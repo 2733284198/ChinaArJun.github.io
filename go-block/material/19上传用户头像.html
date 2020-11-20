@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>10 上传用户头像 | 阿俊博客|记录一个程序员的成长历程</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script>
+            var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?51b8c2e72d1adf96524638ce85bb7d72";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+
+            // 引入谷歌,不需要可删除这段
+            var hm1 = document.createElement("script");
+            hm1.src = "https://www.googletagmanager.com/gtag/js?id=G-B7351EYS04";
+            var s1 = document.getElementsByTagName("script")[0]; 
+            s1.parentNode.insertBefore(hm1, s1);
+            })();
+
+            // 谷歌加载,不需要可删除
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-B7351EYS04');
+        </script>
+    <meta name="description" content="阿俊博客(blog.zhequtao.com)记录一个后端程序员的成长历程,分享他的学习笔记和心得,还有些开发必备技巧哦! java golang web html dev开发">
+    <link rel="preload" href="/assets/css/0.styles.a3df589e.css" as="style"><link rel="preload" href="/assets/js/app.9ea962d1.js" as="script"><link rel="preload" href="/assets/js/2.c9a70b15.js" as="script"><link rel="preload" href="/assets/js/4.844b86fa.js" as="script"><link rel="preload" href="/assets/js/81.674f5038.js" as="script"><link rel="prefetch" href="/assets/js/10.62e601c1.js"><link rel="prefetch" href="/assets/js/100.cf1207c5.js"><link rel="prefetch" href="/assets/js/101.4d7a9918.js"><link rel="prefetch" href="/assets/js/102.fc6db33a.js"><link rel="prefetch" href="/assets/js/103.30b8eabe.js"><link rel="prefetch" href="/assets/js/104.820bf0b0.js"><link rel="prefetch" href="/assets/js/105.99743e1b.js"><link rel="prefetch" href="/assets/js/106.0ab60d54.js"><link rel="prefetch" href="/assets/js/107.622d7433.js"><link rel="prefetch" href="/assets/js/108.aa7661f4.js"><link rel="prefetch" href="/assets/js/109.c0895a64.js"><link rel="prefetch" href="/assets/js/11.7da91838.js"><link rel="prefetch" href="/assets/js/110.c81dd090.js"><link rel="prefetch" href="/assets/js/111.24ece24d.js"><link rel="prefetch" href="/assets/js/112.30f8c029.js"><link rel="prefetch" href="/assets/js/113.eaaeb7ca.js"><link rel="prefetch" href="/assets/js/114.ba155e36.js"><link rel="prefetch" href="/assets/js/115.d6dc863f.js"><link rel="prefetch" href="/assets/js/116.88505488.js"><link rel="prefetch" href="/assets/js/117.b5d01796.js"><link rel="prefetch" href="/assets/js/118.67d3a13c.js"><link rel="prefetch" href="/assets/js/119.86770a17.js"><link rel="prefetch" href="/assets/js/12.8bd1929b.js"><link rel="prefetch" href="/assets/js/120.1327c5d1.js"><link rel="prefetch" href="/assets/js/121.df650198.js"><link rel="prefetch" href="/assets/js/122.aae17f4e.js"><link rel="prefetch" href="/assets/js/123.ce82f47d.js"><link rel="prefetch" href="/assets/js/124.26b9296d.js"><link rel="prefetch" href="/assets/js/125.25341b03.js"><link rel="prefetch" href="/assets/js/126.a322ae87.js"><link rel="prefetch" href="/assets/js/127.d19d83a8.js"><link rel="prefetch" href="/assets/js/128.57397ec4.js"><link rel="prefetch" href="/assets/js/129.cddf11fb.js"><link rel="prefetch" href="/assets/js/13.89b0bee6.js"><link rel="prefetch" href="/assets/js/130.233f34dc.js"><link rel="prefetch" href="/assets/js/131.d9c82885.js"><link rel="prefetch" href="/assets/js/132.c806fc3d.js"><link rel="prefetch" href="/assets/js/133.1fb1021b.js"><link rel="prefetch" href="/assets/js/134.55127691.js"><link rel="prefetch" href="/assets/js/135.f1eceeed.js"><link rel="prefetch" href="/assets/js/136.c1560a93.js"><link rel="prefetch" href="/assets/js/137.63c49866.js"><link rel="prefetch" href="/assets/js/138.5fe32c17.js"><link rel="prefetch" href="/assets/js/139.7ed0036a.js"><link rel="prefetch" href="/assets/js/14.05030778.js"><link rel="prefetch" href="/assets/js/140.5791e121.js"><link rel="prefetch" href="/assets/js/141.51770f04.js"><link rel="prefetch" href="/assets/js/142.6fb8fd3a.js"><link rel="prefetch" href="/assets/js/143.cb474433.js"><link rel="prefetch" href="/assets/js/144.0ce90ec6.js"><link rel="prefetch" href="/assets/js/145.0a0cb1c3.js"><link rel="prefetch" href="/assets/js/146.8bbc9e3b.js"><link rel="prefetch" href="/assets/js/147.b6783918.js"><link rel="prefetch" href="/assets/js/148.40ec0811.js"><link rel="prefetch" href="/assets/js/149.dea285d2.js"><link rel="prefetch" href="/assets/js/15.efef2d1b.js"><link rel="prefetch" href="/assets/js/150.7504351a.js"><link rel="prefetch" href="/assets/js/151.25e3f6a5.js"><link rel="prefetch" href="/assets/js/152.1bc21368.js"><link rel="prefetch" href="/assets/js/153.d395af94.js"><link rel="prefetch" href="/assets/js/154.5f5d2d95.js"><link rel="prefetch" href="/assets/js/155.5bb9391c.js"><link rel="prefetch" href="/assets/js/156.787b7172.js"><link rel="prefetch" href="/assets/js/157.ceccf7ca.js"><link rel="prefetch" href="/assets/js/158.5542d68b.js"><link rel="prefetch" href="/assets/js/159.9146bf68.js"><link rel="prefetch" href="/assets/js/16.307e235e.js"><link rel="prefetch" href="/assets/js/160.66555b7c.js"><link rel="prefetch" href="/assets/js/161.e17ec2ba.js"><link rel="prefetch" href="/assets/js/162.28f8d9c6.js"><link rel="prefetch" href="/assets/js/163.d27e5402.js"><link rel="prefetch" href="/assets/js/164.2e7c87ca.js"><link rel="prefetch" href="/assets/js/165.10f6348c.js"><link rel="prefetch" href="/assets/js/166.ba22558d.js"><link rel="prefetch" href="/assets/js/167.03b2b6f1.js"><link rel="prefetch" href="/assets/js/168.95b9cd51.js"><link rel="prefetch" href="/assets/js/169.9d5abaf8.js"><link rel="prefetch" href="/assets/js/17.8e7c137e.js"><link rel="prefetch" href="/assets/js/170.a9a4a69e.js"><link rel="prefetch" href="/assets/js/171.c2d23226.js"><link rel="prefetch" href="/assets/js/172.1bd427f9.js"><link rel="prefetch" href="/assets/js/173.2c53877d.js"><link rel="prefetch" href="/assets/js/174.ec879d25.js"><link rel="prefetch" href="/assets/js/175.c32e6c4f.js"><link rel="prefetch" href="/assets/js/176.6b1d0ffa.js"><link rel="prefetch" href="/assets/js/177.5e8c5d1c.js"><link rel="prefetch" href="/assets/js/178.10be38e6.js"><link rel="prefetch" href="/assets/js/179.6724c9df.js"><link rel="prefetch" href="/assets/js/18.7fcb42c3.js"><link rel="prefetch" href="/assets/js/180.b26ed559.js"><link rel="prefetch" href="/assets/js/181.113a50d4.js"><link rel="prefetch" href="/assets/js/182.25a92d08.js"><link rel="prefetch" href="/assets/js/183.7429f323.js"><link rel="prefetch" href="/assets/js/184.e595c325.js"><link rel="prefetch" href="/assets/js/185.c973228d.js"><link rel="prefetch" href="/assets/js/186.0a647caa.js"><link rel="prefetch" href="/assets/js/187.2b1628b6.js"><link rel="prefetch" href="/assets/js/188.a88b4ad9.js"><link rel="prefetch" href="/assets/js/189.2fe1abbb.js"><link rel="prefetch" href="/assets/js/19.6dcea1bc.js"><link rel="prefetch" href="/assets/js/190.46d6460f.js"><link rel="prefetch" href="/assets/js/191.f4fb4998.js"><link rel="prefetch" href="/assets/js/192.74a4ad9f.js"><link rel="prefetch" href="/assets/js/193.91af848a.js"><link rel="prefetch" href="/assets/js/194.f9597fa6.js"><link rel="prefetch" href="/assets/js/195.6007909c.js"><link rel="prefetch" href="/assets/js/196.61f30712.js"><link rel="prefetch" href="/assets/js/197.f7096cb0.js"><link rel="prefetch" href="/assets/js/198.33d13915.js"><link rel="prefetch" href="/assets/js/199.9339c983.js"><link rel="prefetch" href="/assets/js/20.86c2c262.js"><link rel="prefetch" href="/assets/js/200.11374ebc.js"><link rel="prefetch" href="/assets/js/201.3e1fd856.js"><link rel="prefetch" href="/assets/js/202.93a8beeb.js"><link rel="prefetch" href="/assets/js/203.c0fee1fb.js"><link rel="prefetch" href="/assets/js/204.a8c0f8a1.js"><link rel="prefetch" href="/assets/js/205.7967210e.js"><link rel="prefetch" href="/assets/js/206.c4a88733.js"><link rel="prefetch" href="/assets/js/207.e4950166.js"><link rel="prefetch" href="/assets/js/208.a1176cf7.js"><link rel="prefetch" href="/assets/js/209.cd4f7baf.js"><link rel="prefetch" href="/assets/js/21.9c9a31ac.js"><link rel="prefetch" href="/assets/js/210.e43bd795.js"><link rel="prefetch" href="/assets/js/211.ddf04558.js"><link rel="prefetch" href="/assets/js/212.391ef50c.js"><link rel="prefetch" href="/assets/js/213.da32644a.js"><link rel="prefetch" href="/assets/js/214.181d708c.js"><link rel="prefetch" href="/assets/js/215.0114fbd1.js"><link rel="prefetch" href="/assets/js/216.9aab137a.js"><link rel="prefetch" href="/assets/js/217.25bf6db0.js"><link rel="prefetch" href="/assets/js/218.b0355ab3.js"><link rel="prefetch" href="/assets/js/219.87b99a27.js"><link rel="prefetch" href="/assets/js/22.5939eeb8.js"><link rel="prefetch" href="/assets/js/220.189892e3.js"><link rel="prefetch" href="/assets/js/221.1f604643.js"><link rel="prefetch" href="/assets/js/222.89415692.js"><link rel="prefetch" href="/assets/js/223.cb562c81.js"><link rel="prefetch" href="/assets/js/224.4c239cde.js"><link rel="prefetch" href="/assets/js/225.2b201379.js"><link rel="prefetch" href="/assets/js/226.ae5425fd.js"><link rel="prefetch" href="/assets/js/227.250dcdfc.js"><link rel="prefetch" href="/assets/js/228.c5e0493c.js"><link rel="prefetch" href="/assets/js/229.36b1d13d.js"><link rel="prefetch" href="/assets/js/23.9e765009.js"><link rel="prefetch" href="/assets/js/230.6e191eaf.js"><link rel="prefetch" href="/assets/js/231.c253f165.js"><link rel="prefetch" href="/assets/js/232.02191827.js"><link rel="prefetch" href="/assets/js/233.b662ceb3.js"><link rel="prefetch" href="/assets/js/234.1a3c416f.js"><link rel="prefetch" href="/assets/js/235.7e36938c.js"><link rel="prefetch" href="/assets/js/236.9c53b690.js"><link rel="prefetch" href="/assets/js/237.ea36cc85.js"><link rel="prefetch" href="/assets/js/238.b33057d4.js"><link rel="prefetch" href="/assets/js/239.0868edac.js"><link rel="prefetch" href="/assets/js/24.8e4704a7.js"><link rel="prefetch" href="/assets/js/240.2a7704ab.js"><link rel="prefetch" href="/assets/js/241.0fcb9572.js"><link rel="prefetch" href="/assets/js/242.ce7b9353.js"><link rel="prefetch" href="/assets/js/243.9f744f0b.js"><link rel="prefetch" href="/assets/js/244.a78ef66e.js"><link rel="prefetch" href="/assets/js/245.d7576519.js"><link rel="prefetch" href="/assets/js/246.ca4fd3c4.js"><link rel="prefetch" href="/assets/js/247.a44e8ce8.js"><link rel="prefetch" href="/assets/js/248.a9c1de28.js"><link rel="prefetch" href="/assets/js/249.da16a6a9.js"><link rel="prefetch" href="/assets/js/25.58ecd9b7.js"><link rel="prefetch" href="/assets/js/250.1d79bfff.js"><link rel="prefetch" href="/assets/js/251.a3e6ce2a.js"><link rel="prefetch" href="/assets/js/252.19753464.js"><link rel="prefetch" href="/assets/js/253.981b17b4.js"><link rel="prefetch" href="/assets/js/254.a8d017c7.js"><link rel="prefetch" href="/assets/js/255.49af6fcc.js"><link rel="prefetch" href="/assets/js/256.dd891671.js"><link rel="prefetch" href="/assets/js/257.4ed68d8d.js"><link rel="prefetch" href="/assets/js/258.5307d7a8.js"><link rel="prefetch" href="/assets/js/259.6ddcac1f.js"><link rel="prefetch" href="/assets/js/26.967ebdc3.js"><link rel="prefetch" href="/assets/js/260.b1c1f329.js"><link rel="prefetch" href="/assets/js/261.674d550e.js"><link rel="prefetch" href="/assets/js/262.7f75caba.js"><link rel="prefetch" href="/assets/js/263.4f76640d.js"><link rel="prefetch" href="/assets/js/264.b375613b.js"><link rel="prefetch" href="/assets/js/265.cc9c6501.js"><link rel="prefetch" href="/assets/js/266.c642e410.js"><link rel="prefetch" href="/assets/js/267.ab0de99f.js"><link rel="prefetch" href="/assets/js/268.24457362.js"><link rel="prefetch" href="/assets/js/269.2e8d42d9.js"><link rel="prefetch" href="/assets/js/27.d33e568a.js"><link rel="prefetch" href="/assets/js/270.e16d1e3a.js"><link rel="prefetch" href="/assets/js/271.77daddc8.js"><link rel="prefetch" href="/assets/js/272.7e84bdb2.js"><link rel="prefetch" href="/assets/js/273.d5dbce4e.js"><link rel="prefetch" href="/assets/js/274.6feb83b8.js"><link rel="prefetch" href="/assets/js/275.103f0486.js"><link rel="prefetch" href="/assets/js/276.2f998450.js"><link rel="prefetch" href="/assets/js/277.791a5013.js"><link rel="prefetch" href="/assets/js/278.3e0520fd.js"><link rel="prefetch" href="/assets/js/279.fcb87095.js"><link rel="prefetch" href="/assets/js/28.287f05a3.js"><link rel="prefetch" href="/assets/js/280.27106da5.js"><link rel="prefetch" href="/assets/js/281.91186cc2.js"><link rel="prefetch" href="/assets/js/282.3ac046ef.js"><link rel="prefetch" href="/assets/js/283.054707a2.js"><link rel="prefetch" href="/assets/js/284.fd7ae7bf.js"><link rel="prefetch" href="/assets/js/285.39768e4e.js"><link rel="prefetch" href="/assets/js/286.ddda020a.js"><link rel="prefetch" href="/assets/js/287.6b607282.js"><link rel="prefetch" href="/assets/js/288.10968280.js"><link rel="prefetch" href="/assets/js/289.83e85ab4.js"><link rel="prefetch" href="/assets/js/29.fe9422c1.js"><link rel="prefetch" href="/assets/js/290.ea068360.js"><link rel="prefetch" href="/assets/js/291.cecf9a33.js"><link rel="prefetch" href="/assets/js/292.76975bb4.js"><link rel="prefetch" href="/assets/js/293.a63be123.js"><link rel="prefetch" href="/assets/js/294.7f47f63d.js"><link rel="prefetch" href="/assets/js/295.8c920f6f.js"><link rel="prefetch" href="/assets/js/296.0df85a34.js"><link rel="prefetch" href="/assets/js/297.718b10bf.js"><link rel="prefetch" href="/assets/js/298.3781ec23.js"><link rel="prefetch" href="/assets/js/299.c345f6e7.js"><link rel="prefetch" href="/assets/js/3.e0c57d3e.js"><link rel="prefetch" href="/assets/js/30.ecca89f6.js"><link rel="prefetch" href="/assets/js/300.87f82f09.js"><link rel="prefetch" href="/assets/js/301.4d2f986c.js"><link rel="prefetch" href="/assets/js/302.9e65b4f7.js"><link rel="prefetch" href="/assets/js/303.a7a07667.js"><link rel="prefetch" href="/assets/js/304.fe7e8225.js"><link rel="prefetch" href="/assets/js/305.760e05cb.js"><link rel="prefetch" href="/assets/js/306.30ba2755.js"><link rel="prefetch" href="/assets/js/307.fdb5e282.js"><link rel="prefetch" href="/assets/js/308.760b43d7.js"><link rel="prefetch" href="/assets/js/309.2ad5b744.js"><link rel="prefetch" href="/assets/js/31.671ae8f6.js"><link rel="prefetch" href="/assets/js/310.5ceeda16.js"><link rel="prefetch" href="/assets/js/311.1a9c85c6.js"><link rel="prefetch" href="/assets/js/312.9ed98b62.js"><link rel="prefetch" href="/assets/js/313.6d0015fd.js"><link rel="prefetch" href="/assets/js/314.c9d0b6d2.js"><link rel="prefetch" href="/assets/js/315.5c5807cb.js"><link rel="prefetch" href="/assets/js/316.40a7ffb0.js"><link rel="prefetch" href="/assets/js/317.d12e1ff6.js"><link rel="prefetch" href="/assets/js/318.e5c71f34.js"><link rel="prefetch" href="/assets/js/319.cc5e5279.js"><link rel="prefetch" href="/assets/js/32.88e43d7e.js"><link rel="prefetch" href="/assets/js/320.f18837bb.js"><link rel="prefetch" href="/assets/js/321.7969f1e2.js"><link rel="prefetch" href="/assets/js/322.74aeb82f.js"><link rel="prefetch" href="/assets/js/323.354a4de0.js"><link rel="prefetch" href="/assets/js/324.bac5b379.js"><link rel="prefetch" href="/assets/js/325.145a31ae.js"><link rel="prefetch" href="/assets/js/326.bbc46277.js"><link rel="prefetch" href="/assets/js/327.306f70db.js"><link rel="prefetch" href="/assets/js/328.1af4efed.js"><link rel="prefetch" href="/assets/js/329.15b29081.js"><link rel="prefetch" href="/assets/js/33.59c6fc69.js"><link rel="prefetch" href="/assets/js/330.a4ac66fc.js"><link rel="prefetch" href="/assets/js/331.35f0f6c3.js"><link rel="prefetch" href="/assets/js/332.e36e061d.js"><link rel="prefetch" href="/assets/js/333.08477386.js"><link rel="prefetch" href="/assets/js/334.be69b8b3.js"><link rel="prefetch" href="/assets/js/335.434734ca.js"><link rel="prefetch" href="/assets/js/336.3cbce0cd.js"><link rel="prefetch" href="/assets/js/337.82fa8d11.js"><link rel="prefetch" href="/assets/js/338.28c84ece.js"><link rel="prefetch" href="/assets/js/339.88f98613.js"><link rel="prefetch" href="/assets/js/34.0ece5672.js"><link rel="prefetch" href="/assets/js/340.25f40ebf.js"><link rel="prefetch" href="/assets/js/341.997c73c1.js"><link rel="prefetch" href="/assets/js/342.7013a957.js"><link rel="prefetch" href="/assets/js/343.65626256.js"><link rel="prefetch" href="/assets/js/344.57f2bdb4.js"><link rel="prefetch" href="/assets/js/345.38f630e9.js"><link rel="prefetch" href="/assets/js/346.9ad2fbaf.js"><link rel="prefetch" href="/assets/js/347.57091be7.js"><link rel="prefetch" href="/assets/js/348.1ab8ba98.js"><link rel="prefetch" href="/assets/js/349.6e295edd.js"><link rel="prefetch" href="/assets/js/35.2555d318.js"><link rel="prefetch" href="/assets/js/350.b30f3fbf.js"><link rel="prefetch" href="/assets/js/351.60773132.js"><link rel="prefetch" href="/assets/js/352.13db1b1d.js"><link rel="prefetch" href="/assets/js/353.171c8652.js"><link rel="prefetch" href="/assets/js/354.15ecc76b.js"><link rel="prefetch" href="/assets/js/355.9fbc80e0.js"><link rel="prefetch" href="/assets/js/356.84d2c6de.js"><link rel="prefetch" href="/assets/js/357.739df3d4.js"><link rel="prefetch" href="/assets/js/358.88560f09.js"><link rel="prefetch" href="/assets/js/359.6a0bb2b8.js"><link rel="prefetch" href="/assets/js/36.3478b3d7.js"><link rel="prefetch" href="/assets/js/360.ef8b18c6.js"><link rel="prefetch" href="/assets/js/361.db83fa7d.js"><link rel="prefetch" href="/assets/js/362.9baf3da9.js"><link rel="prefetch" href="/assets/js/363.c220f73c.js"><link rel="prefetch" href="/assets/js/364.088926b8.js"><link rel="prefetch" href="/assets/js/365.101a11ff.js"><link rel="prefetch" href="/assets/js/366.41a2bbdb.js"><link rel="prefetch" href="/assets/js/367.e7471fcd.js"><link rel="prefetch" href="/assets/js/368.efbb651a.js"><link rel="prefetch" href="/assets/js/369.8c111250.js"><link rel="prefetch" href="/assets/js/37.cf06df2c.js"><link rel="prefetch" href="/assets/js/370.d6254892.js"><link rel="prefetch" href="/assets/js/371.9bccb7f9.js"><link rel="prefetch" href="/assets/js/372.ddc12fda.js"><link rel="prefetch" href="/assets/js/373.91b3ad6b.js"><link rel="prefetch" href="/assets/js/374.c8c27965.js"><link rel="prefetch" href="/assets/js/375.26df66e7.js"><link rel="prefetch" href="/assets/js/376.8fab051f.js"><link rel="prefetch" href="/assets/js/377.7cda8366.js"><link rel="prefetch" href="/assets/js/378.b726510c.js"><link rel="prefetch" href="/assets/js/379.c66b85c0.js"><link rel="prefetch" href="/assets/js/38.afb74648.js"><link rel="prefetch" href="/assets/js/380.80b1dbaa.js"><link rel="prefetch" href="/assets/js/381.9eae4d8d.js"><link rel="prefetch" href="/assets/js/382.875628ce.js"><link rel="prefetch" href="/assets/js/383.a5154208.js"><link rel="prefetch" href="/assets/js/384.311052bf.js"><link rel="prefetch" href="/assets/js/385.bfce1e00.js"><link rel="prefetch" href="/assets/js/386.354b125a.js"><link rel="prefetch" href="/assets/js/387.7bbe1740.js"><link rel="prefetch" href="/assets/js/388.ee15d89e.js"><link rel="prefetch" href="/assets/js/389.1d2d4ccc.js"><link rel="prefetch" href="/assets/js/39.c314f21b.js"><link rel="prefetch" href="/assets/js/390.90ca40a9.js"><link rel="prefetch" href="/assets/js/391.d199796b.js"><link rel="prefetch" href="/assets/js/392.672aae85.js"><link rel="prefetch" href="/assets/js/393.3a57edae.js"><link rel="prefetch" href="/assets/js/394.b46b9242.js"><link rel="prefetch" href="/assets/js/395.77d35e16.js"><link rel="prefetch" href="/assets/js/396.677289ca.js"><link rel="prefetch" href="/assets/js/397.0cb9500f.js"><link rel="prefetch" href="/assets/js/398.962ab9a6.js"><link rel="prefetch" href="/assets/js/399.c6da0357.js"><link rel="prefetch" href="/assets/js/40.8bb0c972.js"><link rel="prefetch" href="/assets/js/400.36c0a7d6.js"><link rel="prefetch" href="/assets/js/401.9bf663ea.js"><link rel="prefetch" href="/assets/js/402.ecf01655.js"><link rel="prefetch" href="/assets/js/403.f4237c9f.js"><link rel="prefetch" href="/assets/js/404.db53111c.js"><link rel="prefetch" href="/assets/js/405.3ee804d4.js"><link rel="prefetch" href="/assets/js/406.963652f1.js"><link rel="prefetch" href="/assets/js/407.6136eb18.js"><link rel="prefetch" href="/assets/js/408.48792ff4.js"><link rel="prefetch" href="/assets/js/409.5e291789.js"><link rel="prefetch" href="/assets/js/41.e74854d6.js"><link rel="prefetch" href="/assets/js/410.442c009b.js"><link rel="prefetch" href="/assets/js/411.0c54fdb2.js"><link rel="prefetch" href="/assets/js/412.6e141134.js"><link rel="prefetch" href="/assets/js/413.2320aff0.js"><link rel="prefetch" href="/assets/js/414.05d880a9.js"><link rel="prefetch" href="/assets/js/415.32322d35.js"><link rel="prefetch" href="/assets/js/416.4fba6f60.js"><link rel="prefetch" href="/assets/js/417.1a0596ef.js"><link rel="prefetch" href="/assets/js/418.82ea5e39.js"><link rel="prefetch" href="/assets/js/419.8f90b199.js"><link rel="prefetch" href="/assets/js/42.e492c74b.js"><link rel="prefetch" href="/assets/js/420.3e817d1b.js"><link rel="prefetch" href="/assets/js/421.4f55039c.js"><link rel="prefetch" href="/assets/js/422.2bf4ed76.js"><link rel="prefetch" href="/assets/js/423.67e9b23d.js"><link rel="prefetch" href="/assets/js/424.087a8b6b.js"><link rel="prefetch" href="/assets/js/425.1e94b153.js"><link rel="prefetch" href="/assets/js/426.f0367461.js"><link rel="prefetch" href="/assets/js/427.3d28a4b2.js"><link rel="prefetch" href="/assets/js/428.ce36b8ee.js"><link rel="prefetch" href="/assets/js/429.105dc086.js"><link rel="prefetch" href="/assets/js/43.75f9f169.js"><link rel="prefetch" href="/assets/js/430.08b72517.js"><link rel="prefetch" href="/assets/js/431.208ce8d8.js"><link rel="prefetch" href="/assets/js/432.6c4fb6f0.js"><link rel="prefetch" href="/assets/js/433.1074506a.js"><link rel="prefetch" href="/assets/js/434.e5ce0f12.js"><link rel="prefetch" href="/assets/js/435.15247615.js"><link rel="prefetch" href="/assets/js/436.61555659.js"><link rel="prefetch" href="/assets/js/437.0cf79a46.js"><link rel="prefetch" href="/assets/js/438.9a5decbc.js"><link rel="prefetch" href="/assets/js/439.c66f17c5.js"><link rel="prefetch" href="/assets/js/44.8a8252fc.js"><link rel="prefetch" href="/assets/js/440.845b7492.js"><link rel="prefetch" href="/assets/js/441.602f5a22.js"><link rel="prefetch" href="/assets/js/442.1574dc38.js"><link rel="prefetch" href="/assets/js/443.cc12b13c.js"><link rel="prefetch" href="/assets/js/444.236a7fb7.js"><link rel="prefetch" href="/assets/js/445.f391fec2.js"><link rel="prefetch" href="/assets/js/446.cbd42128.js"><link rel="prefetch" href="/assets/js/447.f1045e95.js"><link rel="prefetch" href="/assets/js/448.67ce60c2.js"><link rel="prefetch" href="/assets/js/449.6b62b1ad.js"><link rel="prefetch" href="/assets/js/45.d4f0276c.js"><link rel="prefetch" href="/assets/js/450.6b6ffc4b.js"><link rel="prefetch" href="/assets/js/451.3c3e1317.js"><link rel="prefetch" href="/assets/js/452.6003d8da.js"><link rel="prefetch" href="/assets/js/453.a44d279b.js"><link rel="prefetch" href="/assets/js/454.78070189.js"><link rel="prefetch" href="/assets/js/455.f2b79088.js"><link rel="prefetch" href="/assets/js/456.91663bf5.js"><link rel="prefetch" href="/assets/js/457.35a8e118.js"><link rel="prefetch" href="/assets/js/458.4149d6b7.js"><link rel="prefetch" href="/assets/js/459.7ea1e553.js"><link rel="prefetch" href="/assets/js/46.6ddb0a09.js"><link rel="prefetch" href="/assets/js/460.3995271b.js"><link rel="prefetch" href="/assets/js/461.091f1430.js"><link rel="prefetch" href="/assets/js/462.4cd71054.js"><link rel="prefetch" href="/assets/js/463.6857db16.js"><link rel="prefetch" href="/assets/js/464.a1bda4d9.js"><link rel="prefetch" href="/assets/js/465.677688cc.js"><link rel="prefetch" href="/assets/js/466.62a2c52f.js"><link rel="prefetch" href="/assets/js/467.4aa3b11e.js"><link rel="prefetch" href="/assets/js/468.817b6b69.js"><link rel="prefetch" href="/assets/js/469.51f23dcd.js"><link rel="prefetch" href="/assets/js/47.3f31abda.js"><link rel="prefetch" href="/assets/js/470.69ea0010.js"><link rel="prefetch" href="/assets/js/471.7efe5b62.js"><link rel="prefetch" href="/assets/js/472.af7c0c2d.js"><link rel="prefetch" href="/assets/js/473.0cad2221.js"><link rel="prefetch" href="/assets/js/474.e8f9a1e9.js"><link rel="prefetch" href="/assets/js/475.b5b9b45a.js"><link rel="prefetch" href="/assets/js/476.c7a0afe6.js"><link rel="prefetch" href="/assets/js/477.2a810d6e.js"><link rel="prefetch" href="/assets/js/478.0efbc4c7.js"><link rel="prefetch" href="/assets/js/479.dd5bbccc.js"><link rel="prefetch" href="/assets/js/48.8ff4bc01.js"><link rel="prefetch" href="/assets/js/480.33e9fcec.js"><link rel="prefetch" href="/assets/js/481.60f573e7.js"><link rel="prefetch" href="/assets/js/482.7b54b4fb.js"><link rel="prefetch" href="/assets/js/483.53290792.js"><link rel="prefetch" href="/assets/js/484.bc29ab5e.js"><link rel="prefetch" href="/assets/js/485.811fd0e7.js"><link rel="prefetch" href="/assets/js/486.b6ec0cbc.js"><link rel="prefetch" href="/assets/js/487.d76ef442.js"><link rel="prefetch" href="/assets/js/488.dc438775.js"><link rel="prefetch" href="/assets/js/489.03938f88.js"><link rel="prefetch" href="/assets/js/49.d14740e5.js"><link rel="prefetch" href="/assets/js/490.87e301b9.js"><link rel="prefetch" href="/assets/js/491.ce0fd7e5.js"><link rel="prefetch" href="/assets/js/492.ab10827f.js"><link rel="prefetch" href="/assets/js/493.52442a50.js"><link rel="prefetch" href="/assets/js/494.2606c238.js"><link rel="prefetch" href="/assets/js/495.4218d96e.js"><link rel="prefetch" href="/assets/js/496.09da8fd9.js"><link rel="prefetch" href="/assets/js/497.0059402d.js"><link rel="prefetch" href="/assets/js/498.9f6cfe70.js"><link rel="prefetch" href="/assets/js/499.35e2fee2.js"><link rel="prefetch" href="/assets/js/5.7fd7e748.js"><link rel="prefetch" href="/assets/js/50.2b80f2b9.js"><link rel="prefetch" href="/assets/js/500.c1ab43b9.js"><link rel="prefetch" href="/assets/js/501.01fe1e3b.js"><link rel="prefetch" href="/assets/js/502.4373b1ae.js"><link rel="prefetch" href="/assets/js/503.2f03713d.js"><link rel="prefetch" href="/assets/js/504.80f22850.js"><link rel="prefetch" href="/assets/js/505.e0bbc99e.js"><link rel="prefetch" href="/assets/js/506.507dc313.js"><link rel="prefetch" href="/assets/js/507.fb6bad79.js"><link rel="prefetch" href="/assets/js/508.5e699aa9.js"><link rel="prefetch" href="/assets/js/509.8d16f124.js"><link rel="prefetch" href="/assets/js/51.e473d3f3.js"><link rel="prefetch" href="/assets/js/510.34c69374.js"><link rel="prefetch" href="/assets/js/511.7a3ea23f.js"><link rel="prefetch" href="/assets/js/512.444e2951.js"><link rel="prefetch" href="/assets/js/513.d270dbcc.js"><link rel="prefetch" href="/assets/js/514.1ff5debc.js"><link rel="prefetch" href="/assets/js/515.2a5036b4.js"><link rel="prefetch" href="/assets/js/516.519572fa.js"><link rel="prefetch" href="/assets/js/517.310e6a40.js"><link rel="prefetch" href="/assets/js/518.5f4c76cc.js"><link rel="prefetch" href="/assets/js/519.afd8b4ec.js"><link rel="prefetch" href="/assets/js/52.b2705e5a.js"><link rel="prefetch" href="/assets/js/520.78726749.js"><link rel="prefetch" href="/assets/js/521.14c49cc4.js"><link rel="prefetch" href="/assets/js/522.e66a26d6.js"><link rel="prefetch" href="/assets/js/523.dc9f7da0.js"><link rel="prefetch" href="/assets/js/524.d8a555ad.js"><link rel="prefetch" href="/assets/js/525.283ec81f.js"><link rel="prefetch" href="/assets/js/526.286f94bf.js"><link rel="prefetch" href="/assets/js/527.d0f5bacb.js"><link rel="prefetch" href="/assets/js/528.a147459b.js"><link rel="prefetch" href="/assets/js/529.8e2036f6.js"><link rel="prefetch" href="/assets/js/53.b22d1830.js"><link rel="prefetch" href="/assets/js/530.7e39049e.js"><link rel="prefetch" href="/assets/js/531.e674752b.js"><link rel="prefetch" href="/assets/js/532.8fe6dc9a.js"><link rel="prefetch" href="/assets/js/533.1611f6fc.js"><link rel="prefetch" href="/assets/js/534.30350526.js"><link rel="prefetch" href="/assets/js/535.c53c8062.js"><link rel="prefetch" href="/assets/js/536.194c0f54.js"><link rel="prefetch" href="/assets/js/537.9fff58be.js"><link rel="prefetch" href="/assets/js/538.5fc4dbf1.js"><link rel="prefetch" href="/assets/js/539.dcb3dbde.js"><link rel="prefetch" href="/assets/js/54.dd781fee.js"><link rel="prefetch" href="/assets/js/540.e603d37f.js"><link rel="prefetch" href="/assets/js/541.8c3509ee.js"><link rel="prefetch" href="/assets/js/542.32647773.js"><link rel="prefetch" href="/assets/js/543.6d7bcae1.js"><link rel="prefetch" href="/assets/js/544.f56f121b.js"><link rel="prefetch" href="/assets/js/545.3d29510d.js"><link rel="prefetch" href="/assets/js/546.81e647f6.js"><link rel="prefetch" href="/assets/js/547.669e6f5b.js"><link rel="prefetch" href="/assets/js/548.32996733.js"><link rel="prefetch" href="/assets/js/549.8681397c.js"><link rel="prefetch" href="/assets/js/55.4bae83d9.js"><link rel="prefetch" href="/assets/js/550.41afbfd6.js"><link rel="prefetch" href="/assets/js/551.8dc3f7b8.js"><link rel="prefetch" href="/assets/js/552.1ee0d0c6.js"><link rel="prefetch" href="/assets/js/553.dadf63ed.js"><link rel="prefetch" href="/assets/js/554.8644a9ab.js"><link rel="prefetch" href="/assets/js/555.8ec41521.js"><link rel="prefetch" href="/assets/js/556.9606b8c9.js"><link rel="prefetch" href="/assets/js/557.74ad4a9c.js"><link rel="prefetch" href="/assets/js/558.24ff45f5.js"><link rel="prefetch" href="/assets/js/559.76efed78.js"><link rel="prefetch" href="/assets/js/56.718429c0.js"><link rel="prefetch" href="/assets/js/560.2ef5cc53.js"><link rel="prefetch" href="/assets/js/561.b617f5cc.js"><link rel="prefetch" href="/assets/js/562.552e64a7.js"><link rel="prefetch" href="/assets/js/563.78b6d1ab.js"><link rel="prefetch" href="/assets/js/564.3b5dfa30.js"><link rel="prefetch" href="/assets/js/565.6433e636.js"><link rel="prefetch" href="/assets/js/566.28e8456d.js"><link rel="prefetch" href="/assets/js/567.313eee33.js"><link rel="prefetch" href="/assets/js/568.3d648b50.js"><link rel="prefetch" href="/assets/js/569.671a6298.js"><link rel="prefetch" href="/assets/js/57.c8333339.js"><link rel="prefetch" href="/assets/js/570.471719cb.js"><link rel="prefetch" href="/assets/js/571.ef881d90.js"><link rel="prefetch" href="/assets/js/572.977abd40.js"><link rel="prefetch" href="/assets/js/573.0d03433d.js"><link rel="prefetch" href="/assets/js/574.8251b547.js"><link rel="prefetch" href="/assets/js/575.171cf807.js"><link rel="prefetch" href="/assets/js/576.80b09c7e.js"><link rel="prefetch" href="/assets/js/577.1d5f24a7.js"><link rel="prefetch" href="/assets/js/578.5645f036.js"><link rel="prefetch" href="/assets/js/579.952881cd.js"><link rel="prefetch" href="/assets/js/58.b9e624cb.js"><link rel="prefetch" href="/assets/js/580.ab812d3b.js"><link rel="prefetch" href="/assets/js/581.b647a055.js"><link rel="prefetch" href="/assets/js/582.83438adb.js"><link rel="prefetch" href="/assets/js/583.b1aa2cf2.js"><link rel="prefetch" href="/assets/js/584.c2f1007a.js"><link rel="prefetch" href="/assets/js/585.45dbf748.js"><link rel="prefetch" href="/assets/js/586.4c3ffbc3.js"><link rel="prefetch" href="/assets/js/587.e71d43c3.js"><link rel="prefetch" href="/assets/js/588.fd7f9eea.js"><link rel="prefetch" href="/assets/js/589.8bf05731.js"><link rel="prefetch" href="/assets/js/59.8bf10afa.js"><link rel="prefetch" href="/assets/js/590.0e4ba5e0.js"><link rel="prefetch" href="/assets/js/591.95f0532d.js"><link rel="prefetch" href="/assets/js/592.bd7ef654.js"><link rel="prefetch" href="/assets/js/593.c7a65b3d.js"><link rel="prefetch" href="/assets/js/594.078a006a.js"><link rel="prefetch" href="/assets/js/595.d6e901df.js"><link rel="prefetch" href="/assets/js/596.d6208112.js"><link rel="prefetch" href="/assets/js/597.66a14285.js"><link rel="prefetch" href="/assets/js/598.30d544ef.js"><link rel="prefetch" href="/assets/js/599.e6a114fe.js"><link rel="prefetch" href="/assets/js/6.242ca76c.js"><link rel="prefetch" href="/assets/js/60.e6863bd6.js"><link rel="prefetch" href="/assets/js/600.62bb7a77.js"><link rel="prefetch" href="/assets/js/601.c7ebebb4.js"><link rel="prefetch" href="/assets/js/602.3756fa7e.js"><link rel="prefetch" href="/assets/js/603.da93e741.js"><link rel="prefetch" href="/assets/js/604.93a28c87.js"><link rel="prefetch" href="/assets/js/605.a12d21ca.js"><link rel="prefetch" href="/assets/js/606.23250d5d.js"><link rel="prefetch" href="/assets/js/607.0efff327.js"><link rel="prefetch" href="/assets/js/608.2c831508.js"><link rel="prefetch" href="/assets/js/609.70098de8.js"><link rel="prefetch" href="/assets/js/61.156b4de8.js"><link rel="prefetch" href="/assets/js/610.a408edf0.js"><link rel="prefetch" href="/assets/js/611.26c3a70f.js"><link rel="prefetch" href="/assets/js/612.2e1b1cd1.js"><link rel="prefetch" href="/assets/js/613.31e5b63e.js"><link rel="prefetch" href="/assets/js/614.6404ddc6.js"><link rel="prefetch" href="/assets/js/615.fbc11140.js"><link rel="prefetch" href="/assets/js/616.4579566e.js"><link rel="prefetch" href="/assets/js/617.9dd611ad.js"><link rel="prefetch" href="/assets/js/618.76fef12e.js"><link rel="prefetch" href="/assets/js/619.d8f9b353.js"><link rel="prefetch" href="/assets/js/62.73a556b6.js"><link rel="prefetch" href="/assets/js/620.2bf6c11c.js"><link rel="prefetch" href="/assets/js/621.9c732b88.js"><link rel="prefetch" href="/assets/js/622.ce177beb.js"><link rel="prefetch" href="/assets/js/623.41e320ec.js"><link rel="prefetch" href="/assets/js/624.817b3c8f.js"><link rel="prefetch" href="/assets/js/625.816b419b.js"><link rel="prefetch" href="/assets/js/626.3c14f028.js"><link rel="prefetch" href="/assets/js/627.758b56b4.js"><link rel="prefetch" href="/assets/js/628.86943080.js"><link rel="prefetch" href="/assets/js/629.6c75e55e.js"><link rel="prefetch" href="/assets/js/63.f1b1e853.js"><link rel="prefetch" href="/assets/js/630.94ca1db4.js"><link rel="prefetch" href="/assets/js/631.3b6f7de5.js"><link rel="prefetch" href="/assets/js/632.52f89764.js"><link rel="prefetch" href="/assets/js/633.75fd5193.js"><link rel="prefetch" href="/assets/js/634.622710b7.js"><link rel="prefetch" href="/assets/js/635.d50d1187.js"><link rel="prefetch" href="/assets/js/636.d341f6d6.js"><link rel="prefetch" href="/assets/js/637.c1f5d3b3.js"><link rel="prefetch" href="/assets/js/638.4fde80df.js"><link rel="prefetch" href="/assets/js/639.b8a205b8.js"><link rel="prefetch" href="/assets/js/64.793c820a.js"><link rel="prefetch" href="/assets/js/640.9a453c25.js"><link rel="prefetch" href="/assets/js/641.b4ed0d96.js"><link rel="prefetch" href="/assets/js/642.ffef1ff3.js"><link rel="prefetch" href="/assets/js/643.a7ec1541.js"><link rel="prefetch" href="/assets/js/644.05544b13.js"><link rel="prefetch" href="/assets/js/645.09b7731d.js"><link rel="prefetch" href="/assets/js/646.c109548f.js"><link rel="prefetch" href="/assets/js/647.f0596714.js"><link rel="prefetch" href="/assets/js/648.0c1b39d0.js"><link rel="prefetch" href="/assets/js/649.287e64d5.js"><link rel="prefetch" href="/assets/js/65.f37d0be7.js"><link rel="prefetch" href="/assets/js/650.9105410b.js"><link rel="prefetch" href="/assets/js/651.5f41618d.js"><link rel="prefetch" href="/assets/js/652.947536e5.js"><link rel="prefetch" href="/assets/js/653.61384c75.js"><link rel="prefetch" href="/assets/js/654.b549f13d.js"><link rel="prefetch" href="/assets/js/655.835429b6.js"><link rel="prefetch" href="/assets/js/656.387ac233.js"><link rel="prefetch" href="/assets/js/657.408c57c3.js"><link rel="prefetch" href="/assets/js/658.2b122032.js"><link rel="prefetch" href="/assets/js/659.83fe3485.js"><link rel="prefetch" href="/assets/js/66.5d717dec.js"><link rel="prefetch" href="/assets/js/660.f9b6ec32.js"><link rel="prefetch" href="/assets/js/661.d778682c.js"><link rel="prefetch" href="/assets/js/662.aaddc23e.js"><link rel="prefetch" href="/assets/js/663.37416307.js"><link rel="prefetch" href="/assets/js/664.450ee534.js"><link rel="prefetch" href="/assets/js/665.294b451e.js"><link rel="prefetch" href="/assets/js/666.bbec7c7b.js"><link rel="prefetch" href="/assets/js/667.e0a703ca.js"><link rel="prefetch" href="/assets/js/668.f7386e1c.js"><link rel="prefetch" href="/assets/js/669.40a74c7a.js"><link rel="prefetch" href="/assets/js/67.78c4b054.js"><link rel="prefetch" href="/assets/js/670.c7c79ad0.js"><link rel="prefetch" href="/assets/js/671.be2b7674.js"><link rel="prefetch" href="/assets/js/672.08b612fb.js"><link rel="prefetch" href="/assets/js/673.415ad76e.js"><link rel="prefetch" href="/assets/js/674.523d603e.js"><link rel="prefetch" href="/assets/js/675.1d5f94c1.js"><link rel="prefetch" href="/assets/js/676.bece4f17.js"><link rel="prefetch" href="/assets/js/677.e9b33833.js"><link rel="prefetch" href="/assets/js/678.c35ac3b8.js"><link rel="prefetch" href="/assets/js/68.b8df93e3.js"><link rel="prefetch" href="/assets/js/69.212ed37f.js"><link rel="prefetch" href="/assets/js/7.ec80a013.js"><link rel="prefetch" href="/assets/js/70.38b19eab.js"><link rel="prefetch" href="/assets/js/71.04f667f1.js"><link rel="prefetch" href="/assets/js/72.91bcc269.js"><link rel="prefetch" href="/assets/js/73.246d8f25.js"><link rel="prefetch" href="/assets/js/74.ac496839.js"><link rel="prefetch" href="/assets/js/75.b4d9ba62.js"><link rel="prefetch" href="/assets/js/76.a7a81728.js"><link rel="prefetch" href="/assets/js/77.d7e31e43.js"><link rel="prefetch" href="/assets/js/78.9abf5788.js"><link rel="prefetch" href="/assets/js/79.b2150d81.js"><link rel="prefetch" href="/assets/js/8.bfd1270e.js"><link rel="prefetch" href="/assets/js/80.7cb80d2a.js"><link rel="prefetch" href="/assets/js/82.f8a79a9d.js"><link rel="prefetch" href="/assets/js/83.58e59d33.js"><link rel="prefetch" href="/assets/js/84.3bc64167.js"><link rel="prefetch" href="/assets/js/85.63f6b74c.js"><link rel="prefetch" href="/assets/js/86.cc62df1d.js"><link rel="prefetch" href="/assets/js/87.ffa9c597.js"><link rel="prefetch" href="/assets/js/88.71916ff0.js"><link rel="prefetch" href="/assets/js/89.1e49428d.js"><link rel="prefetch" href="/assets/js/9.b8e260e0.js"><link rel="prefetch" href="/assets/js/90.c52ee918.js"><link rel="prefetch" href="/assets/js/91.1482551a.js"><link rel="prefetch" href="/assets/js/92.cf73cb76.js"><link rel="prefetch" href="/assets/js/93.32c694d0.js"><link rel="prefetch" href="/assets/js/94.4af4cfae.js"><link rel="prefetch" href="/assets/js/95.c6340c1f.js"><link rel="prefetch" href="/assets/js/96.6d43f540.js"><link rel="prefetch" href="/assets/js/97.71873cf9.js"><link rel="prefetch" href="/assets/js/98.7cd8e6da.js"><link rel="prefetch" href="/assets/js/99.22c51c9e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a3df589e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">阿俊博客|记录一个程序员的成长历程</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/post/" class="nav-link">存档</a></div><div class="nav-item"><a href="/record/" class="nav-link">历程</a></div><div class="nav-item"><a href="/golang/" class="nav-link">Go</a></div><div class="nav-item"><a href="/go-block/" class="nav-link router-link-active">区块链</a></div><div class="nav-item"><a href="/k8s/" class="nav-link">k8s</a></div><div class="nav-item"><a href="/pm/" class="nav-link">pm</a></div><div class="nav-item"><a href="/op/" class="nav-link">运维</a></div><div class="nav-item"><a href="/finance/" class="nav-link">金融</a></div><div class="nav-item"><a href="/about.html" class="nav-link">关于我</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/go-learning/" class="nav-link">go-learning</a></li><li class="dropdown-item"><!----> <a href="/post/flutter-guide/" class="nav-link">flutter</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">mysql</a></li><li class="dropdown-item"><!----> <a href="/python/" class="nav-link">python</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/more/leetcode/" class="nav-link">算法</a></li><li class="dropdown-item"><!----> <a href="/more/web/" class="nav-link">大前端</a></li></ul></div></div> <a href="https://github.com/ChinaArJun" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/post/" class="nav-link">存档</a></div><div class="nav-item"><a href="/record/" class="nav-link">历程</a></div><div class="nav-item"><a href="/golang/" class="nav-link">Go</a></div><div class="nav-item"><a href="/go-block/" class="nav-link router-link-active">区块链</a></div><div class="nav-item"><a href="/k8s/" class="nav-link">k8s</a></div><div class="nav-item"><a href="/pm/" class="nav-link">pm</a></div><div class="nav-item"><a href="/op/" class="nav-link">运维</a></div><div class="nav-item"><a href="/finance/" class="nav-link">金融</a></div><div class="nav-item"><a href="/about.html" class="nav-link">关于我</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/go-learning/" class="nav-link">go-learning</a></li><li class="dropdown-item"><!----> <a href="/post/flutter-guide/" class="nav-link">flutter</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">mysql</a></li><li class="dropdown-item"><!----> <a href="/python/" class="nav-link">python</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/more/leetcode/" class="nav-link">算法</a></li><li class="dropdown-item"><!----> <a href="/more/web/" class="nav-link">大前端</a></li></ul></div></div> <a href="https://github.com/ChinaArJun" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <div></div> <div style="padding-left:1.5rem;"><div></div></div> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>区块链基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/go-block/blockchain/encryption-expand.html" class="sidebar-link">常见的密码技术</a></li><li><a href="/go-block/blockchain/encryption.html" class="sidebar-link">密码学安全</a></li><li><a href="/go-block/blockchain/ethereum.html" class="sidebar-link">以太坊智能合约</a></li><li><a href="/go-block/blockchain/hyperledgerfabric.html" class="sidebar-link">hyperledger fabric</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Hyperledger Fabric</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/go-block/fabric/1搭建网络-纯手动.html" class="sidebar-link">1搭建网络-纯手动</a></li><li><a href="/go-block/fabric/1环境搭建.html" class="sidebar-link">1环境搭建</a></li><li><a href="/go-block/fabric/2Fabric介绍.html" class="sidebar-link">2Fabric介绍</a></li><li><a href="/go-block/fabric/3Fabric核心模块.html" class="sidebar-link">3Fabric核心模块</a></li><li><a href="/go-block/fabric/4网络搭建-脚本.html" class="sidebar-link">4网络搭建-脚本</a></li><li><a href="/go-block/fabric/5智能合约.html" class="sidebar-link">5智能合约</a></li><li><a href="/go-block/fabric/6Fabric账号.html" class="sidebar-link">6Fabric账号</a></li><li><a href="/go-block/fabric/7Solo多机多节点部署.html" class="sidebar-link">7Solo多机多节点部署</a></li><li><a href="/go-block/fabric/8Kafka多机多节点部署.html" class="sidebar-link">8Kafka多机多节点部署</a></li></ul></section></li></ul> </aside> <!----> <!----> <main class="page"><div class="theme-default-content" style="margin-bottom:-5rem;"><div class="bar"><div class="bar-intro"><div class="text">
+      阿里云优惠活动，点击链接进行购买: <a href="https://www.aliyun.com/minisite/goods?userCode=yg08nutm&share_source=copy_link">一年仅需89元即可以购买服务器~</a>。我个人服务器为2核4G配置，也更加推荐购买 <a href="https://www.aliyun.com/minisite/goods?userCode=yg08nutm&share_source=copy_link">2核4G三年799元</a> 配置的服务器。
+    </div> <div class="text">
+      你可以跟着我的笔记 <a href="https://blog.zhequtao.com/op/">当我有一台服务器时，我做了什么</a> 来开始维护服务器并搭建应用，将引导你使用 docker 和 k8s 搭建一个自己的服务器开发集群。
+    </div></div></div> <!----></div> <div class="theme-default-content content__default"><h1 id="_10-上传用户头像"><a href="#_10-上传用户头像" class="header-anchor">#</a> 10 上传用户头像</h1> <p>发送（上传）用户头像服务（用户相关）</p> <h2 id="流程与接口"><a href="#流程与接口" class="header-anchor">#</a> 流程与接口</h2> <p><img src="assets/clip_image002-1543152066379.jpg" alt="img"></p> <div class="language-json extra-class"><pre class="language-json"><code>#Request<span class="token operator">:</span>
+method<span class="token operator">:</span> POST
+url<span class="token operator">:</span>api/v<span class="token number">1.0</span>/user/avatar
+#data<span class="token operator">:</span>
+图片的二进制数据
+#Response
+#返回成功：
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;errno&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;errmsg&quot;</span><span class="token operator">:</span> <span class="token string">&quot;成功&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;data&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;avatar_url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://101.200.170.171:9998/group1/M00/00/00/Zciqq1n6_L-AOB04AADexS5wJKs662.png&quot;</span> <span class="token comment">//图片地址需要进行拼接</span>
+  <span class="token punctuation">}</span> 
+
+<span class="token punctuation">}</span>
+#返回失败：
+<span class="token punctuation">{</span>
+    <span class="token property">&quot;errno&quot;</span><span class="token operator">:</span> <span class="token string">&quot;400x&quot;</span><span class="token punctuation">,</span>   <span class="token comment">//状态码</span>
+    <span class="token property">&quot;errmsg&quot;</span><span class="token operator">:</span><span class="token string">&quot;状态错误信息&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>fastdfs操纵函数</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> models
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;github.com/weilaihui/fdfs_client&quot;</span>
+	<span class="token string">&quot;github.com/astaxie/beego&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">//通过文件名的方式进行上传</span>
+<span class="token keyword">func</span> <span class="token function">UploadByFilename</span><span class="token punctuation">(</span> filename <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">(</span>GroupName<span class="token punctuation">,</span>RemoteFileId <span class="token builtin">string</span> <span class="token punctuation">,</span>err <span class="token builtin">error</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//通过配置文件创建fdfs操作句柄</span>
+	fdfsClient<span class="token punctuation">,</span> thiserr <span class="token operator">:=</span>fdfs_client<span class="token punctuation">.</span><span class="token function">NewFdfsClient</span><span class="token punctuation">(</span><span class="token string">&quot;/home/itcast/go/src/go-1/homeweb/conf/client.conf&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> thiserr  <span class="token operator">!=</span><span class="token boolean">nil</span><span class="token punctuation">{</span>
+		<span class="token comment">//说一下那里出问题了</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;UploadByFilename( ) fdfs_client.NewFdfsClient  err&quot;</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		GroupName <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		RemoteFileId <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		err <span class="token operator">=</span> thiserr
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">//unc (this *FdfsClient) UploadByFilename(filename string) (*UploadFileResponse, error)</span>
+	<span class="token comment">//通过句柄上传文件（被上传的文件）</span>
+
+	uploadResponse<span class="token punctuation">,</span> thiserr <span class="token operator">:=</span> fdfsClient<span class="token punctuation">.</span><span class="token function">UploadByFilename</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> thiserr <span class="token operator">!=</span><span class="token boolean">nil</span><span class="token punctuation">{</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;UploadByFilename( ) fdfsClient.UploadByFilename(filename)  err&quot;</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		GroupName <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		RemoteFileId <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		err <span class="token operator">=</span> thiserr
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>uploadResponse<span class="token punctuation">.</span>GroupName<span class="token punctuation">)</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>uploadResponse<span class="token punctuation">.</span>RemoteFileId<span class="token punctuation">)</span>
+	<span class="token comment">//回传</span>
+	<span class="token keyword">return</span>  uploadResponse<span class="token punctuation">.</span>GroupName <span class="token punctuation">,</span> uploadResponse<span class="token punctuation">.</span>RemoteFileId <span class="token punctuation">,</span><span class="token boolean">nil</span>
+
+<span class="token punctuation">}</span>
+
+
+
+
+<span class="token comment">//功能函数 操作fdfs上传二进制文件</span>
+<span class="token keyword">func</span> <span class="token function">UploadByBuffer</span><span class="token punctuation">(</span>filebuffer <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> fileExtName <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">(</span>GroupName<span class="token punctuation">,</span>RemoteFileId <span class="token builtin">string</span> <span class="token punctuation">,</span>err <span class="token builtin">error</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+	<span class="token comment">//通过配置文件创建fdfs操作句柄</span>
+	fdfsClient<span class="token punctuation">,</span> thiserr <span class="token operator">:=</span>fdfs_client<span class="token punctuation">.</span><span class="token function">NewFdfsClient</span><span class="token punctuation">(</span><span class="token string">&quot;/home/itcast/go/src/go-1/homeweb/conf/client.conf&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> thiserr  <span class="token operator">!=</span><span class="token boolean">nil</span><span class="token punctuation">{</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;UploadByBuffer( ) fdfs_client.NewFdfsClient  err&quot;</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		GroupName <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		RemoteFileId <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		err <span class="token operator">=</span> thiserr
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">//通过句柄上传二进制的文件</span>
+	uploadResponse<span class="token punctuation">,</span> thiserr <span class="token operator">:=</span>fdfsClient<span class="token punctuation">.</span><span class="token function">UploadByBuffer</span><span class="token punctuation">(</span>filebuffer<span class="token punctuation">,</span>fileExtName<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> thiserr  <span class="token operator">!=</span><span class="token boolean">nil</span><span class="token punctuation">{</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;UploadByBuffer( ) fdfs_client.UploadByBuffer  err&quot;</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		GroupName <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		RemoteFileId <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		err <span class="token operator">=</span> thiserr
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>uploadResponse<span class="token punctuation">.</span>GroupName<span class="token punctuation">)</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>uploadResponse<span class="token punctuation">.</span>RemoteFileId<span class="token punctuation">)</span>
+	<span class="token comment">//回传入</span>
+	<span class="token keyword">return</span> uploadResponse<span class="token punctuation">.</span>GroupName<span class="token punctuation">,</span>uploadResponse<span class="token punctuation">.</span>RemoteFileId<span class="token punctuation">,</span><span class="token boolean">nil</span>
+
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="创建命令"><a href="#创建命令" class="header-anchor">#</a> 创建命令</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>$ micro new  --type <span class="token string">&quot;srv&quot;</span> sss/PostAvatar
+</code></pre></div><p>proto</p> <div class="language-protobuf extra-class"><pre class="language-protobuf"><code><span class="token keyword">service</span> <span class="token class-name">Example</span> <span class="token punctuation">{</span>
+	rpc <span class="token function">PostAvatar</span><span class="token punctuation">(</span>Request<span class="token punctuation">)</span> returns <span class="token punctuation">(</span>Response<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">message</span> <span class="token class-name">Message</span> <span class="token punctuation">{</span>
+	<span class="token builtin">string</span> say <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">message</span> <span class="token class-name">Request</span> <span class="token punctuation">{</span>
+    <span class="token comment">//二进制图片</span>
+	<span class="token builtin">bytes</span> Avatar <span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token comment">//sessionid</span>
+    <span class="token builtin">string</span> Sessionid<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token comment">//文件大小</span>
+    <span class="token builtin">int64</span> filesize <span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span>
+    <span class="token comment">//文件名字</span>
+    <span class="token builtin">string</span> filename <span class="token operator">=</span><span class="token number">4</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">message</span> <span class="token class-name">Response</span> <span class="token punctuation">{</span>
+	<span class="token comment">//错误码</span>
+	<span class="token builtin">string</span> Errno <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token comment">//错误信息</span>
+    <span class="token builtin">string</span> Errmsg <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token comment">//回传的url</span>
+    <span class="token builtin">string</span> Avatar_url <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>web中添加路由</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">//上传头像 POST</span>
+rou<span class="token punctuation">.</span><span class="token function">POST</span><span class="token punctuation">(</span><span class="token string">&quot;/api/v1.0/user/avatar&quot;</span><span class="token punctuation">,</span>handler<span class="token punctuation">.</span>PostAvatar<span class="token punctuation">)</span>
+</code></pre></div><p>web下handle</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">//上传用户头像 PostAvatar</span>
+<span class="token keyword">func</span> <span class="token function">PostAvatar</span><span class="token punctuation">(</span>w http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> r <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">,</span><span class="token boolean">_</span> httprouter<span class="token punctuation">.</span>Params<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;上传用户头像 PostAvatar /api/v1.0/user/avatar&quot;</span><span class="token punctuation">)</span>
+
+	<span class="token comment">//创建服务</span>
+	service <span class="token operator">:=</span> grpc<span class="token punctuation">.</span><span class="token function">NewService</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	service<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token comment">//创建句柄</span>
+	exampleClient <span class="token operator">:=</span> POSTAVATAR<span class="token punctuation">.</span><span class="token function">NewExampleService</span><span class="token punctuation">(</span><span class="token string">&quot;go.micro.srv.PostAvatar&quot;</span><span class="token punctuation">,</span> service<span class="token punctuation">.</span><span class="token function">Client</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+	<span class="token comment">//查看登陆信息</span>
+	userlogin<span class="token punctuation">,</span>err<span class="token operator">:=</span>r<span class="token punctuation">.</span><span class="token function">Cookie</span><span class="token punctuation">(</span><span class="token string">&quot;userlogin&quot;</span><span class="token punctuation">)</span>
+
+	<span class="token comment">//如果没有登陆就返回错误</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span><span class="token punctuation">{</span>
+		resp <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span>
+			<span class="token string">&quot;errno&quot;</span><span class="token punctuation">:</span> utils<span class="token punctuation">.</span>RECODE_SESSIONERR<span class="token punctuation">,</span>
+			<span class="token string">&quot;errmsg&quot;</span><span class="token punctuation">:</span> utils<span class="token punctuation">.</span><span class="token function">RecodeText</span><span class="token punctuation">(</span>utils<span class="token punctuation">.</span>RECODE_SESSIONERR<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span>
+
+		w<span class="token punctuation">.</span><span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">)</span>
+		<span class="token comment">// encode and write the response as json</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">NewEncoder</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Encode</span><span class="token punctuation">(</span>resp<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			http<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span> err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">503</span><span class="token punctuation">)</span>
+			beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">//接收前端发送过来的文集</span>
+	file<span class="token punctuation">,</span>hander<span class="token punctuation">,</span>err<span class="token operator">:=</span>r<span class="token punctuation">.</span><span class="token function">FormFile</span><span class="token punctuation">(</span><span class="token string">&quot;avatar&quot;</span><span class="token punctuation">)</span>
+
+	<span class="token comment">//判断是否接受成功</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span><span class="token punctuation">{</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;Postupavatar   c.GetFile(avatar) err&quot;</span> <span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+
+		resp <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span>
+			<span class="token string">&quot;errno&quot;</span><span class="token punctuation">:</span> utils<span class="token punctuation">.</span>RECODE_IOERR<span class="token punctuation">,</span>
+			<span class="token string">&quot;errmsg&quot;</span><span class="token punctuation">:</span> utils<span class="token punctuation">.</span><span class="token function">RecodeText</span><span class="token punctuation">(</span>utils<span class="token punctuation">.</span>RECODE_IOERR<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span>
+		w<span class="token punctuation">.</span><span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">)</span>
+		<span class="token comment">// encode and write the response as json</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">NewEncoder</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Encode</span><span class="token punctuation">(</span>resp<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			http<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span> err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">503</span><span class="token punctuation">)</span>
+			beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//打印基本信息</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>file <span class="token punctuation">,</span>hander<span class="token punctuation">)</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;文件大小&quot;</span><span class="token punctuation">,</span>hander<span class="token punctuation">.</span>Size<span class="token punctuation">)</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;文件名&quot;</span><span class="token punctuation">,</span>hander<span class="token punctuation">.</span>Filename<span class="token punctuation">)</span>
+
+	<span class="token comment">//二进制的空间用来存储文件</span>
+	filebuffer<span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span>hander<span class="token punctuation">.</span>Size<span class="token punctuation">)</span>
+
+	<span class="token comment">//将文件读取到filebuffer里</span>
+	<span class="token boolean">_</span><span class="token punctuation">,</span>err <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span>filebuffer<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span><span class="token boolean">nil</span><span class="token punctuation">{</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;Postupavatar   file.Read(filebuffer) err&quot;</span> <span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		resp <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span>
+			<span class="token string">&quot;errno&quot;</span><span class="token punctuation">:</span> utils<span class="token punctuation">.</span>RECODE_IOERR<span class="token punctuation">,</span>
+			<span class="token string">&quot;errmsg&quot;</span><span class="token punctuation">:</span> utils<span class="token punctuation">.</span><span class="token function">RecodeText</span><span class="token punctuation">(</span>utils<span class="token punctuation">.</span>RECODE_IOERR<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span>
+		w<span class="token punctuation">.</span><span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">)</span>
+		<span class="token comment">// encode and write the response as json</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">NewEncoder</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Encode</span><span class="token punctuation">(</span>resp<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			http<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span> err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">503</span><span class="token punctuation">)</span>
+			beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//调用函数传入数据</span>
+	rsp<span class="token punctuation">,</span> err <span class="token operator">:=</span> exampleClient<span class="token punctuation">.</span><span class="token function">PostAvatar</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">TODO</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>POSTAVATAR<span class="token punctuation">.</span>Request<span class="token punctuation">{</span>
+		Sessionid<span class="token punctuation">:</span>userlogin<span class="token punctuation">.</span>Value<span class="token punctuation">,</span>
+		Filename<span class="token punctuation">:</span>hander<span class="token punctuation">.</span>Filename<span class="token punctuation">,</span>
+		Filesize<span class="token punctuation">:</span>hander<span class="token punctuation">.</span>Size<span class="token punctuation">,</span>
+		Avatar<span class="token punctuation">:</span>filebuffer<span class="token punctuation">,</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		http<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span> err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">502</span><span class="token punctuation">)</span>
+
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+		<span class="token comment">//beego.Debug(err)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//</span>
+
+	<span class="token comment">//准备回传数据空间</span>
+	data <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token comment">//url拼接然回回传数据</span>
+	data<span class="token punctuation">[</span><span class="token string">&quot;avatar_url&quot;</span><span class="token punctuation">]</span><span class="token operator">=</span>utils<span class="token punctuation">.</span><span class="token function">AddDomain2Url</span><span class="token punctuation">(</span>rsp<span class="token punctuation">.</span>AvatarUrl<span class="token punctuation">)</span>
+
+
+
+	resp <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;errno&quot;</span><span class="token punctuation">:</span> rsp<span class="token punctuation">.</span>Errno<span class="token punctuation">,</span>
+		<span class="token string">&quot;errmsg&quot;</span><span class="token punctuation">:</span> rsp<span class="token punctuation">.</span>Errmsg<span class="token punctuation">,</span>
+		<span class="token string">&quot;data&quot;</span><span class="token punctuation">:</span>data<span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	w<span class="token punctuation">.</span><span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">&quot;Content-Type&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;application/json&quot;</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// encode and write the response as json</span>
+	<span class="token keyword">if</span> err <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">NewEncoder</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Encode</span><span class="token punctuation">(</span>resp<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		http<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>w<span class="token punctuation">,</span> err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">503</span><span class="token punctuation">)</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+
+
+	<span class="token keyword">return</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>服务端</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// Call is a single request handler called via client.Call or the generated client code</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>e <span class="token operator">*</span>Example<span class="token punctuation">)</span> <span class="token function">PostAvatar</span><span class="token punctuation">(</span>ctx context<span class="token punctuation">.</span>Context<span class="token punctuation">,</span> req <span class="token operator">*</span>example<span class="token punctuation">.</span>Request<span class="token punctuation">,</span> rsp <span class="token operator">*</span>example<span class="token punctuation">.</span>Response<span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;上传用户头像 PostAvatar /api/v1.0/user/avatar&quot;</span><span class="token punctuation">)</span>
+	<span class="token comment">//初始化返回正确的返回值</span>
+	rsp<span class="token punctuation">.</span>Errno <span class="token operator">=</span> utils<span class="token punctuation">.</span>RECODE_OK
+	rsp<span class="token punctuation">.</span>Errmsg <span class="token operator">=</span> utils<span class="token punctuation">.</span><span class="token function">RecodeText</span><span class="token punctuation">(</span>rsp<span class="token punctuation">.</span>Errno<span class="token punctuation">)</span>
+
+	<span class="token comment">//检查下数据是否正常</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>Avatar<span class="token punctuation">)</span><span class="token punctuation">,</span>req<span class="token punctuation">.</span>Filesize<span class="token punctuation">)</span>
+
+
+	<span class="token comment">/*获取文件的后缀名*/</span>     <span class="token comment">//dsnlkjfajadskfksda.sadsdasd.sdasd.jpg</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;后缀名&quot;</span><span class="token punctuation">,</span>path<span class="token punctuation">.</span><span class="token function">Ext</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>Filename<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+	<span class="token comment">/*存储文件到fastdfs当中并且获取 url*/</span>
+	<span class="token comment">//.jpg</span>
+	fileext <span class="token operator">:=</span>path<span class="token punctuation">.</span><span class="token function">Ext</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>Filename<span class="token punctuation">)</span>
+	<span class="token comment">//group1 group1/M00/00/00/wKgLg1t08pmANXH1AAaInSze-cQ589.jpg</span>
+	<span class="token comment">//上传数据</span>
+	Group<span class="token punctuation">,</span>FileId <span class="token punctuation">,</span>err <span class="token operator">:=</span>  models<span class="token punctuation">.</span><span class="token function">UploadByBuffer</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>Avatar<span class="token punctuation">,</span>fileext<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;Postupavatar  models.UploadByBuffer err&quot;</span> <span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		rsp<span class="token punctuation">.</span>Errno <span class="token operator">=</span> utils<span class="token punctuation">.</span>RECODE_IOERR
+		rsp<span class="token punctuation">.</span>Errmsg <span class="token operator">=</span> utils<span class="token punctuation">.</span><span class="token function">RecodeText</span><span class="token punctuation">(</span>rsp<span class="token punctuation">.</span>Errno<span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token boolean">nil</span>
+	<span class="token punctuation">}</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>Group<span class="token punctuation">)</span>
+
+	<span class="token comment">/*通过session 获取我们当前现在用户的uesr_id*/</span>
+	redis_config_map <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span>
+		<span class="token string">&quot;key&quot;</span><span class="token punctuation">:</span>utils<span class="token punctuation">.</span>G_server_name<span class="token punctuation">,</span>
+		<span class="token comment">//&quot;conn&quot;:&quot;127.0.0.1:6379&quot;,</span>
+		<span class="token string">&quot;conn&quot;</span><span class="token punctuation">:</span>utils<span class="token punctuation">.</span>G_redis_addr<span class="token operator">+</span><span class="token string">&quot;:&quot;</span><span class="token operator">+</span>utils<span class="token punctuation">.</span>G_redis_port<span class="token punctuation">,</span>
+		<span class="token string">&quot;dbNum&quot;</span><span class="token punctuation">:</span>utils<span class="token punctuation">.</span>G_redis_dbnum<span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>redis_config_map<span class="token punctuation">)</span>
+	redis_config <span class="token punctuation">,</span><span class="token boolean">_</span><span class="token operator">:=</span>json<span class="token punctuation">.</span><span class="token function">Marshal</span><span class="token punctuation">(</span>redis_config_map<span class="token punctuation">)</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span> <span class="token function">string</span><span class="token punctuation">(</span>redis_config<span class="token punctuation">)</span> <span class="token punctuation">)</span>
+	<span class="token comment">//连接redis数据库 创建句柄</span>
+	bm<span class="token punctuation">,</span> err <span class="token operator">:=</span> cache<span class="token punctuation">.</span><span class="token function">NewCache</span><span class="token punctuation">(</span><span class="token string">&quot;redis&quot;</span><span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>redis_config<span class="token punctuation">)</span> <span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;缓存创建失败&quot;</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		rsp<span class="token punctuation">.</span>Errno  <span class="token operator">=</span>  utils<span class="token punctuation">.</span>RECODE_DBERR
+		rsp<span class="token punctuation">.</span>Errmsg  <span class="token operator">=</span> utils<span class="token punctuation">.</span><span class="token function">RecodeText</span><span class="token punctuation">(</span>rsp<span class="token punctuation">.</span>Errno<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>  <span class="token boolean">nil</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">//拼接key</span>
+	sessioniduserid <span class="token operator">:=</span>  req<span class="token punctuation">.</span>Sessionid <span class="token operator">+</span> <span class="token string">&quot;user_id&quot;</span>
+
+	<span class="token comment">//获得当前用户的userid</span>
+	value_id <span class="token operator">:=</span>bm<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>sessioniduserid<span class="token punctuation">)</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>value_id<span class="token punctuation">,</span>reflect<span class="token punctuation">.</span><span class="token function">TypeOf</span><span class="token punctuation">(</span>value_id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+	id <span class="token operator">:=</span>  <span class="token function">int</span><span class="token punctuation">(</span>value_id<span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">uint8</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>id <span class="token punctuation">,</span>reflect<span class="token punctuation">.</span><span class="token function">TypeOf</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+	<span class="token comment">//创建表对象</span>
+	user <span class="token operator">:=</span> models<span class="token punctuation">.</span>User<span class="token punctuation">{</span>Id<span class="token punctuation">:</span>id<span class="token punctuation">,</span>Avatar_url<span class="token punctuation">:</span>FileId<span class="token punctuation">}</span>
+	<span class="token comment">/*将当前fastdfs-url 存储到我们当前用户的表中*/</span>
+	o<span class="token operator">:=</span>orm<span class="token punctuation">.</span><span class="token function">NewOrm</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">//将图片的地址存入表中</span>
+	<span class="token boolean">_</span> <span class="token punctuation">,</span>err <span class="token operator">=</span>o<span class="token punctuation">.</span><span class="token function">Update</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>user <span class="token punctuation">,</span><span class="token string">&quot;avatar_url&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span><span class="token boolean">nil</span> <span class="token punctuation">{</span>
+
+		rsp<span class="token punctuation">.</span>Errno <span class="token operator">=</span> utils<span class="token punctuation">.</span>RECODE_DBERR
+		rsp<span class="token punctuation">.</span>Errmsg <span class="token operator">=</span> utils<span class="token punctuation">.</span><span class="token function">RecodeText</span><span class="token punctuation">(</span>rsp<span class="token punctuation">.</span>Errno<span class="token punctuation">)</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">//回传图片地址</span>
+	rsp<span class="token punctuation">.</span>AvatarUrl<span class="token operator">=</span>FileId
+
+	<span class="token keyword">return</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="使用fastdfs-nginx"><a href="#使用fastdfs-nginx" class="header-anchor">#</a> 使用fastdfs+nginx</h2> <h3 id="fastdfs安装"><a href="#fastdfs安装" class="header-anchor">#</a> fastdfs安装</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#安装libevent</span>
+<span class="token comment">#解压 </span>
+$ <span class="token function">tar</span> zxvf libevent-2.1.8-stable.tar.gz 
+$ <span class="token builtin class-name">cd</span> libevent-2.1.8-stable/
+<span class="token comment">#检查 </span>
+$ ./configure
+<span class="token comment">#编译</span>
+$ <span class="token function">make</span> 
+<span class="token comment">#安装</span>
+$ <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+<span class="token comment">#检查安装是否成功 </span>
+$ <span class="token function">ls</span> -al /usr/local/lib/ <span class="token operator">|</span> <span class="token function">grep</span> libevent
+<span class="token comment">#防止在系统默认路径下 找不到库文件</span>
+$ <span class="token function">sudo</span> <span class="token function">ln</span> -s /usr/local/lib/libevent-2.1.so.6 /usr/lib/libevent-2.1.so.6
+
+<span class="token comment">#安装libfastcommon</span>
+$ <span class="token function">unzip</span> libfastcommon-1.36.zip 
+$ <span class="token builtin class-name">cd</span> libfastcommon-master/
+$ ./make.sh
+$ <span class="token function">sudo</span> ./make.sh <span class="token function">install</span>
+
+<span class="token comment">#安装fastdfs</span>
+<span class="token comment">#解压</span>
+$ <span class="token function">tar</span> -zxvf fastdfs-5.10.tar.gz 
+$ <span class="token builtin class-name">cd</span> fastdfs-5.10/
+<span class="token comment">#编译</span>
+$ ./make.sh 
+<span class="token comment">#安装</span>
+$ <span class="token function">sudo</span> ./make.sh <span class="token function">install</span> 
+<span class="token comment">#验证</span>
+$ <span class="token function">ls</span> -al /usr/bin/fdfs*
+$ fdfs_test
+</code></pre></div><h3 id="配置-fastdfs"><a href="#配置-fastdfs" class="header-anchor">#</a> 配置 fastdfs</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#默认的配置文件地址在/etc/fdfs下</span>
+<span class="token comment">#因为我们的项目需要</span>
+<span class="token comment">#所以我们需要将配置文件拷贝到我们的conf文件夹下进配置</span>
+$ <span class="token builtin class-name">cd</span> /etc/fdfs
+$ <span class="token function">cp</span>  client.conf.sample  storage.conf.sample  tracker.conf.sample <span class="token variable">$GOPATH</span>/src/sss/Ihomeweb/conf
+<span class="token comment">#将配置文件的名字进行下修改</span>
+<span class="token comment">#客户端</span>
+$ <span class="token function">mv</span> client.conf.sample  client.conf
+<span class="token comment">#存储文件</span>
+$ <span class="token function">mv</span> storage.conf.sample  storage.conf
+<span class="token comment">#跟踪器</span>
+$ <span class="token function">mv</span> tracker.conf.sample  tracker.conf
+<span class="token comment">#准备文件夹在项目下创建文件夹</span>
+$ <span class="token builtin class-name">cd</span> /home/itcast/go/src/sss
+$ <span class="token function">mkdir</span> fastdfs 
+<span class="token comment">#在fastdfs下创建四个文件夹 </span>
+$ <span class="token builtin class-name">cd</span> fastdfs
+$ <span class="token function">mkdir</span> tracker client storage storage_data
+
+<span class="token comment">##配置tracker.conf</span>
+<span class="token comment">#6行的ip地址设置</span>
+<span class="token comment"># bind an address of this host</span>
+<span class="token comment"># empty for bind all addresses of this host</span>
+<span class="token assign-left variable">bind_addr</span><span class="token operator">=</span><span class="token number">192.168</span>.110.123（需要配置的ip）
+
+<span class="token comment">#21行的的log日志设置</span>
+<span class="token comment"># the base path to store data and log files</span>
+<span class="token assign-left variable">base_path</span><span class="token operator">=</span>/home/itcast/go/src/sss/fastdfs/tracker（log目录）
+
+<span class="token comment">##配置storage.conf</span>
+<span class="token comment">#13行配置ip</span>
+<span class="token comment"># bind an address of this host</span>
+<span class="token comment"># empty for bind all addresses of this host</span>
+<span class="token assign-left variable">bind_addr</span><span class="token operator">=</span><span class="token number">192.168</span>.110.123
+<span class="token comment">#40行的log日志设置</span>
+<span class="token comment"># the base path to store data and log files</span>
+<span class="token assign-left variable">base_path</span><span class="token operator">=</span>/home/itcast/go/src/sss/fastdfs/storage（log目录）
+
+<span class="token comment">#107行的文件存放设置</span>
+<span class="token comment"># store_path#, based 0, if store_path0 not exists, it's value is base_path</span>
+<span class="token comment"># the paths must be exist</span>
+<span class="token assign-left variable">store_path0</span><span class="token operator">=</span>/home/itcast/go/src/sss/fastdfs/storage_data（文件存放路径）
+<span class="token comment">#store_path1=/home/yuqing/fastdfs2</span>
+
+<span class="token comment">#116行tracker的ip地址</span>
+<span class="token comment"># tracker_server can ocur more than once, and tracker_server format is</span>
+<span class="token comment">#  &quot;host:port&quot;, host can be hostname or ip address</span>
+<span class="token assign-left variable">tracker_server</span><span class="token operator">=</span><span class="token number">192.168</span>.110.7:22122
+
+<span class="token comment">##配置client.conf日志</span>
+<span class="token comment">#9行的log日志地址</span>
+<span class="token comment"># the base path to store log files</span>
+<span class="token assign-left variable">base_path</span><span class="token operator">=</span>/home/itcast/go/src/sss/fastdfs/client（log目录）
+<span class="token comment">#12行追踪器的ip</span>
+<span class="token comment"># tracker_server can ocur more than once, and tracker_server format is</span>
+<span class="token comment">#  &quot;host:port&quot;, host can be hostname or ip address</span>
+<span class="token assign-left variable">tracker_server</span><span class="token operator">=</span><span class="token number">192.168</span>.110.123:22122
+
+更新项目目录下的的setup_server.sh文件
+<span class="token comment">#启动redis服务</span>
+redis-server ./conf/redis.conf
+
+<span class="token comment">#启动trackerd</span>
+
+fdfs_trackerd  /home/itcast/go/src/sss/homeweb/conf/tracker.conf restart
+<span class="token comment">#启动storaged</span>
+
+fdfs_storaged  /home/itcast/go/src/sss/homeweb/conf/storage.conf restart
+
+我们先测试下 
+Fdfs_upload_file ./conf/client.conf cj.jpg
+
+</code></pre></div><h3 id="安装步骤nginx操作fast步骤"><a href="#安装步骤nginx操作fast步骤" class="header-anchor">#</a> 安装步骤nginx操作fast步骤</h3> <h4 id="关于nginx操作fastdfs的插件"><a href="#关于nginx操作fastdfs的插件" class="header-anchor">#</a> 关于nginx操作fastdfs的插件</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#将事先准备好的fastdfs的插件拷贝到ubuntu中</span>
+<span class="token comment">#解压nginx关于fastdfs的插件</span>
+$ <span class="token function">tar</span> -zxvf fastdfs-nginx-module_v1.16.tar.gz 
+<span class="token comment">#查看当前目录下存在两个解压好的文件</span>
+$ <span class="token function">ls</span>
+fastdfs-nginx-module    nginx-1.10.1  
+<span class="token comment">#进入fastdfs-nginx-module</span>
+$ <span class="token builtin class-name">cd</span> fastdfs-nginx-module
+<span class="token comment">#查看当前文件夹下文件</span>
+$ tree
+<span class="token builtin class-name">.</span>
+├── HISTORY
+├── INSTALL
+└── src
+    ├── common.c
+    ├── common.h
+    ├── config
+    ├── mod_fastdfs.conf
+    └── ngx_http_fastdfs_module.c
+<span class="token comment">#查看INSTALL文件</span>
+$ <span class="token function">vim</span> INSTALL
+</code></pre></div><h4 id="关于fastdfs插件的安装介绍"><a href="#关于fastdfs插件的安装介绍" class="header-anchor">#</a> 关于fastdfs插件的安装介绍</h4> <div class="language- extra-class"><pre class="language-text"><code>版权所有 2010开心鱼 / 余庆
+这个软件只能在GNU通用条款下被复制
+公共许可证V3，请访问FastDFS主页以获得更多详细信息。
+英语:http://english.csource.org/
+中文:http://www.csource.org/
+
+#步骤1.首先安装FastDFS存储服务器和客户端库，
+FastDFS版本应该是&gt;= 2.09。下载地址:
+https://code.google.com/p/fastdfs/downloads/list
+
+#步骤2.安装nginx服务器
+FastDFS nginx模块测试通过nginx 0.8.53，
+我的nginx安装在/usr/local/nginx
+
+#步骤3.下载FastDFS nginx模块源代码包并解压，如:
+tar xzf fastdfs_nginx_module_v1.16.tar.gz
+
+#步骤4.输入nginx源目录，编译并安装模块，如:
+cd nginx-1.5.12
+./configure --add-module=/home/yuqing/fastdfs-nginx-module/src
+make; make install
+
+注意:在编译之前，你可以更改FDFS_OUTPUT_CHUNK_SIZE和
+FDFS_MOD_CONF_FILENAME的宏定义在配置文件中:
+
+CFLAGS=&quot;$CFLAGS -D_FILE_OFFSET_BITS=64 -DFDFS_OUTPUT_CHUNK_SIZE='256*1024' -DFDFS_MOD_CONF_FILENAME='\&quot;/etc/fdfs/mod_fastdfs.conf\&quot;'&quot;
+
+
+
+#步骤5.配置nginx配置文件，例如nginx.conf，添加以下行:
+
+        location /M00 {
+            root /home/yuqing/fastdfs/data;
+            ngx_fastdfs_module;
+        }
+
+#步骤6.将一个符号链接${fastdfs_base_path}/data/M00到${fastdfs_base_path}/data，
+
+命令行，例如:
+ln -s /home/yuqing/fast /data/ home/yuqing/fast /data/ m00
+
+#步骤7.更改配置文件/etc/fdfs/mod_fastdfs.conf，更多细节请看
+
+#步骤8.重新启动nginx服务器，例如:
+/usr/local/nginx/sbin/nginx -s stop; /usr/local/nginx/sbin/nginx
+</code></pre></div><h4 id="修改fastdfs插件安装的配置文件"><a href="#修改fastdfs插件安装的配置文件" class="header-anchor">#</a> 修改fastdfs插件安装的配置文件</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#进入到插件的src目录下</span>
+$ cd/home/itcast/ffdfs/fastdfs-nginx-module/src
+<span class="token comment">#修改config配置文件</span>
+$ <span class="token function">vi</span> config
+<span class="token assign-left variable">CORE_INCS</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$CORE_INCS</span> /usr/local/include/fastdfs /usr/local/include/fastcommon/&quot;</span> 
+<span class="token comment">#修改为:</span>
+<span class="token assign-left variable">CORE_INCS</span><span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$CORE_INCS</span> /usr/include/fastdfs /usr/include/fastcommon/&quot;</span>
+</code></pre></div><h4 id="nginx的安装依赖"><a href="#nginx的安装依赖" class="header-anchor">#</a> nginx的安装依赖</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#讲准备好的依赖文件拷贝到ubuntu中</span>
+<span class="token comment">#依次解压依赖</span>
+$ <span class="token function">tar</span> -zxvf openssl-1.0.1t.tar.gz 
+$ <span class="token function">tar</span> -zxvf zlib-1.2.11.tar.gz
+$ <span class="token function">tar</span> -jxvf pcre-8.40.tar.bz2 
+ 
+
+<span class="token comment">#进入openssl-1.0.1t</span>
+$ <span class="token builtin class-name">cd</span> openssl-1.0.1t
+<span class="token comment">#检查</span>
+$ <span class="token function">sudo</span> ./config
+<span class="token comment">#编译</span>
+$ <span class="token function">sudo</span> <span class="token function">make</span>
+<span class="token comment">#安装</span>
+$ <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+
+<span class="token comment">#进入zlib-1.2.11</span>
+$ <span class="token builtin class-name">cd</span> zlib-1.2.11
+<span class="token comment">#检查</span>
+$ <span class="token function">sudo</span> ./configure
+<span class="token comment">#编译</span>
+$ <span class="token function">sudo</span> <span class="token function">make</span>
+<span class="token comment">#安装</span>
+$ <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+
+<span class="token comment">#进入pcre-8.40</span>
+$ <span class="token builtin class-name">cd</span> pcre-8.40
+<span class="token comment">#检查</span>
+$ <span class="token function">sudo</span> ./configure
+<span class="token comment">#编译</span>
+$ <span class="token function">sudo</span> <span class="token function">make</span>
+<span class="token comment">#安装</span>
+$ <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre></div><h4 id="nginx正规联合编译方法"><a href="#nginx正规联合编译方法" class="header-anchor">#</a> nginx正规联合编译方法</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#将事先准备好的nginx安装包拷贝到ubuntu中 </span>
+<span class="token comment">#解压nginx压缩包</span>
+$ <span class="token function">tar</span> -zxvf nginx-1.10.1.tar.gz 
+<span class="token comment">#进入nginx</span>
+$ <span class="token builtin class-name">cd</span> /home/itcast/ffdfs/nginx-1.10.1
+<span class="token comment">#进行nginx和fastdfs插件的联合编译</span>
+<span class="token comment">#检查</span>
+$ ./configure --with-openssl<span class="token operator">=</span>openssl源码目录 --with-pcre<span class="token operator">=</span>pcre的源码目录 --with-zlib<span class="token operator">=</span>zlib  --add-module<span class="token operator">=</span>插件src目录
+
+$ ./configure --with-openssl<span class="token operator">=</span>/home/itcast/openssl-1.0.1t --with-pcre<span class="token operator">=</span>/home/itcast/pcre-8.40 --with-zlib<span class="token operator">=</span>/home/itcast/zlib-1.2.11 --with-http_ssl_module  --add-module<span class="token operator">=</span>/home/itcast/fastdfs-nginx-module_v1.16/fastdfs-nginx-module/src 
+<span class="token comment">#编译</span>
+$ <span class="token function">make</span>
+<span class="token comment">#安装</span>
+$ <span class="token function">make</span> <span class="token function">install</span>
+<span class="token comment">#创建软连接方便调用</span>
+$ <span class="token function">ln</span> -s /usr/local/nginx/sbin/nginx /usr/bin/nginx
+</code></pre></div><h5 id="注意1：找不到sha1的库"><a href="#注意1：找不到sha1的库" class="header-anchor">#</a> 注意1：找不到sha1的库</h5> <div class="language- extra-class"><pre class="language-text"><code>#在nginx 下执行 ./configure后最近结果显示会出现如下问题
+sha1 library is not found
+#找不到sha1的库
+#configure的时候增加参数 --with-http_ssl_module
+</code></pre></div><h5 id="注意2：编译异常"><a href="#注意2：编译异常" class="header-anchor">#</a> 注意2：编译异常</h5> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#在 make时出现如下问题</span>
+src/core/ngx_murmurhash.c: In <span class="token keyword">function</span> ‘ngx_murmur_hash2’:
+src/core/ngx_murmurhash.c:37:11: error: this statement may fall through <span class="token punctuation">[</span>-Werror<span class="token operator">=</span>implicit-fallthrough<span class="token operator">=</span><span class="token punctuation">]</span>
+         h ^<span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">16</span><span class="token punctuation">;</span>
+         ~~^~~~~~~~~~~~~~~~
+src/core/ngx_murmurhash.c:38:5: note: here
+     <span class="token keyword">case</span> <span class="token number">2</span>:
+     ^~~~
+src/core/ngx_murmurhash.c:39:11: error: this statement may fall through <span class="token punctuation">[</span>-Werror<span class="token operator">=</span>implicit-fallthrough<span class="token operator">=</span><span class="token punctuation">]</span>
+         h ^<span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">8</span><span class="token punctuation">;</span>
+         ~~^~~~~~~~~~~~~~~
+src/core/ngx_murmurhash.c:40:5: note: here
+     <span class="token keyword">case</span> <span class="token number">1</span>:
+     ^~~~
+cc1: all warnings being treated as errors
+objs/Makefile:485: recipe <span class="token keyword">for</span> target <span class="token string">'objs/src/core/ngx_murmurhash.o'</span> failed
+make<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>objs/src/core/ngx_murmurhash.o<span class="token punctuation">]</span> Error <span class="token number">1</span>
+make<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: 离开目录“/home/itcast/ffdfs/nginx-1.10.1”
+Makefile:8: recipe <span class="token keyword">for</span> target <span class="token string">'build'</span> failed
+make: *** <span class="token punctuation">[</span>build<span class="token punctuation">]</span> Error <span class="token number">2</span>
+
+<span class="token comment">#主要原因是 Makefile 里面  gcc 的参数多了一个&quot;-Werror&quot;</span>
+<span class="token comment">#进入到/home/itcast/ffdfs/nginx-1.10.1/objs中修改Makefile</span>
+<span class="token function">vim</span> Makefile 
+<span class="token comment">#删除&quot;-Werror&quot;得到如下内容</span>
+CFLAGS <span class="token operator">=</span>  -pipe  -O -W -Wall -Wpointer-arith -Wno-unused  -g  -D_FILE_OFFSET_BITS<span class="token operator">=</span><span class="token number">64</span> -DFDFS_OUTPUT_CHUNK_SIZE<span class="token operator">=</span><span class="token string">'256*1024'</span> -DFDFS_MOD_CONF_FILENAME<span class="token operator">=</span><span class="token string">'&quot;/etc/fdfs/mod_fastdfs.conf&quot;'</span>
+
+</code></pre></div><h5 id="注意3：插件配置文件不存在"><a href="#注意3：插件配置文件不存在" class="header-anchor">#</a> 注意3：插件配置文件不存在</h5> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#联合编译安装好nginx后启动nginx如下效果发现只有1个进程</span>
+$ nginx 
+$ <span class="token function">ps</span> aux<span class="token operator">|</span><span class="token function">grep</span> nginx
+<span class="token function">ps</span> aux <span class="token operator">|</span><span class="token function">grep</span> nginx 
+root  <span class="token number">105455</span> <span class="token builtin class-name">cd</span> 
+<span class="token comment">#查看 /usr/local/nginx/logs 目录下的日志 </span>
+$ <span class="token function">cat</span> /usr/local/nginx/logs/error.log
+<span class="token comment">#发现这样一条错误</span>
+ERROR - file: shared_func.c, line: <span class="token number">968</span>, <span class="token function">file</span> /etc/fdfs/mod_fastdfs.conf not exist
+错误 - 文件 :shared_func.c <span class="token number">968</span>行 访问 /etc/fdfs/mod_fastdfs.conf 不存在 
+
+<span class="token comment">#确认下文件是否存在</span>
+$ <span class="token builtin class-name">cd</span> /etc/fdfs/
+$ <span class="token function">ls</span>
+client.conf.sample  storage.conf.sample  storage_ids.conf.sample  tracker.conf.sample
+<span class="token comment">#确实不存在</span>
+
+<span class="token comment">#解决</span>
+<span class="token comment">#需要从fastdfs源码目录中复制过来</span>
+$ <span class="token builtin class-name">cd</span> /home/itcast/ffdfs/fastdfs-nginx-module/src
+<span class="token comment">#将mod_fastdfs.conf 文件从当前目录下拷贝到/etc/fdfs/目录下</span>
+$ <span class="token function">sudo</span> <span class="token function">cp</span> /home/itcast/ffdfs/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/
+</code></pre></div><h5 id="注意4：配置文件修改"><a href="#注意4：配置文件修改" class="header-anchor">#</a> 注意4：配置文件修改</h5> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#修改fastdfs插件的配置文件进行修改，参数当前存储节点的storage.conf进行修改</span>
+<span class="token comment">#进入到/etc/fdfs/目录</span>
+$ <span class="token builtin class-name">cd</span> /etc/fdfs/
+<span class="token comment">#编辑 mod_fastdfs.conf 文件</span>
+$ <span class="token function">sudo</span> <span class="token function">vim</span> mod_fastdfs.conf
+
+<span class="token comment"># 存储log日志的目录</span>
+ <span class="token number">9</span> <span class="token comment"># the base path to store log files</span>
+ <span class="token number">10</span> <span class="token assign-left variable">base_path</span><span class="token operator">=</span>/home/itcast/go/src/sss/fastdfs/storage
+<span class="token comment"># 追踪器的地址信息</span>
+ <span class="token number">37</span> <span class="token comment"># FastDFS tracker_server can ocur more than once, and tracker_server format is</span>
+ <span class="token number">38</span> <span class="token comment">#  &quot;host:port&quot;, host can be hostname or ip address</span>
+ <span class="token number">39</span> <span class="token comment"># valid only when load_fdfs_parameters_from_tracker is true</span>
+ <span class="token number">40</span> <span class="token assign-left variable">tracker_server</span><span class="token operator">=</span><span class="token number">192.168</span>.110.20:22122
+<span class="token comment"># 当前存储节点监听的端口</span>
+ <span class="token number">42</span> <span class="token comment"># the port of the local storage server</span>
+ <span class="token number">43</span> <span class="token comment"># the default value is 23000</span>
+ <span class="token number">44</span> <span class="token assign-left variable">storage_server_port</span><span class="token operator">=</span><span class="token number">23000</span>
+ <span class="token comment"># 当前存储节点所属的组</span>
+ <span class="token number">46</span> <span class="token comment"># the group name of the local storage server</span>
+ <span class="token number">47</span> <span class="token assign-left variable">group_name</span><span class="token operator">=</span>group1
+<span class="token comment"># 客户端访问的url中是不是出现组名</span>
+ <span class="token number">49</span> <span class="token comment"># if the url / uri including the group name</span>
+ <span class="token number">50</span> <span class="token comment"># set to false when uri like /M00/00/00/xxx</span>
+ <span class="token number">51</span> <span class="token comment"># set to true when uri like ${group_name}/M00/00/00/xxx, such as group1/M00/xxx</span>
+ <span class="token number">52</span> <span class="token comment"># default value is false</span>
+ <span class="token number">53</span> url_have_group_name <span class="token operator">=</span> <span class="token boolean">true</span>
+ <span class="token comment"># 当前存储节点存储路径的个数 参照 storage.conf</span>
+ <span class="token number">55</span> <span class="token comment"># path(disk or mount point) count, default value is 1</span>
+ <span class="token number">56</span> <span class="token comment"># must same as storage.conf</span>
+ <span class="token number">57</span> <span class="token assign-left variable">store_path_count</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token comment"># 详细的存储路径</span>
+ <span class="token number">59</span> <span class="token comment"># store_path#, based 0, if store_path0 not exists, it's value is base_path</span>
+ <span class="token number">60</span> <span class="token comment"># the paths must be exist</span>
+ <span class="token number">61</span> <span class="token comment"># must same as storage.conf</span>
+ <span class="token number">62</span> <span class="token assign-left variable">store_path0</span><span class="token operator">=</span>/home/itcast/go/src/sss/fastdfs/storage_data
+
+
+<span class="token comment">#完成修改后再次启动nginx 依然是1个nginx进程</span>
+$ <span class="token function">sudo</span> nginx 
+$ <span class="token function">ps</span> aux <span class="token operator">|</span><span class="token function">grep</span> nginx 
+root  <span class="token number">106838</span>  <span class="token number">0.0</span>  <span class="token number">0.0</span> <span class="token number">31384</span>   <span class="token number">764</span> ?    Ss <span class="token number">22</span>:09   <span class="token number">0</span>:00 nginx: master process nginx
+itcast <span class="token number">106841</span> <span class="token number">0.0</span>  <span class="token number">0.0</span> <span class="token number">21536</span>  <span class="token number">1048</span> pts/15  S+ <span class="token number">22</span>:09   <span class="token number">0</span>:00 <span class="token function">grep</span> --color<span class="token operator">=</span>auto nginx
+<span class="token comment">#查看日志</span>
+$ <span class="token function">cat</span> /usr/local/nginx/logs/error.log
+<span class="token comment">#发现新的错误</span>
+ERROR - file: ini_file_reader.c, line: <span class="token number">631</span>, include <span class="token function">file</span> <span class="token string">&quot;http.conf&quot;</span> not exists, line: <span class="token string">&quot;#include http.conf&quot;</span>
+<span class="token comment">#那么说明我们的配置文件就改好了</span>
+</code></pre></div><h5 id="注意5：新的错误"><a href="#注意5：新的错误" class="header-anchor">#</a> 注意5：新的错误</h5> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#上面我们查看了新的日志发现了新的错误</span>
+ERROR - file: ini_file_reader.c, line: <span class="token number">631</span>, include <span class="token function">file</span> <span class="token string">&quot;http.conf&quot;</span> not exists, line: <span class="token string">&quot;#include http.conf&quot;</span>
+<span class="token comment">#错误 -文件 ：ini_file_reader.c 的第631行 导入文件的 http.conf 不存在</span>
+	- 原因是从/etc/fdfs下加载该http.conf文件没找到
+	- 从fastdfs的源码安装目录中找
+	- fastdfs源码安装目录/conf/http.conf
+	- <span class="token function">cp</span> fastdfs源码安装目录/conf/http.conf /etc/fdfs
+$ <span class="token function">sudo</span> <span class="token function">cp</span> ./http.conf /etc/fdfs/
+<span class="token comment">#进入etc下验证是否成功</span>
+$ <span class="token builtin class-name">cd</span> /etc/fdfs/
+$ <span class="token function">ls</span>
+client.conf.sample  http.conf  mod_fastdfs.conf  storage.conf.sample  storage_ids.conf.sample  tracker.conf.sample
+<span class="token comment">#停掉之前启动的nginx</span>
+$ <span class="token function">sudo</span> nginx -s stop 
+<span class="token comment">#查看是否停止</span>
+$ <span class="token function">ps</span> aux <span class="token operator">|</span><span class="token function">grep</span> nginx 
+itcast <span class="token number">107419</span> <span class="token number">0.0</span> <span class="token number">0.0</span> <span class="token number">21536</span> <span class="token number">1040</span> pts/15 S+ 09:36  <span class="token number">0</span>:00 <span class="token function">grep</span> --color<span class="token operator">=</span>auto nginx
+<span class="token comment">#启动新的nginx</span>
+$ <span class="token function">sudo</span> nginx 
+<span class="token comment">#查看还是1个线程</span>
+$ <span class="token function">ps</span> aux <span class="token operator">|</span><span class="token function">grep</span> nginx 
+root   <span class="token number">107422</span> <span class="token number">0.0</span> <span class="token number">0.0</span> <span class="token number">31384</span>  <span class="token number">760</span> ?      Ss  09:36  <span class="token number">0</span>:00 nginx: master process nginx
+itcast <span class="token number">107425</span> <span class="token number">0.0</span> <span class="token number">0.0</span> <span class="token number">21536</span> <span class="token number">1048</span> pts/15 S+  09:36  <span class="token number">0</span>:00 <span class="token function">grep</span> --color<span class="token operator">=</span>auto nginx
+
+<span class="token comment">#发现还是有错误所以我们再次查看日志</span>
+$ <span class="token function">cat</span> /usr/local/nginx/logs/error.log
+
+<span class="token comment">#又一次出现了新的错误</span>
+ERROR - file: shared_func.c, line: <span class="token number">968</span>, <span class="token function">file</span> /etc/fdfs/mime.types not exist
+<span class="token comment">#说明我们http.conf的错误已经解决了</span>
+</code></pre></div><h5 id="注意6：找不到文件"><a href="#注意6：找不到文件" class="header-anchor">#</a> 注意6：找不到文件</h5> <div class="language-SHELL extra-class"><pre class="language-shell"><code><span class="token comment">#ERROR - file: shared_func.c, line: 968, file /etc/fdfs/mime.types not exist</span>
+<span class="token comment">#错误 - file ： shared_func.c 文件的 第968 行 不能找到 /etc/fdfs/mime.types</span>
+- 从nginx的源码安装目录中找
+- nginx源码安装目录/conf/mime.types
+- <span class="token function">cp</span> nginx源码安装目录/conf/mime.types /etc/fdfs
+<span class="token comment">#找到nginx源码安装目录的文件</span>
+$ <span class="token builtin class-name">cd</span> /home/itcast/ffdfs/nginx-1.10.1/conf
+$ <span class="token function">ls</span>
+fastcgi.conf  fastcgi_params  koi-utf  koi-win  mime.types  nginx.conf  scgi_params  uwsgi_params  win-utf
+<span class="token comment">#发现文件存在后将其拷贝到/etc/fdfs</span>
+$ <span class="token function">sudo</span> <span class="token function">cp</span> ./mime.types  /etc/fdfs/
+
+<span class="token comment">#再次验证是否成功</span>
+<span class="token comment">#停掉之前启动的nginx</span>
+$ <span class="token function">sudo</span> nginx -s stop 
+<span class="token comment">#查看是否停止</span>
+$ <span class="token function">ps</span> aux <span class="token operator">|</span><span class="token function">grep</span> nginx 
+itcast <span class="token number">107488</span> <span class="token number">0.0</span> <span class="token number">0.0</span> <span class="token number">21536</span> <span class="token number">1092</span> pts/15  S+  09:52  <span class="token number">0</span>:00 <span class="token function">grep</span> --color<span class="token operator">=</span>auto nginx
+<span class="token comment">#启动nginx</span>
+$ <span class="token function">sudo</span> nginx
+itcast@itcast-virtual-machine:~/ffdfs/nginx-1.10.1/conf$ <span class="token function">ps</span> aux <span class="token operator">|</span><span class="token function">grep</span> nginx 
+root   <span class="token number">107491</span> <span class="token number">0.0</span>  <span class="token number">0.0</span> <span class="token number">31384</span>   <span class="token number">764</span> ?     Ss  09:53  <span class="token number">0</span>:00 nginx: master process nginx
+nobody <span class="token number">107492</span> <span class="token number">0.0</span>  <span class="token number">0.0</span> <span class="token number">36212</span>  <span class="token number">4016</span> ?      S   09:53  <span class="token number">0</span>:00 nginx: worker process
+itcast <span class="token number">107494</span> <span class="token number">0.0</span>  <span class="token number">0.0</span> <span class="token number">21536</span>  <span class="token number">1152</span> pts/15 S+  09:53  <span class="token number">0</span>:00 <span class="token function">grep</span> --color<span class="token operator">=</span>auto nginx
+<span class="token comment">#发现已经出现了worker的进程说明我们的nginx安装环境算是成功了</span>
+</code></pre></div><h5 id="注意7：可能出现的问题"><a href="#注意7：可能出现的问题" class="header-anchor">#</a> 注意7：可能出现的问题</h5> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#可能出现的问题</span>
+line: <span class="token number">177</span>, <span class="token string">&quot;Permission denied&quot;</span> can't be accessed
+<span class="token comment">#没有权限访问</span>
+    - 修改nginx.conf, 将worker进程的所有者改为root
+    - user root<span class="token punctuation">;</span>
+</code></pre></div><h4 id="修改nginx的访问配置文件"><a href="#修改nginx的访问配置文件" class="header-anchor">#</a> 修改nginx的访问配置文件</h4> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#我们在虚拟机中访问我们的资源图片</span>
+http://127.0.0.1/group1/M00/00/00/wKhuFFuRWriATb4DAADprYlRZN0624.jpg
+<span class="token comment">#会出现如下效果</span>
+</code></pre></div><p><img src="assets/%5CUsers%5Ckstwo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1537322430259.png" alt="1537322430259"></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment">#此时我们需要再次访问我们的日志文件</span>
+$ <span class="token function">cat</span> /usr/local/nginx/logs/error.log
+<span class="token comment"># open() &quot;/usr/local/nginx/html/group1/M00/00/00/wKhuFFuRWriATb4DAADprYlRZN0624.jpg&quot; failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: &quot;GET /group1/M00/00/00/wKhuFFuRWriATb4DAADprYlRZN0624.jpg HTTP/1.1&quot;, host: &quot;127.0.0.1&quot;</span>
+<span class="token comment">#打开图片文件失败（没有这样的文件或者是目录） 客户端是 127.0.0.1 服务器是localhost </span>
+<span class="token comment">#发送请求&quot;GET /group1/M00/00/00/wKhuFFuRWriATb4DAADprYlRZN0624.jpg HTTP/1.1&quot; </span>
+<span class="token comment">#主机127.0.0.1</span>
+<span class="token comment">#为什么是404？</span>
+<span class="token comment">#nginx在解析客户端请求的时查找的资源目录是不对的，所以找不到我们想要的文件 </span>
+<span class="token comment">#所以我们需要给nginx制定争取的目录</span>
+
+<span class="token comment">#nginx 处理 http://127.0.0.1/group1/M00/00/00/wKhuFFuRWriATb4DAADprYlRZN0624.jpg</span>
+<span class="token comment">#去掉ip与文件名，得到 /group1/M00/00/00/</span>
+
+<span class="token comment">#需要给修改nginx的配置文件添加location处理指令	</span>
+	location /group1/M00/00/00/
+	<span class="token punctuation">{</span>
+		<span class="token comment"># 指定正确的资源路径</span>
+        root /root/fdfs/storage/data<span class="token punctuation">;</span> // M00映射的实际路径
+        ngx_fastdfs_module<span class="token punctuation">;</span> <span class="token comment"># 添加nginx对fastdfs模块的调用</span>
+	<span class="token punctuation">}</span>
+	
+	
+	
+<span class="token comment">#进入nginx的配置文件目录下</span>
+$ <span class="token builtin class-name">cd</span> /usr/local/nginx/conf
+<span class="token comment">#备份 nginx.conf</span>
+$ <span class="token function">sudo</span> <span class="token function">cp</span> nginx.conf nginx.conf.old
+<span class="token comment">#编辑nginx.conf</span>
+$ <span class="token function">sudo</span> <span class="token function">vim</span> nginx.conf 
+<span class="token comment">#修改内容为</span>
+	listen       <span class="token number">8888</span><span class="token punctuation">;</span>
+    server_name  localhost<span class="token punctuation">;</span>
+    <span class="token comment">#location  /group1/M00/ {</span>
+    location  ~/group<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span>-9<span class="token punctuation">]</span><span class="token punctuation">)</span>/M00 <span class="token punctuation">{</span>
+    <span class="token comment">#正确的数据路径</span>
+        root   /home/itcast/go/src/sss/fastdfs/storage_data/data<span class="token punctuation">;</span>
+        ngx_fastdfs_module<span class="token punctuation">;</span> <span class="token comment"># 添加nginx对fastdfs模块的调用</span>
+    <span class="token punctuation">}</span>
+
+
+<span class="token comment">#修改好文件之后加载文件则会出现1个新的进程就是这个插件的进程</span>
+$ <span class="token function">sudo</span> nginx -s reload
+<span class="token punctuation">[</span>sudo<span class="token punctuation">]</span> itcast 的密码： 
+ngx_http_fastdfs_set <span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token number">107791</span>
+<span class="token comment">#修改app.conf文件添加配置信息</span>
+
+<span class="token comment">#成功之后我们再次访问图片</span>
+http://127.0.0.1:8888/group1/M00/00/00/wKhuFFuRWriATb4DAADprYlRZN0624.jpg
+<span class="token comment">#会出现以下效果</span>
+</code></pre></div><p><img src="assets/%5CUsers%5Ckstwo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1537328504896.png" alt="1537328504896"></p> <h2 id="go操作fastdfs"><a href="#go操作fastdfs" class="header-anchor">#</a> go操作fastdfs</h2> <p>安装库</p> <div class="language-shell extra-class"><pre class="language-shell"><code>go get github.com/weilaihui/fdfs_client
+</code></pre></div><p>在models中创建fastdfs_client.go</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> models
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;github.com/weilaihui/fdfs_client&quot;</span>
+	<span class="token string">&quot;github.com/astaxie/beego&quot;</span>
+<span class="token punctuation">)</span>
+
+
+<span class="token comment">//通过文件名的方式进行上传</span>
+<span class="token keyword">func</span> <span class="token function">UploadByFilename</span><span class="token punctuation">(</span> filename <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">(</span>GroupName<span class="token punctuation">,</span>RemoteFileId <span class="token builtin">string</span> <span class="token punctuation">,</span>err <span class="token builtin">error</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//通过配置文件创建fdfs操作句柄</span>
+	fdfsClient<span class="token punctuation">,</span> thiserr <span class="token operator">:=</span>fdfs_client<span class="token punctuation">.</span><span class="token function">NewFdfsClient</span><span class="token punctuation">(</span><span class="token string">&quot;/home/itcast/go/srcsss/homeweb/conf/client.conf&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> thiserr  <span class="token operator">!=</span><span class="token boolean">nil</span><span class="token punctuation">{</span>
+		<span class="token comment">//说一下那里出问题了</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;UploadByFilename( ) fdfs_client.NewFdfsClient  err&quot;</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		GroupName <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		RemoteFileId <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		err <span class="token operator">=</span> thiserr
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">//unc (this *FdfsClient) UploadByFilename(filename string) (*UploadFileResponse, error)</span>
+	<span class="token comment">//通过句柄上传文件（被上传的文件）</span>
+
+	uploadResponse<span class="token punctuation">,</span> thiserr <span class="token operator">:=</span> fdfsClient<span class="token punctuation">.</span><span class="token function">UploadByFilename</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> thiserr <span class="token operator">!=</span><span class="token boolean">nil</span><span class="token punctuation">{</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;UploadByFilename( ) fdfsClient.UploadByFilename(filename)  err&quot;</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		GroupName <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		RemoteFileId <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		err <span class="token operator">=</span> thiserr
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>uploadResponse<span class="token punctuation">.</span>GroupName<span class="token punctuation">)</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>uploadResponse<span class="token punctuation">.</span>RemoteFileId<span class="token punctuation">)</span>
+	<span class="token comment">//回传</span>
+	<span class="token keyword">return</span>  uploadResponse<span class="token punctuation">.</span>GroupName <span class="token punctuation">,</span> uploadResponse<span class="token punctuation">.</span>RemoteFileId <span class="token punctuation">,</span><span class="token boolean">nil</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token comment">//功能函数 操作fdfs上传二进制文件</span>
+<span class="token keyword">func</span> <span class="token function">UploadByBuffer</span><span class="token punctuation">(</span>filebuffer <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> fileExtName <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">(</span>GroupName<span class="token punctuation">,</span>RemoteFileId <span class="token builtin">string</span> <span class="token punctuation">,</span>err <span class="token builtin">error</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+	<span class="token comment">//通过配置文件创建fdfs操作句柄</span>
+	fdfsClient<span class="token punctuation">,</span> thiserr <span class="token operator">:=</span>fdfs_client<span class="token punctuation">.</span><span class="token function">NewFdfsClient</span><span class="token punctuation">(</span><span class="token string">&quot;/home/itcast/go/src/sss/homeweb/conf/client.conf&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> thiserr  <span class="token operator">!=</span><span class="token boolean">nil</span><span class="token punctuation">{</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;UploadByBuffer( ) fdfs_client.NewFdfsClient  err&quot;</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		GroupName <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		RemoteFileId <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		err <span class="token operator">=</span> thiserr
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">//通过句柄上传二进制的文件</span>
+	uploadResponse<span class="token punctuation">,</span> thiserr <span class="token operator">:=</span>fdfsClient<span class="token punctuation">.</span><span class="token function">UploadByBuffer</span><span class="token punctuation">(</span>filebuffer<span class="token punctuation">,</span>fileExtName<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> thiserr  <span class="token operator">!=</span><span class="token boolean">nil</span><span class="token punctuation">{</span>
+		beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">&quot;UploadByBuffer( ) fdfs_client.UploadByBuffer  err&quot;</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
+		GroupName <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		RemoteFileId <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+		err <span class="token operator">=</span> thiserr
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>uploadResponse<span class="token punctuation">.</span>GroupName<span class="token punctuation">)</span>
+	beego<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span>uploadResponse<span class="token punctuation">.</span>RemoteFileId<span class="token punctuation">)</span>
+	<span class="token comment">//回传</span>
+	<span class="token keyword">return</span> uploadResponse<span class="token punctuation">.</span>GroupName<span class="token punctuation">,</span>uploadResponse<span class="token punctuation">.</span>RemoteFileId<span class="token punctuation">,</span><span class="token boolean">nil</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">7/20/2020, 2:09:44 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9ea962d1.js" defer></script><script src="/assets/js/2.c9a70b15.js" defer></script><script src="/assets/js/4.844b86fa.js" defer></script><script src="/assets/js/81.674f5038.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>1.11 从实践到原理，带你参透 gRPC | 阿俊博客|记录一个程序员的成长历程</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script>
+            var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?51b8c2e72d1adf96524638ce85bb7d72";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+
+            // 引入谷歌,不需要可删除这段
+            var hm1 = document.createElement("script");
+            hm1.src = "https://www.googletagmanager.com/gtag/js?id=G-B7351EYS04";
+            var s1 = document.getElementsByTagName("script")[0]; 
+            s1.parentNode.insertBefore(hm1, s1);
+            })();
+
+            // 谷歌加载,不需要可删除
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-B7351EYS04');
+        </script>
+    <meta name="description" content="阿俊博客(blog.zhequtao.com)记录一个后端程序员的成长历程,分享他的学习笔记和心得,还有些开发必备技巧哦! java golang web html dev开发">
+    <link rel="preload" href="/assets/css/0.styles.a3df589e.css" as="style"><link rel="preload" href="/assets/js/app.9ea962d1.js" as="script"><link rel="preload" href="/assets/js/2.c9a70b15.js" as="script"><link rel="preload" href="/assets/js/4.844b86fa.js" as="script"><link rel="preload" href="/assets/js/183.7429f323.js" as="script"><link rel="prefetch" href="/assets/js/10.62e601c1.js"><link rel="prefetch" href="/assets/js/100.cf1207c5.js"><link rel="prefetch" href="/assets/js/101.4d7a9918.js"><link rel="prefetch" href="/assets/js/102.fc6db33a.js"><link rel="prefetch" href="/assets/js/103.30b8eabe.js"><link rel="prefetch" href="/assets/js/104.820bf0b0.js"><link rel="prefetch" href="/assets/js/105.99743e1b.js"><link rel="prefetch" href="/assets/js/106.0ab60d54.js"><link rel="prefetch" href="/assets/js/107.622d7433.js"><link rel="prefetch" href="/assets/js/108.aa7661f4.js"><link rel="prefetch" href="/assets/js/109.c0895a64.js"><link rel="prefetch" href="/assets/js/11.7da91838.js"><link rel="prefetch" href="/assets/js/110.c81dd090.js"><link rel="prefetch" href="/assets/js/111.24ece24d.js"><link rel="prefetch" href="/assets/js/112.30f8c029.js"><link rel="prefetch" href="/assets/js/113.eaaeb7ca.js"><link rel="prefetch" href="/assets/js/114.ba155e36.js"><link rel="prefetch" href="/assets/js/115.d6dc863f.js"><link rel="prefetch" href="/assets/js/116.88505488.js"><link rel="prefetch" href="/assets/js/117.b5d01796.js"><link rel="prefetch" href="/assets/js/118.67d3a13c.js"><link rel="prefetch" href="/assets/js/119.86770a17.js"><link rel="prefetch" href="/assets/js/12.8bd1929b.js"><link rel="prefetch" href="/assets/js/120.1327c5d1.js"><link rel="prefetch" href="/assets/js/121.df650198.js"><link rel="prefetch" href="/assets/js/122.aae17f4e.js"><link rel="prefetch" href="/assets/js/123.ce82f47d.js"><link rel="prefetch" href="/assets/js/124.26b9296d.js"><link rel="prefetch" href="/assets/js/125.25341b03.js"><link rel="prefetch" href="/assets/js/126.a322ae87.js"><link rel="prefetch" href="/assets/js/127.d19d83a8.js"><link rel="prefetch" href="/assets/js/128.57397ec4.js"><link rel="prefetch" href="/assets/js/129.cddf11fb.js"><link rel="prefetch" href="/assets/js/13.89b0bee6.js"><link rel="prefetch" href="/assets/js/130.233f34dc.js"><link rel="prefetch" href="/assets/js/131.d9c82885.js"><link rel="prefetch" href="/assets/js/132.c806fc3d.js"><link rel="prefetch" href="/assets/js/133.1fb1021b.js"><link rel="prefetch" href="/assets/js/134.55127691.js"><link rel="prefetch" href="/assets/js/135.f1eceeed.js"><link rel="prefetch" href="/assets/js/136.c1560a93.js"><link rel="prefetch" href="/assets/js/137.63c49866.js"><link rel="prefetch" href="/assets/js/138.5fe32c17.js"><link rel="prefetch" href="/assets/js/139.7ed0036a.js"><link rel="prefetch" href="/assets/js/14.05030778.js"><link rel="prefetch" href="/assets/js/140.5791e121.js"><link rel="prefetch" href="/assets/js/141.51770f04.js"><link rel="prefetch" href="/assets/js/142.6fb8fd3a.js"><link rel="prefetch" href="/assets/js/143.cb474433.js"><link rel="prefetch" href="/assets/js/144.0ce90ec6.js"><link rel="prefetch" href="/assets/js/145.0a0cb1c3.js"><link rel="prefetch" href="/assets/js/146.8bbc9e3b.js"><link rel="prefetch" href="/assets/js/147.b6783918.js"><link rel="prefetch" href="/assets/js/148.40ec0811.js"><link rel="prefetch" href="/assets/js/149.dea285d2.js"><link rel="prefetch" href="/assets/js/15.efef2d1b.js"><link rel="prefetch" href="/assets/js/150.7504351a.js"><link rel="prefetch" href="/assets/js/151.25e3f6a5.js"><link rel="prefetch" href="/assets/js/152.1bc21368.js"><link rel="prefetch" href="/assets/js/153.d395af94.js"><link rel="prefetch" href="/assets/js/154.5f5d2d95.js"><link rel="prefetch" href="/assets/js/155.5bb9391c.js"><link rel="prefetch" href="/assets/js/156.787b7172.js"><link rel="prefetch" href="/assets/js/157.ceccf7ca.js"><link rel="prefetch" href="/assets/js/158.5542d68b.js"><link rel="prefetch" href="/assets/js/159.9146bf68.js"><link rel="prefetch" href="/assets/js/16.307e235e.js"><link rel="prefetch" href="/assets/js/160.66555b7c.js"><link rel="prefetch" href="/assets/js/161.e17ec2ba.js"><link rel="prefetch" href="/assets/js/162.28f8d9c6.js"><link rel="prefetch" href="/assets/js/163.d27e5402.js"><link rel="prefetch" href="/assets/js/164.2e7c87ca.js"><link rel="prefetch" href="/assets/js/165.10f6348c.js"><link rel="prefetch" href="/assets/js/166.ba22558d.js"><link rel="prefetch" href="/assets/js/167.03b2b6f1.js"><link rel="prefetch" href="/assets/js/168.95b9cd51.js"><link rel="prefetch" href="/assets/js/169.9d5abaf8.js"><link rel="prefetch" href="/assets/js/17.8e7c137e.js"><link rel="prefetch" href="/assets/js/170.a9a4a69e.js"><link rel="prefetch" href="/assets/js/171.c2d23226.js"><link rel="prefetch" href="/assets/js/172.1bd427f9.js"><link rel="prefetch" href="/assets/js/173.2c53877d.js"><link rel="prefetch" href="/assets/js/174.ec879d25.js"><link rel="prefetch" href="/assets/js/175.c32e6c4f.js"><link rel="prefetch" href="/assets/js/176.6b1d0ffa.js"><link rel="prefetch" href="/assets/js/177.5e8c5d1c.js"><link rel="prefetch" href="/assets/js/178.10be38e6.js"><link rel="prefetch" href="/assets/js/179.6724c9df.js"><link rel="prefetch" href="/assets/js/18.7fcb42c3.js"><link rel="prefetch" href="/assets/js/180.b26ed559.js"><link rel="prefetch" href="/assets/js/181.113a50d4.js"><link rel="prefetch" href="/assets/js/182.25a92d08.js"><link rel="prefetch" href="/assets/js/184.e595c325.js"><link rel="prefetch" href="/assets/js/185.c973228d.js"><link rel="prefetch" href="/assets/js/186.0a647caa.js"><link rel="prefetch" href="/assets/js/187.2b1628b6.js"><link rel="prefetch" href="/assets/js/188.a88b4ad9.js"><link rel="prefetch" href="/assets/js/189.2fe1abbb.js"><link rel="prefetch" href="/assets/js/19.6dcea1bc.js"><link rel="prefetch" href="/assets/js/190.46d6460f.js"><link rel="prefetch" href="/assets/js/191.f4fb4998.js"><link rel="prefetch" href="/assets/js/192.74a4ad9f.js"><link rel="prefetch" href="/assets/js/193.91af848a.js"><link rel="prefetch" href="/assets/js/194.f9597fa6.js"><link rel="prefetch" href="/assets/js/195.6007909c.js"><link rel="prefetch" href="/assets/js/196.61f30712.js"><link rel="prefetch" href="/assets/js/197.f7096cb0.js"><link rel="prefetch" href="/assets/js/198.33d13915.js"><link rel="prefetch" href="/assets/js/199.9339c983.js"><link rel="prefetch" href="/assets/js/20.86c2c262.js"><link rel="prefetch" href="/assets/js/200.11374ebc.js"><link rel="prefetch" href="/assets/js/201.3e1fd856.js"><link rel="prefetch" href="/assets/js/202.93a8beeb.js"><link rel="prefetch" href="/assets/js/203.c0fee1fb.js"><link rel="prefetch" href="/assets/js/204.a8c0f8a1.js"><link rel="prefetch" href="/assets/js/205.7967210e.js"><link rel="prefetch" href="/assets/js/206.c4a88733.js"><link rel="prefetch" href="/assets/js/207.e4950166.js"><link rel="prefetch" href="/assets/js/208.a1176cf7.js"><link rel="prefetch" href="/assets/js/209.cd4f7baf.js"><link rel="prefetch" href="/assets/js/21.9c9a31ac.js"><link rel="prefetch" href="/assets/js/210.e43bd795.js"><link rel="prefetch" href="/assets/js/211.ddf04558.js"><link rel="prefetch" href="/assets/js/212.391ef50c.js"><link rel="prefetch" href="/assets/js/213.da32644a.js"><link rel="prefetch" href="/assets/js/214.181d708c.js"><link rel="prefetch" href="/assets/js/215.0114fbd1.js"><link rel="prefetch" href="/assets/js/216.9aab137a.js"><link rel="prefetch" href="/assets/js/217.25bf6db0.js"><link rel="prefetch" href="/assets/js/218.b0355ab3.js"><link rel="prefetch" href="/assets/js/219.87b99a27.js"><link rel="prefetch" href="/assets/js/22.5939eeb8.js"><link rel="prefetch" href="/assets/js/220.189892e3.js"><link rel="prefetch" href="/assets/js/221.1f604643.js"><link rel="prefetch" href="/assets/js/222.89415692.js"><link rel="prefetch" href="/assets/js/223.cb562c81.js"><link rel="prefetch" href="/assets/js/224.4c239cde.js"><link rel="prefetch" href="/assets/js/225.2b201379.js"><link rel="prefetch" href="/assets/js/226.ae5425fd.js"><link rel="prefetch" href="/assets/js/227.250dcdfc.js"><link rel="prefetch" href="/assets/js/228.c5e0493c.js"><link rel="prefetch" href="/assets/js/229.36b1d13d.js"><link rel="prefetch" href="/assets/js/23.9e765009.js"><link rel="prefetch" href="/assets/js/230.6e191eaf.js"><link rel="prefetch" href="/assets/js/231.c253f165.js"><link rel="prefetch" href="/assets/js/232.02191827.js"><link rel="prefetch" href="/assets/js/233.b662ceb3.js"><link rel="prefetch" href="/assets/js/234.1a3c416f.js"><link rel="prefetch" href="/assets/js/235.7e36938c.js"><link rel="prefetch" href="/assets/js/236.9c53b690.js"><link rel="prefetch" href="/assets/js/237.ea36cc85.js"><link rel="prefetch" href="/assets/js/238.b33057d4.js"><link rel="prefetch" href="/assets/js/239.0868edac.js"><link rel="prefetch" href="/assets/js/24.8e4704a7.js"><link rel="prefetch" href="/assets/js/240.2a7704ab.js"><link rel="prefetch" href="/assets/js/241.0fcb9572.js"><link rel="prefetch" href="/assets/js/242.ce7b9353.js"><link rel="prefetch" href="/assets/js/243.9f744f0b.js"><link rel="prefetch" href="/assets/js/244.a78ef66e.js"><link rel="prefetch" href="/assets/js/245.d7576519.js"><link rel="prefetch" href="/assets/js/246.ca4fd3c4.js"><link rel="prefetch" href="/assets/js/247.a44e8ce8.js"><link rel="prefetch" href="/assets/js/248.a9c1de28.js"><link rel="prefetch" href="/assets/js/249.da16a6a9.js"><link rel="prefetch" href="/assets/js/25.58ecd9b7.js"><link rel="prefetch" href="/assets/js/250.1d79bfff.js"><link rel="prefetch" href="/assets/js/251.a3e6ce2a.js"><link rel="prefetch" href="/assets/js/252.19753464.js"><link rel="prefetch" href="/assets/js/253.981b17b4.js"><link rel="prefetch" href="/assets/js/254.a8d017c7.js"><link rel="prefetch" href="/assets/js/255.49af6fcc.js"><link rel="prefetch" href="/assets/js/256.dd891671.js"><link rel="prefetch" href="/assets/js/257.4ed68d8d.js"><link rel="prefetch" href="/assets/js/258.5307d7a8.js"><link rel="prefetch" href="/assets/js/259.6ddcac1f.js"><link rel="prefetch" href="/assets/js/26.967ebdc3.js"><link rel="prefetch" href="/assets/js/260.b1c1f329.js"><link rel="prefetch" href="/assets/js/261.674d550e.js"><link rel="prefetch" href="/assets/js/262.7f75caba.js"><link rel="prefetch" href="/assets/js/263.4f76640d.js"><link rel="prefetch" href="/assets/js/264.b375613b.js"><link rel="prefetch" href="/assets/js/265.cc9c6501.js"><link rel="prefetch" href="/assets/js/266.c642e410.js"><link rel="prefetch" href="/assets/js/267.ab0de99f.js"><link rel="prefetch" href="/assets/js/268.24457362.js"><link rel="prefetch" href="/assets/js/269.2e8d42d9.js"><link rel="prefetch" href="/assets/js/27.d33e568a.js"><link rel="prefetch" href="/assets/js/270.e16d1e3a.js"><link rel="prefetch" href="/assets/js/271.77daddc8.js"><link rel="prefetch" href="/assets/js/272.7e84bdb2.js"><link rel="prefetch" href="/assets/js/273.d5dbce4e.js"><link rel="prefetch" href="/assets/js/274.6feb83b8.js"><link rel="prefetch" href="/assets/js/275.103f0486.js"><link rel="prefetch" href="/assets/js/276.2f998450.js"><link rel="prefetch" href="/assets/js/277.791a5013.js"><link rel="prefetch" href="/assets/js/278.3e0520fd.js"><link rel="prefetch" href="/assets/js/279.fcb87095.js"><link rel="prefetch" href="/assets/js/28.287f05a3.js"><link rel="prefetch" href="/assets/js/280.27106da5.js"><link rel="prefetch" href="/assets/js/281.91186cc2.js"><link rel="prefetch" href="/assets/js/282.3ac046ef.js"><link rel="prefetch" href="/assets/js/283.054707a2.js"><link rel="prefetch" href="/assets/js/284.fd7ae7bf.js"><link rel="prefetch" href="/assets/js/285.39768e4e.js"><link rel="prefetch" href="/assets/js/286.ddda020a.js"><link rel="prefetch" href="/assets/js/287.6b607282.js"><link rel="prefetch" href="/assets/js/288.10968280.js"><link rel="prefetch" href="/assets/js/289.83e85ab4.js"><link rel="prefetch" href="/assets/js/29.fe9422c1.js"><link rel="prefetch" href="/assets/js/290.ea068360.js"><link rel="prefetch" href="/assets/js/291.cecf9a33.js"><link rel="prefetch" href="/assets/js/292.76975bb4.js"><link rel="prefetch" href="/assets/js/293.a63be123.js"><link rel="prefetch" href="/assets/js/294.7f47f63d.js"><link rel="prefetch" href="/assets/js/295.8c920f6f.js"><link rel="prefetch" href="/assets/js/296.0df85a34.js"><link rel="prefetch" href="/assets/js/297.718b10bf.js"><link rel="prefetch" href="/assets/js/298.3781ec23.js"><link rel="prefetch" href="/assets/js/299.c345f6e7.js"><link rel="prefetch" href="/assets/js/3.e0c57d3e.js"><link rel="prefetch" href="/assets/js/30.ecca89f6.js"><link rel="prefetch" href="/assets/js/300.87f82f09.js"><link rel="prefetch" href="/assets/js/301.4d2f986c.js"><link rel="prefetch" href="/assets/js/302.9e65b4f7.js"><link rel="prefetch" href="/assets/js/303.a7a07667.js"><link rel="prefetch" href="/assets/js/304.fe7e8225.js"><link rel="prefetch" href="/assets/js/305.760e05cb.js"><link rel="prefetch" href="/assets/js/306.30ba2755.js"><link rel="prefetch" href="/assets/js/307.fdb5e282.js"><link rel="prefetch" href="/assets/js/308.760b43d7.js"><link rel="prefetch" href="/assets/js/309.2ad5b744.js"><link rel="prefetch" href="/assets/js/31.671ae8f6.js"><link rel="prefetch" href="/assets/js/310.5ceeda16.js"><link rel="prefetch" href="/assets/js/311.1a9c85c6.js"><link rel="prefetch" href="/assets/js/312.9ed98b62.js"><link rel="prefetch" href="/assets/js/313.6d0015fd.js"><link rel="prefetch" href="/assets/js/314.c9d0b6d2.js"><link rel="prefetch" href="/assets/js/315.5c5807cb.js"><link rel="prefetch" href="/assets/js/316.40a7ffb0.js"><link rel="prefetch" href="/assets/js/317.d12e1ff6.js"><link rel="prefetch" href="/assets/js/318.e5c71f34.js"><link rel="prefetch" href="/assets/js/319.cc5e5279.js"><link rel="prefetch" href="/assets/js/32.88e43d7e.js"><link rel="prefetch" href="/assets/js/320.f18837bb.js"><link rel="prefetch" href="/assets/js/321.7969f1e2.js"><link rel="prefetch" href="/assets/js/322.74aeb82f.js"><link rel="prefetch" href="/assets/js/323.354a4de0.js"><link rel="prefetch" href="/assets/js/324.bac5b379.js"><link rel="prefetch" href="/assets/js/325.145a31ae.js"><link rel="prefetch" href="/assets/js/326.bbc46277.js"><link rel="prefetch" href="/assets/js/327.306f70db.js"><link rel="prefetch" href="/assets/js/328.1af4efed.js"><link rel="prefetch" href="/assets/js/329.15b29081.js"><link rel="prefetch" href="/assets/js/33.59c6fc69.js"><link rel="prefetch" href="/assets/js/330.a4ac66fc.js"><link rel="prefetch" href="/assets/js/331.35f0f6c3.js"><link rel="prefetch" href="/assets/js/332.e36e061d.js"><link rel="prefetch" href="/assets/js/333.08477386.js"><link rel="prefetch" href="/assets/js/334.be69b8b3.js"><link rel="prefetch" href="/assets/js/335.434734ca.js"><link rel="prefetch" href="/assets/js/336.3cbce0cd.js"><link rel="prefetch" href="/assets/js/337.82fa8d11.js"><link rel="prefetch" href="/assets/js/338.28c84ece.js"><link rel="prefetch" href="/assets/js/339.88f98613.js"><link rel="prefetch" href="/assets/js/34.0ece5672.js"><link rel="prefetch" href="/assets/js/340.25f40ebf.js"><link rel="prefetch" href="/assets/js/341.997c73c1.js"><link rel="prefetch" href="/assets/js/342.7013a957.js"><link rel="prefetch" href="/assets/js/343.65626256.js"><link rel="prefetch" href="/assets/js/344.57f2bdb4.js"><link rel="prefetch" href="/assets/js/345.38f630e9.js"><link rel="prefetch" href="/assets/js/346.9ad2fbaf.js"><link rel="prefetch" href="/assets/js/347.57091be7.js"><link rel="prefetch" href="/assets/js/348.1ab8ba98.js"><link rel="prefetch" href="/assets/js/349.6e295edd.js"><link rel="prefetch" href="/assets/js/35.2555d318.js"><link rel="prefetch" href="/assets/js/350.b30f3fbf.js"><link rel="prefetch" href="/assets/js/351.60773132.js"><link rel="prefetch" href="/assets/js/352.13db1b1d.js"><link rel="prefetch" href="/assets/js/353.171c8652.js"><link rel="prefetch" href="/assets/js/354.15ecc76b.js"><link rel="prefetch" href="/assets/js/355.9fbc80e0.js"><link rel="prefetch" href="/assets/js/356.84d2c6de.js"><link rel="prefetch" href="/assets/js/357.739df3d4.js"><link rel="prefetch" href="/assets/js/358.88560f09.js"><link rel="prefetch" href="/assets/js/359.6a0bb2b8.js"><link rel="prefetch" href="/assets/js/36.3478b3d7.js"><link rel="prefetch" href="/assets/js/360.ef8b18c6.js"><link rel="prefetch" href="/assets/js/361.db83fa7d.js"><link rel="prefetch" href="/assets/js/362.9baf3da9.js"><link rel="prefetch" href="/assets/js/363.c220f73c.js"><link rel="prefetch" href="/assets/js/364.088926b8.js"><link rel="prefetch" href="/assets/js/365.101a11ff.js"><link rel="prefetch" href="/assets/js/366.41a2bbdb.js"><link rel="prefetch" href="/assets/js/367.e7471fcd.js"><link rel="prefetch" href="/assets/js/368.efbb651a.js"><link rel="prefetch" href="/assets/js/369.8c111250.js"><link rel="prefetch" href="/assets/js/37.cf06df2c.js"><link rel="prefetch" href="/assets/js/370.d6254892.js"><link rel="prefetch" href="/assets/js/371.9bccb7f9.js"><link rel="prefetch" href="/assets/js/372.ddc12fda.js"><link rel="prefetch" href="/assets/js/373.91b3ad6b.js"><link rel="prefetch" href="/assets/js/374.c8c27965.js"><link rel="prefetch" href="/assets/js/375.26df66e7.js"><link rel="prefetch" href="/assets/js/376.8fab051f.js"><link rel="prefetch" href="/assets/js/377.7cda8366.js"><link rel="prefetch" href="/assets/js/378.b726510c.js"><link rel="prefetch" href="/assets/js/379.c66b85c0.js"><link rel="prefetch" href="/assets/js/38.afb74648.js"><link rel="prefetch" href="/assets/js/380.80b1dbaa.js"><link rel="prefetch" href="/assets/js/381.9eae4d8d.js"><link rel="prefetch" href="/assets/js/382.875628ce.js"><link rel="prefetch" href="/assets/js/383.a5154208.js"><link rel="prefetch" href="/assets/js/384.311052bf.js"><link rel="prefetch" href="/assets/js/385.bfce1e00.js"><link rel="prefetch" href="/assets/js/386.354b125a.js"><link rel="prefetch" href="/assets/js/387.7bbe1740.js"><link rel="prefetch" href="/assets/js/388.ee15d89e.js"><link rel="prefetch" href="/assets/js/389.1d2d4ccc.js"><link rel="prefetch" href="/assets/js/39.c314f21b.js"><link rel="prefetch" href="/assets/js/390.90ca40a9.js"><link rel="prefetch" href="/assets/js/391.d199796b.js"><link rel="prefetch" href="/assets/js/392.672aae85.js"><link rel="prefetch" href="/assets/js/393.3a57edae.js"><link rel="prefetch" href="/assets/js/394.b46b9242.js"><link rel="prefetch" href="/assets/js/395.77d35e16.js"><link rel="prefetch" href="/assets/js/396.677289ca.js"><link rel="prefetch" href="/assets/js/397.0cb9500f.js"><link rel="prefetch" href="/assets/js/398.962ab9a6.js"><link rel="prefetch" href="/assets/js/399.c6da0357.js"><link rel="prefetch" href="/assets/js/40.8bb0c972.js"><link rel="prefetch" href="/assets/js/400.36c0a7d6.js"><link rel="prefetch" href="/assets/js/401.9bf663ea.js"><link rel="prefetch" href="/assets/js/402.ecf01655.js"><link rel="prefetch" href="/assets/js/403.f4237c9f.js"><link rel="prefetch" href="/assets/js/404.db53111c.js"><link rel="prefetch" href="/assets/js/405.3ee804d4.js"><link rel="prefetch" href="/assets/js/406.963652f1.js"><link rel="prefetch" href="/assets/js/407.6136eb18.js"><link rel="prefetch" href="/assets/js/408.48792ff4.js"><link rel="prefetch" href="/assets/js/409.5e291789.js"><link rel="prefetch" href="/assets/js/41.e74854d6.js"><link rel="prefetch" href="/assets/js/410.442c009b.js"><link rel="prefetch" href="/assets/js/411.0c54fdb2.js"><link rel="prefetch" href="/assets/js/412.6e141134.js"><link rel="prefetch" href="/assets/js/413.2320aff0.js"><link rel="prefetch" href="/assets/js/414.05d880a9.js"><link rel="prefetch" href="/assets/js/415.32322d35.js"><link rel="prefetch" href="/assets/js/416.4fba6f60.js"><link rel="prefetch" href="/assets/js/417.1a0596ef.js"><link rel="prefetch" href="/assets/js/418.82ea5e39.js"><link rel="prefetch" href="/assets/js/419.8f90b199.js"><link rel="prefetch" href="/assets/js/42.e492c74b.js"><link rel="prefetch" href="/assets/js/420.3e817d1b.js"><link rel="prefetch" href="/assets/js/421.4f55039c.js"><link rel="prefetch" href="/assets/js/422.2bf4ed76.js"><link rel="prefetch" href="/assets/js/423.67e9b23d.js"><link rel="prefetch" href="/assets/js/424.087a8b6b.js"><link rel="prefetch" href="/assets/js/425.1e94b153.js"><link rel="prefetch" href="/assets/js/426.f0367461.js"><link rel="prefetch" href="/assets/js/427.3d28a4b2.js"><link rel="prefetch" href="/assets/js/428.ce36b8ee.js"><link rel="prefetch" href="/assets/js/429.105dc086.js"><link rel="prefetch" href="/assets/js/43.75f9f169.js"><link rel="prefetch" href="/assets/js/430.08b72517.js"><link rel="prefetch" href="/assets/js/431.208ce8d8.js"><link rel="prefetch" href="/assets/js/432.6c4fb6f0.js"><link rel="prefetch" href="/assets/js/433.1074506a.js"><link rel="prefetch" href="/assets/js/434.e5ce0f12.js"><link rel="prefetch" href="/assets/js/435.15247615.js"><link rel="prefetch" href="/assets/js/436.61555659.js"><link rel="prefetch" href="/assets/js/437.0cf79a46.js"><link rel="prefetch" href="/assets/js/438.9a5decbc.js"><link rel="prefetch" href="/assets/js/439.c66f17c5.js"><link rel="prefetch" href="/assets/js/44.8a8252fc.js"><link rel="prefetch" href="/assets/js/440.845b7492.js"><link rel="prefetch" href="/assets/js/441.602f5a22.js"><link rel="prefetch" href="/assets/js/442.1574dc38.js"><link rel="prefetch" href="/assets/js/443.cc12b13c.js"><link rel="prefetch" href="/assets/js/444.236a7fb7.js"><link rel="prefetch" href="/assets/js/445.f391fec2.js"><link rel="prefetch" href="/assets/js/446.cbd42128.js"><link rel="prefetch" href="/assets/js/447.f1045e95.js"><link rel="prefetch" href="/assets/js/448.67ce60c2.js"><link rel="prefetch" href="/assets/js/449.6b62b1ad.js"><link rel="prefetch" href="/assets/js/45.d4f0276c.js"><link rel="prefetch" href="/assets/js/450.6b6ffc4b.js"><link rel="prefetch" href="/assets/js/451.3c3e1317.js"><link rel="prefetch" href="/assets/js/452.6003d8da.js"><link rel="prefetch" href="/assets/js/453.a44d279b.js"><link rel="prefetch" href="/assets/js/454.78070189.js"><link rel="prefetch" href="/assets/js/455.f2b79088.js"><link rel="prefetch" href="/assets/js/456.91663bf5.js"><link rel="prefetch" href="/assets/js/457.35a8e118.js"><link rel="prefetch" href="/assets/js/458.4149d6b7.js"><link rel="prefetch" href="/assets/js/459.7ea1e553.js"><link rel="prefetch" href="/assets/js/46.6ddb0a09.js"><link rel="prefetch" href="/assets/js/460.3995271b.js"><link rel="prefetch" href="/assets/js/461.091f1430.js"><link rel="prefetch" href="/assets/js/462.4cd71054.js"><link rel="prefetch" href="/assets/js/463.6857db16.js"><link rel="prefetch" href="/assets/js/464.a1bda4d9.js"><link rel="prefetch" href="/assets/js/465.677688cc.js"><link rel="prefetch" href="/assets/js/466.62a2c52f.js"><link rel="prefetch" href="/assets/js/467.4aa3b11e.js"><link rel="prefetch" href="/assets/js/468.817b6b69.js"><link rel="prefetch" href="/assets/js/469.51f23dcd.js"><link rel="prefetch" href="/assets/js/47.3f31abda.js"><link rel="prefetch" href="/assets/js/470.69ea0010.js"><link rel="prefetch" href="/assets/js/471.7efe5b62.js"><link rel="prefetch" href="/assets/js/472.af7c0c2d.js"><link rel="prefetch" href="/assets/js/473.0cad2221.js"><link rel="prefetch" href="/assets/js/474.e8f9a1e9.js"><link rel="prefetch" href="/assets/js/475.b5b9b45a.js"><link rel="prefetch" href="/assets/js/476.c7a0afe6.js"><link rel="prefetch" href="/assets/js/477.2a810d6e.js"><link rel="prefetch" href="/assets/js/478.0efbc4c7.js"><link rel="prefetch" href="/assets/js/479.dd5bbccc.js"><link rel="prefetch" href="/assets/js/48.8ff4bc01.js"><link rel="prefetch" href="/assets/js/480.33e9fcec.js"><link rel="prefetch" href="/assets/js/481.60f573e7.js"><link rel="prefetch" href="/assets/js/482.7b54b4fb.js"><link rel="prefetch" href="/assets/js/483.53290792.js"><link rel="prefetch" href="/assets/js/484.bc29ab5e.js"><link rel="prefetch" href="/assets/js/485.811fd0e7.js"><link rel="prefetch" href="/assets/js/486.b6ec0cbc.js"><link rel="prefetch" href="/assets/js/487.d76ef442.js"><link rel="prefetch" href="/assets/js/488.dc438775.js"><link rel="prefetch" href="/assets/js/489.03938f88.js"><link rel="prefetch" href="/assets/js/49.d14740e5.js"><link rel="prefetch" href="/assets/js/490.87e301b9.js"><link rel="prefetch" href="/assets/js/491.ce0fd7e5.js"><link rel="prefetch" href="/assets/js/492.ab10827f.js"><link rel="prefetch" href="/assets/js/493.52442a50.js"><link rel="prefetch" href="/assets/js/494.2606c238.js"><link rel="prefetch" href="/assets/js/495.4218d96e.js"><link rel="prefetch" href="/assets/js/496.09da8fd9.js"><link rel="prefetch" href="/assets/js/497.0059402d.js"><link rel="prefetch" href="/assets/js/498.9f6cfe70.js"><link rel="prefetch" href="/assets/js/499.35e2fee2.js"><link rel="prefetch" href="/assets/js/5.7fd7e748.js"><link rel="prefetch" href="/assets/js/50.2b80f2b9.js"><link rel="prefetch" href="/assets/js/500.c1ab43b9.js"><link rel="prefetch" href="/assets/js/501.01fe1e3b.js"><link rel="prefetch" href="/assets/js/502.4373b1ae.js"><link rel="prefetch" href="/assets/js/503.2f03713d.js"><link rel="prefetch" href="/assets/js/504.80f22850.js"><link rel="prefetch" href="/assets/js/505.e0bbc99e.js"><link rel="prefetch" href="/assets/js/506.507dc313.js"><link rel="prefetch" href="/assets/js/507.fb6bad79.js"><link rel="prefetch" href="/assets/js/508.5e699aa9.js"><link rel="prefetch" href="/assets/js/509.8d16f124.js"><link rel="prefetch" href="/assets/js/51.e473d3f3.js"><link rel="prefetch" href="/assets/js/510.34c69374.js"><link rel="prefetch" href="/assets/js/511.7a3ea23f.js"><link rel="prefetch" href="/assets/js/512.444e2951.js"><link rel="prefetch" href="/assets/js/513.d270dbcc.js"><link rel="prefetch" href="/assets/js/514.1ff5debc.js"><link rel="prefetch" href="/assets/js/515.2a5036b4.js"><link rel="prefetch" href="/assets/js/516.519572fa.js"><link rel="prefetch" href="/assets/js/517.310e6a40.js"><link rel="prefetch" href="/assets/js/518.5f4c76cc.js"><link rel="prefetch" href="/assets/js/519.afd8b4ec.js"><link rel="prefetch" href="/assets/js/52.b2705e5a.js"><link rel="prefetch" href="/assets/js/520.78726749.js"><link rel="prefetch" href="/assets/js/521.14c49cc4.js"><link rel="prefetch" href="/assets/js/522.e66a26d6.js"><link rel="prefetch" href="/assets/js/523.dc9f7da0.js"><link rel="prefetch" href="/assets/js/524.d8a555ad.js"><link rel="prefetch" href="/assets/js/525.283ec81f.js"><link rel="prefetch" href="/assets/js/526.286f94bf.js"><link rel="prefetch" href="/assets/js/527.d0f5bacb.js"><link rel="prefetch" href="/assets/js/528.a147459b.js"><link rel="prefetch" href="/assets/js/529.8e2036f6.js"><link rel="prefetch" href="/assets/js/53.b22d1830.js"><link rel="prefetch" href="/assets/js/530.7e39049e.js"><link rel="prefetch" href="/assets/js/531.e674752b.js"><link rel="prefetch" href="/assets/js/532.8fe6dc9a.js"><link rel="prefetch" href="/assets/js/533.1611f6fc.js"><link rel="prefetch" href="/assets/js/534.30350526.js"><link rel="prefetch" href="/assets/js/535.c53c8062.js"><link rel="prefetch" href="/assets/js/536.194c0f54.js"><link rel="prefetch" href="/assets/js/537.9fff58be.js"><link rel="prefetch" href="/assets/js/538.5fc4dbf1.js"><link rel="prefetch" href="/assets/js/539.dcb3dbde.js"><link rel="prefetch" href="/assets/js/54.dd781fee.js"><link rel="prefetch" href="/assets/js/540.e603d37f.js"><link rel="prefetch" href="/assets/js/541.8c3509ee.js"><link rel="prefetch" href="/assets/js/542.32647773.js"><link rel="prefetch" href="/assets/js/543.6d7bcae1.js"><link rel="prefetch" href="/assets/js/544.f56f121b.js"><link rel="prefetch" href="/assets/js/545.3d29510d.js"><link rel="prefetch" href="/assets/js/546.81e647f6.js"><link rel="prefetch" href="/assets/js/547.669e6f5b.js"><link rel="prefetch" href="/assets/js/548.32996733.js"><link rel="prefetch" href="/assets/js/549.8681397c.js"><link rel="prefetch" href="/assets/js/55.4bae83d9.js"><link rel="prefetch" href="/assets/js/550.41afbfd6.js"><link rel="prefetch" href="/assets/js/551.8dc3f7b8.js"><link rel="prefetch" href="/assets/js/552.1ee0d0c6.js"><link rel="prefetch" href="/assets/js/553.dadf63ed.js"><link rel="prefetch" href="/assets/js/554.8644a9ab.js"><link rel="prefetch" href="/assets/js/555.8ec41521.js"><link rel="prefetch" href="/assets/js/556.9606b8c9.js"><link rel="prefetch" href="/assets/js/557.74ad4a9c.js"><link rel="prefetch" href="/assets/js/558.24ff45f5.js"><link rel="prefetch" href="/assets/js/559.76efed78.js"><link rel="prefetch" href="/assets/js/56.718429c0.js"><link rel="prefetch" href="/assets/js/560.2ef5cc53.js"><link rel="prefetch" href="/assets/js/561.b617f5cc.js"><link rel="prefetch" href="/assets/js/562.552e64a7.js"><link rel="prefetch" href="/assets/js/563.78b6d1ab.js"><link rel="prefetch" href="/assets/js/564.3b5dfa30.js"><link rel="prefetch" href="/assets/js/565.6433e636.js"><link rel="prefetch" href="/assets/js/566.28e8456d.js"><link rel="prefetch" href="/assets/js/567.313eee33.js"><link rel="prefetch" href="/assets/js/568.3d648b50.js"><link rel="prefetch" href="/assets/js/569.671a6298.js"><link rel="prefetch" href="/assets/js/57.c8333339.js"><link rel="prefetch" href="/assets/js/570.471719cb.js"><link rel="prefetch" href="/assets/js/571.ef881d90.js"><link rel="prefetch" href="/assets/js/572.977abd40.js"><link rel="prefetch" href="/assets/js/573.0d03433d.js"><link rel="prefetch" href="/assets/js/574.8251b547.js"><link rel="prefetch" href="/assets/js/575.171cf807.js"><link rel="prefetch" href="/assets/js/576.80b09c7e.js"><link rel="prefetch" href="/assets/js/577.1d5f24a7.js"><link rel="prefetch" href="/assets/js/578.5645f036.js"><link rel="prefetch" href="/assets/js/579.952881cd.js"><link rel="prefetch" href="/assets/js/58.b9e624cb.js"><link rel="prefetch" href="/assets/js/580.ab812d3b.js"><link rel="prefetch" href="/assets/js/581.b647a055.js"><link rel="prefetch" href="/assets/js/582.83438adb.js"><link rel="prefetch" href="/assets/js/583.b1aa2cf2.js"><link rel="prefetch" href="/assets/js/584.c2f1007a.js"><link rel="prefetch" href="/assets/js/585.45dbf748.js"><link rel="prefetch" href="/assets/js/586.4c3ffbc3.js"><link rel="prefetch" href="/assets/js/587.e71d43c3.js"><link rel="prefetch" href="/assets/js/588.fd7f9eea.js"><link rel="prefetch" href="/assets/js/589.8bf05731.js"><link rel="prefetch" href="/assets/js/59.8bf10afa.js"><link rel="prefetch" href="/assets/js/590.0e4ba5e0.js"><link rel="prefetch" href="/assets/js/591.95f0532d.js"><link rel="prefetch" href="/assets/js/592.bd7ef654.js"><link rel="prefetch" href="/assets/js/593.c7a65b3d.js"><link rel="prefetch" href="/assets/js/594.078a006a.js"><link rel="prefetch" href="/assets/js/595.d6e901df.js"><link rel="prefetch" href="/assets/js/596.d6208112.js"><link rel="prefetch" href="/assets/js/597.66a14285.js"><link rel="prefetch" href="/assets/js/598.30d544ef.js"><link rel="prefetch" href="/assets/js/599.e6a114fe.js"><link rel="prefetch" href="/assets/js/6.242ca76c.js"><link rel="prefetch" href="/assets/js/60.e6863bd6.js"><link rel="prefetch" href="/assets/js/600.62bb7a77.js"><link rel="prefetch" href="/assets/js/601.c7ebebb4.js"><link rel="prefetch" href="/assets/js/602.3756fa7e.js"><link rel="prefetch" href="/assets/js/603.da93e741.js"><link rel="prefetch" href="/assets/js/604.93a28c87.js"><link rel="prefetch" href="/assets/js/605.a12d21ca.js"><link rel="prefetch" href="/assets/js/606.23250d5d.js"><link rel="prefetch" href="/assets/js/607.0efff327.js"><link rel="prefetch" href="/assets/js/608.2c831508.js"><link rel="prefetch" href="/assets/js/609.70098de8.js"><link rel="prefetch" href="/assets/js/61.156b4de8.js"><link rel="prefetch" href="/assets/js/610.a408edf0.js"><link rel="prefetch" href="/assets/js/611.26c3a70f.js"><link rel="prefetch" href="/assets/js/612.2e1b1cd1.js"><link rel="prefetch" href="/assets/js/613.31e5b63e.js"><link rel="prefetch" href="/assets/js/614.6404ddc6.js"><link rel="prefetch" href="/assets/js/615.fbc11140.js"><link rel="prefetch" href="/assets/js/616.4579566e.js"><link rel="prefetch" href="/assets/js/617.9dd611ad.js"><link rel="prefetch" href="/assets/js/618.76fef12e.js"><link rel="prefetch" href="/assets/js/619.d8f9b353.js"><link rel="prefetch" href="/assets/js/62.73a556b6.js"><link rel="prefetch" href="/assets/js/620.2bf6c11c.js"><link rel="prefetch" href="/assets/js/621.9c732b88.js"><link rel="prefetch" href="/assets/js/622.ce177beb.js"><link rel="prefetch" href="/assets/js/623.41e320ec.js"><link rel="prefetch" href="/assets/js/624.817b3c8f.js"><link rel="prefetch" href="/assets/js/625.816b419b.js"><link rel="prefetch" href="/assets/js/626.3c14f028.js"><link rel="prefetch" href="/assets/js/627.758b56b4.js"><link rel="prefetch" href="/assets/js/628.86943080.js"><link rel="prefetch" href="/assets/js/629.6c75e55e.js"><link rel="prefetch" href="/assets/js/63.f1b1e853.js"><link rel="prefetch" href="/assets/js/630.94ca1db4.js"><link rel="prefetch" href="/assets/js/631.3b6f7de5.js"><link rel="prefetch" href="/assets/js/632.52f89764.js"><link rel="prefetch" href="/assets/js/633.75fd5193.js"><link rel="prefetch" href="/assets/js/634.622710b7.js"><link rel="prefetch" href="/assets/js/635.d50d1187.js"><link rel="prefetch" href="/assets/js/636.d341f6d6.js"><link rel="prefetch" href="/assets/js/637.c1f5d3b3.js"><link rel="prefetch" href="/assets/js/638.4fde80df.js"><link rel="prefetch" href="/assets/js/639.b8a205b8.js"><link rel="prefetch" href="/assets/js/64.793c820a.js"><link rel="prefetch" href="/assets/js/640.9a453c25.js"><link rel="prefetch" href="/assets/js/641.b4ed0d96.js"><link rel="prefetch" href="/assets/js/642.ffef1ff3.js"><link rel="prefetch" href="/assets/js/643.a7ec1541.js"><link rel="prefetch" href="/assets/js/644.05544b13.js"><link rel="prefetch" href="/assets/js/645.09b7731d.js"><link rel="prefetch" href="/assets/js/646.c109548f.js"><link rel="prefetch" href="/assets/js/647.f0596714.js"><link rel="prefetch" href="/assets/js/648.0c1b39d0.js"><link rel="prefetch" href="/assets/js/649.287e64d5.js"><link rel="prefetch" href="/assets/js/65.f37d0be7.js"><link rel="prefetch" href="/assets/js/650.9105410b.js"><link rel="prefetch" href="/assets/js/651.5f41618d.js"><link rel="prefetch" href="/assets/js/652.947536e5.js"><link rel="prefetch" href="/assets/js/653.61384c75.js"><link rel="prefetch" href="/assets/js/654.b549f13d.js"><link rel="prefetch" href="/assets/js/655.835429b6.js"><link rel="prefetch" href="/assets/js/656.387ac233.js"><link rel="prefetch" href="/assets/js/657.408c57c3.js"><link rel="prefetch" href="/assets/js/658.2b122032.js"><link rel="prefetch" href="/assets/js/659.83fe3485.js"><link rel="prefetch" href="/assets/js/66.5d717dec.js"><link rel="prefetch" href="/assets/js/660.f9b6ec32.js"><link rel="prefetch" href="/assets/js/661.d778682c.js"><link rel="prefetch" href="/assets/js/662.aaddc23e.js"><link rel="prefetch" href="/assets/js/663.37416307.js"><link rel="prefetch" href="/assets/js/664.450ee534.js"><link rel="prefetch" href="/assets/js/665.294b451e.js"><link rel="prefetch" href="/assets/js/666.bbec7c7b.js"><link rel="prefetch" href="/assets/js/667.e0a703ca.js"><link rel="prefetch" href="/assets/js/668.f7386e1c.js"><link rel="prefetch" href="/assets/js/669.40a74c7a.js"><link rel="prefetch" href="/assets/js/67.78c4b054.js"><link rel="prefetch" href="/assets/js/670.c7c79ad0.js"><link rel="prefetch" href="/assets/js/671.be2b7674.js"><link rel="prefetch" href="/assets/js/672.08b612fb.js"><link rel="prefetch" href="/assets/js/673.415ad76e.js"><link rel="prefetch" href="/assets/js/674.523d603e.js"><link rel="prefetch" href="/assets/js/675.1d5f94c1.js"><link rel="prefetch" href="/assets/js/676.bece4f17.js"><link rel="prefetch" href="/assets/js/677.e9b33833.js"><link rel="prefetch" href="/assets/js/678.c35ac3b8.js"><link rel="prefetch" href="/assets/js/68.b8df93e3.js"><link rel="prefetch" href="/assets/js/69.212ed37f.js"><link rel="prefetch" href="/assets/js/7.ec80a013.js"><link rel="prefetch" href="/assets/js/70.38b19eab.js"><link rel="prefetch" href="/assets/js/71.04f667f1.js"><link rel="prefetch" href="/assets/js/72.91bcc269.js"><link rel="prefetch" href="/assets/js/73.246d8f25.js"><link rel="prefetch" href="/assets/js/74.ac496839.js"><link rel="prefetch" href="/assets/js/75.b4d9ba62.js"><link rel="prefetch" href="/assets/js/76.a7a81728.js"><link rel="prefetch" href="/assets/js/77.d7e31e43.js"><link rel="prefetch" href="/assets/js/78.9abf5788.js"><link rel="prefetch" href="/assets/js/79.b2150d81.js"><link rel="prefetch" href="/assets/js/8.bfd1270e.js"><link rel="prefetch" href="/assets/js/80.7cb80d2a.js"><link rel="prefetch" href="/assets/js/81.674f5038.js"><link rel="prefetch" href="/assets/js/82.f8a79a9d.js"><link rel="prefetch" href="/assets/js/83.58e59d33.js"><link rel="prefetch" href="/assets/js/84.3bc64167.js"><link rel="prefetch" href="/assets/js/85.63f6b74c.js"><link rel="prefetch" href="/assets/js/86.cc62df1d.js"><link rel="prefetch" href="/assets/js/87.ffa9c597.js"><link rel="prefetch" href="/assets/js/88.71916ff0.js"><link rel="prefetch" href="/assets/js/89.1e49428d.js"><link rel="prefetch" href="/assets/js/9.b8e260e0.js"><link rel="prefetch" href="/assets/js/90.c52ee918.js"><link rel="prefetch" href="/assets/js/91.1482551a.js"><link rel="prefetch" href="/assets/js/92.cf73cb76.js"><link rel="prefetch" href="/assets/js/93.32c694d0.js"><link rel="prefetch" href="/assets/js/94.4af4cfae.js"><link rel="prefetch" href="/assets/js/95.c6340c1f.js"><link rel="prefetch" href="/assets/js/96.6d43f540.js"><link rel="prefetch" href="/assets/js/97.71873cf9.js"><link rel="prefetch" href="/assets/js/98.7cd8e6da.js"><link rel="prefetch" href="/assets/js/99.22c51c9e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a3df589e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">阿俊博客|记录一个程序员的成长历程</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/post/" class="nav-link">存档</a></div><div class="nav-item"><a href="/record/" class="nav-link">历程</a></div><div class="nav-item"><a href="/golang/" class="nav-link">Go</a></div><div class="nav-item"><a href="/go-block/" class="nav-link">区块链</a></div><div class="nav-item"><a href="/k8s/" class="nav-link">k8s</a></div><div class="nav-item"><a href="/pm/" class="nav-link">pm</a></div><div class="nav-item"><a href="/op/" class="nav-link">运维</a></div><div class="nav-item"><a href="/finance/" class="nav-link">金融</a></div><div class="nav-item"><a href="/about.html" class="nav-link">关于我</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/go-learning/" class="nav-link router-link-active">go-learning</a></li><li class="dropdown-item"><!----> <a href="/post/flutter-guide/" class="nav-link">flutter</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">mysql</a></li><li class="dropdown-item"><!----> <a href="/python/" class="nav-link">python</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/more/leetcode/" class="nav-link">算法</a></li><li class="dropdown-item"><!----> <a href="/more/web/" class="nav-link">大前端</a></li></ul></div></div> <a href="https://github.com/ChinaArJun" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/post/" class="nav-link">存档</a></div><div class="nav-item"><a href="/record/" class="nav-link">历程</a></div><div class="nav-item"><a href="/golang/" class="nav-link">Go</a></div><div class="nav-item"><a href="/go-block/" class="nav-link">区块链</a></div><div class="nav-item"><a href="/k8s/" class="nav-link">k8s</a></div><div class="nav-item"><a href="/pm/" class="nav-link">pm</a></div><div class="nav-item"><a href="/op/" class="nav-link">运维</a></div><div class="nav-item"><a href="/finance/" class="nav-link">金融</a></div><div class="nav-item"><a href="/about.html" class="nav-link">关于我</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/go-learning/" class="nav-link router-link-active">go-learning</a></li><li class="dropdown-item"><!----> <a href="/post/flutter-guide/" class="nav-link">flutter</a></li><li class="dropdown-item"><!----> <a href="/mysql/" class="nav-link">mysql</a></li><li class="dropdown-item"><!----> <a href="/python/" class="nav-link">python</a></li><li class="dropdown-item"><!----> <a href="/more/interview/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/more/leetcode/" class="nav-link">算法</a></li><li class="dropdown-item"><!----> <a href="/more/web/" class="nav-link">大前端</a></li></ul></div></div> <a href="https://github.com/ChinaArJun" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <div></div> <div style="padding-left:1.5rem;"><div></div></div> <!----> </aside> <!----> <!----> <main class="page"><div class="theme-default-content" style="margin-bottom:-5rem;"><div class="bar"><div class="bar-intro"><div class="text">
+      阿里云优惠活动，点击链接进行购买: <a href="https://www.aliyun.com/minisite/goods?userCode=yg08nutm&share_source=copy_link">一年仅需89元即可以购买服务器~</a>。我个人服务器为2核4G配置，也更加推荐购买 <a href="https://www.aliyun.com/minisite/goods?userCode=yg08nutm&share_source=copy_link">2核4G三年799元</a> 配置的服务器。
+    </div> <div class="text">
+      你可以跟着我的笔记 <a href="https://blog.zhequtao.com/op/">当我有一台服务器时，我做了什么</a> 来开始维护服务器并搭建应用，将引导你使用 docker 和 k8s 搭建一个自己的服务器开发集群。
+    </div></div></div> <!----></div> <div class="theme-default-content content__default"><h1 id="_1-11-从实践到原理，带你参透-grpc"><a href="#_1-11-从实践到原理，带你参透-grpc" class="header-anchor">#</a> 1.11 从实践到原理，带你参透 gRPC</h1> <p><img src="https://i.imgur.com/cjLNsWj.png" alt="image"></p> <p>gRPC 在 Go 语言中大放异彩，越来越多的小伙伴在使用，最近也在公司安利了一波，希望这一篇文章能带你一览 gRPC 的巧妙之处，本文篇幅比较长，请做好阅读准备。本文目录如下：</p> <p><img src="https://i.imgur.com/TYvrtlc.jpg" alt="image"></p> <h2 id="简述"><a href="#简述" class="header-anchor">#</a> 简述</h2> <p>gRPC  是一个高性能、开源和通用的 RPC 框架，面向移动和 HTTP/2 设计。目前提供 C、Java 和 Go 语言版本，分别是：grpc, grpc-java, grpc-go. 其中 C 版本支持 C, C++, Node.js, Python, Ruby, Objective-C, PHP 和 C# 支持。</p> <p>gRPC 基于 HTTP/2 标准设计，带来诸如双向流、流控、头部压缩、单 TCP 连接上的多复用请求等特性。这些特性使得其在移动设备上表现更好，更省电和节省空间占用。</p> <h2 id="调用模型"><a href="#调用模型" class="header-anchor">#</a> 调用模型</h2> <p><img src="http://www.grpc.io/img/grpc_concept_diagram_00.png" alt="image"></p> <p>1、客户端（gRPC Stub）调用 A 方法，发起 RPC 调用。</p> <p>2、对请求信息使用 Protobuf 进行对象序列化压缩（IDL）。</p> <p>3、服务端（gRPC Server）接收到请求后，解码请求体，进行业务逻辑处理并返回。</p> <p>4、对响应结果使用 Protobuf 进行对象序列化压缩（IDL）。</p> <p>5、客户端接受到服务端响应，解码请求体。回调被调用的 A 方法，唤醒正在等待响应（阻塞）的客户端调用并返回响应结果。</p> <h2 id="调用方式"><a href="#调用方式" class="header-anchor">#</a> 调用方式</h2> <h3 id="一、unary-rpc：一元-rpc"><a href="#一、unary-rpc：一元-rpc" class="header-anchor">#</a> 一、Unary RPC：一元 RPC</h3> <p><img src="https://i.imgur.com/Z3V3hl1.png" alt="image"></p> <h4 id="server"><a href="#server" class="header-anchor">#</a> Server</h4> <div class="language- extra-class"><pre class="language-text"><code>type SearchService struct{}
+
+func (s *SearchService) Search(ctx context.Context, r *pb.SearchRequest) (*pb.SearchResponse, error) {
+    return &amp;pb.SearchResponse{Response: r.GetRequest() + &quot; Server&quot;}, nil
+}
+
+const PORT = &quot;9001&quot;
+
+func main() {
+    server := grpc.NewServer()
+    pb.RegisterSearchServiceServer(server, &amp;SearchService{})
+
+    lis, err := net.Listen(&quot;tcp&quot;, &quot;:&quot;+PORT)
+    ...
+
+    server.Serve(lis)
+}
+</code></pre></div><ul><li>创建 gRPC Server 对象，你可以理解为它是 Server 端的抽象对象。</li> <li>将 SearchService（其包含需要被调用的服务端接口）注册到 gRPC Server。 的内部注册中心。这样可以在接受到请求时，通过内部的 “服务发现”，发现该服务端接口并转接进行逻辑处理。</li> <li>创建 Listen，监听 TCP 端口。</li> <li>gRPC Server 开始 lis.Accept，直到 Stop 或 GracefulStop。</li></ul> <h4 id="client"><a href="#client" class="header-anchor">#</a> Client</h4> <div class="language- extra-class"><pre class="language-text"><code>func main() {
+    conn, err := grpc.Dial(&quot;:&quot;+PORT, grpc.WithInsecure())
+    ...
+    defer conn.Close()
+
+    client := pb.NewSearchServiceClient(conn)
+    resp, err := client.Search(context.Background(), &amp;pb.SearchRequest{
+        Request: &quot;gRPC&quot;,
+    })
+    ...
+}
+</code></pre></div><ul><li>创建与给定目标（服务端）的连接句柄。</li> <li>创建 SearchService 的客户端对象。</li> <li>发送 RPC 请求，等待同步响应，得到回调后返回响应结果。</li></ul> <h3 id="二、server-side-streaming-rpc：服务端流式-rpc"><a href="#二、server-side-streaming-rpc：服务端流式-rpc" class="header-anchor">#</a> 二、Server-side streaming RPC：服务端流式 RPC</h3> <p><img src="https://i.imgur.com/W7g3kSC.png" alt="image"></p> <h4 id="server-2"><a href="#server-2" class="header-anchor">#</a> Server</h4> <div class="language- extra-class"><pre class="language-text"><code>func (s *StreamService) List(r *pb.StreamRequest, stream pb.StreamService_ListServer) error {
+    for n := 0; n &lt;= 6; n++ {
+        stream.Send(&amp;pb.StreamResponse{
+            Pt: &amp;pb.StreamPoint{
+                ...
+            },
+        })
+    }
+
+    return nil
+}
+</code></pre></div><h4 id="client-2"><a href="#client-2" class="header-anchor">#</a> Client</h4> <div class="language- extra-class"><pre class="language-text"><code>func printLists(client pb.StreamServiceClient, r *pb.StreamRequest) error {
+    stream, err := client.List(context.Background(), r)
+    ...
+    
+    for {
+        resp, err := stream.Recv()
+        if err == io.EOF {
+            break
+        }
+        ...
+    }
+
+    return nil
+}
+</code></pre></div><h3 id="三、client-side-streaming-rpc：客户端流式-rpc"><a href="#三、client-side-streaming-rpc：客户端流式-rpc" class="header-anchor">#</a> 三、Client-side streaming RPC：客户端流式 RPC</h3> <p><img src="https://i.imgur.com/e60IAxT.png" alt="image"></p> <h4 id="server-3"><a href="#server-3" class="header-anchor">#</a> Server</h4> <div class="language- extra-class"><pre class="language-text"><code>func (s *StreamService) Record(stream pb.StreamService_RecordServer) error {
+    for {
+        r, err := stream.Recv()
+        if err == io.EOF {
+            return stream.SendAndClose(&amp;pb.StreamResponse{Pt: &amp;pb.StreamPoint{...}})
+        }
+        ...
+
+    }
+
+    return nil
+}
+</code></pre></div><h4 id="client-3"><a href="#client-3" class="header-anchor">#</a> Client</h4> <div class="language- extra-class"><pre class="language-text"><code>func printRecord(client pb.StreamServiceClient, r *pb.StreamRequest) error {
+    stream, err := client.Record(context.Background())
+    ...
+    
+    for n := 0; n &lt; 6; n++ {
+        stream.Send(r)
+    }
+
+    resp, err := stream.CloseAndRecv()
+    ...
+
+    return nil
+}
+</code></pre></div><h3 id="四、bidirectional-streaming-rpc：双向流式-rpc"><a href="#四、bidirectional-streaming-rpc：双向流式-rpc" class="header-anchor">#</a> 四、Bidirectional streaming RPC：双向流式 RPC</h3> <p><img src="https://i.imgur.com/DCcxwfj.png" alt="image"></p> <h4 id="server-4"><a href="#server-4" class="header-anchor">#</a> Server</h4> <div class="language- extra-class"><pre class="language-text"><code>func (s *StreamService) Route(stream pb.StreamService_RouteServer) error {
+    for {
+        stream.Send(&amp;pb.StreamResponse{...})
+        r, err := stream.Recv()
+        if err == io.EOF {
+            return nil
+        }
+        ...
+    }
+
+    return nil
+}
+</code></pre></div><h4 id="client-4"><a href="#client-4" class="header-anchor">#</a> Client</h4> <div class="language- extra-class"><pre class="language-text"><code>func printRoute(client pb.StreamServiceClient, r *pb.StreamRequest) error {
+    stream, err := client.Route(context.Background())
+    ...
+
+    for n := 0; n &lt;= 6; n++ {
+        stream.Send(r)
+        resp, err := stream.Recv()
+        if err == io.EOF {
+            break
+        }
+        ...
+    }
+
+    stream.CloseSend()
+
+    return nil
+}
+</code></pre></div><h2 id="客户端与服务端是如何交互的"><a href="#客户端与服务端是如何交互的" class="header-anchor">#</a> 客户端与服务端是如何交互的</h2> <p>在开始分析之前，我们要先 gRPC 的调用有一个初始印象。那么最简单的就是对 Client 端调用 Server 端进行抓包去剖析，看看整个过程中它都做了些什么事。如下图：</p> <p><img src="https://i.imgur.com/H0HPgv9.jpg" alt="image"></p> <ul><li>Magic</li> <li>SETTINGS</li> <li>HEADERS</li> <li>DATA</li> <li>SETTINGS</li> <li>WINDOW_UPDATE</li> <li>PING</li> <li>HEADERS</li> <li>DATA</li> <li>HEADERS</li> <li>WINDOW_UPDATE</li> <li>PING</li></ul> <p>我们略加整理发现共有十二个行为，是比较重要的。在开始分析之前，建议你自己先想一下，它们的作用都是什么？大胆猜测一下，带着疑问去学习效果更佳。</p> <h3 id="行为分析"><a href="#行为分析" class="header-anchor">#</a> 行为分析</h3> <h4 id="magic"><a href="#magic" class="header-anchor">#</a> Magic</h4> <p><img src="https://i.imgur.com/fFkwLPK.jpg" alt="image"></p> <p>Magic 帧的主要作用是建立 HTTP/2 请求的前言。在 HTTP/2 中，要求两端都要发送一个连接前言，作为对所使用协议的最终确认，并确定 HTTP/2 连接的初始设置，客户端和服务端各自发送不同的连接前言。</p> <p>而上图中的 Magic 帧是客户端的前言之一，内容为 <code>PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n</code>，以确定启用 HTTP/2 连接。</p> <h4 id="settings"><a href="#settings" class="header-anchor">#</a> SETTINGS</h4> <p><img src="https://i.imgur.com/wSCvLtb.jpg" alt="image"></p> <p><img src="https://i.imgur.com/0780hAb.jpg" alt="image"></p> <p>SETTINGS 帧的主要作用是设置这一个连接的参数，作用域是整个连接而并非单一的流。</p> <p>而上图的 SETTINGS 帧都是空 SETTINGS 帧，图一是客户端连接的前言（Magic 和 SETTINGS 帧分别组成连接前言）。图二是服务端的。另外我们从图中可以看到多个 SETTINGS 帧，这是为什么呢？是因为发送完连接前言后，客户端和服务端还需要有一步互动确认的动作。对应的就是带有 ACK 标识 SETTINGS 帧。</p> <h4 id="headers"><a href="#headers" class="header-anchor">#</a> HEADERS</h4> <p><img src="https://i.imgur.com/cfDGkPS.jpg" alt="image"></p> <p>HEADERS 帧的主要作用是存储和传播 HTTP 的标头信息。我们关注到 HEADERS 里有一些眼熟的信息，分别如下：</p> <ul><li>method：POST</li> <li>scheme：http</li> <li>path：/proto.SearchService/Search</li> <li>authority：:10001</li> <li>content-type：application/grpc</li> <li>user-agent：grpc-go/1.20.0-dev</li></ul> <p>你会发现这些东西非常眼熟，其实都是 gRPC 的基础属性，实际上远远不止这些，只是设置了多少展示多少。例如像平时常见的 <code>grpc-timeout</code>、<code>grpc-encoding</code> 也是在这里设置的。</p> <h4 id="data"><a href="#data" class="header-anchor">#</a> DATA</h4> <p><img src="https://i.imgur.com/EbsbREx.jpg" alt="image"></p> <p>DATA 帧的主要作用是装填主体信息，是数据帧。而在上图中，可以很明显看到我们的请求参数 gRPC 存储在里面。只需要了解到这一点就可以了。</p> <h4 id="headers-data-headers"><a href="#headers-data-headers" class="header-anchor">#</a> HEADERS, DATA, HEADERS</h4> <p><img src="https://i.imgur.com/ZHGY0K6.jpg" alt="image"></p> <p>在上图中 HEADERS 帧比较简单，就是告诉我们 HTTP 响应状态和响应的内容格式。</p> <p><img src="https://i.imgur.com/u0Js4iF.jpg" alt="imgae"></p> <p>在上图中 DATA 帧主要承载了响应结果的数据集，图中的 gRPC Server 就是我们 RPC 方法的响应结果。</p> <p><img src="https://i.imgur.com/5SPNVYk.jpg" alt="image"></p> <p>在上图中 HEADERS 帧主要承载了 gRPC 状态 和 gRPC 状态消息，图中的 <code>grpc-status</code> 和 <code>grpc-message</code> 就是我们的 gRPC 调用状态的结果。</p> <h3 id="其它步骤"><a href="#其它步骤" class="header-anchor">#</a> 其它步骤</h3> <h4 id="window-update"><a href="#window-update" class="header-anchor">#</a> WINDOW_UPDATE</h4> <p>主要作用是管理和流的窗口控制。通常情况下打开一个连接后，服务器和客户端会立即交换 SETTINGS 帧来确定流控制窗口的大小。默认情况下，该大小设置为约 65 KB，但可通过发出一个 WINDOW_UPDATE 帧为流控制设置不同的大小。</p> <p><img src="https://i.imgur.com/MVsSKSx.jpg" alt="image"></p> <h4 id="ping-pong"><a href="#ping-pong" class="header-anchor">#</a> PING/PONG</h4> <p>主要作用是判断当前连接是否仍然可用，也常用于计算往返时间。其实也就是 PING/PONG，大家对此应该很熟。</p> <h3 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h3> <p><img src="https://i.imgur.com/FrA8EW4.png" alt="image"></p> <ul><li>在建立连接之前，客户端/服务端都会发送<strong>连接前言</strong>（Magic+SETTINGS），确立协议和配置项。</li> <li>在传输数据时，是会涉及滑动窗口（WINDOW_UPDATE）等流控策略的。</li> <li>传播 gRPC 附加信息时，是基于 HEADERS 帧进行传播和设置；而具体的请求/响应数据是存储的 DATA 帧中的。</li> <li>请求/响应结果会分为 HTTP 和 gRPC 状态响应两种类型。</li> <li>客户端发起 PING，服务端就会回应 PONG，反之亦可。</li></ul> <p>这块 gRPC 的基础使用，你可以看看我另外的 <a href="https://github.com/EDDYCJY/blog#grpc%E7%B3%BB%E5%88%97%E7%9B%AE%E5%BD%95" target="_blank" rel="noopener noreferrer">《gRPC 入门系列》<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，相信对你一定有帮助。</p> <h2 id="浅谈理解"><a href="#浅谈理解" class="header-anchor">#</a> 浅谈理解</h2> <h3 id="服务端"><a href="#服务端" class="header-anchor">#</a> 服务端</h3> <p><img src="https://i.imgur.com/xgcsjiQ.png" alt="image"></p> <p>为什么四行代码，就能够起一个 gRPC Server，内部做了什么逻辑。你有想过吗？接下来我们一步步剖析，看看里面到底是何方神圣。</p> <h3 id="一、初始化"><a href="#一、初始化" class="header-anchor">#</a> 一、初始化</h3> <div class="language- extra-class"><pre class="language-text"><code>// grpc.NewServer()
+func NewServer(opt ...ServerOption) *Server {
+	opts := defaultServerOptions
+	for _, o := range opt {
+		o(&amp;opts)
+	}
+	s := &amp;Server{
+		lis:    make(map[net.Listener]bool),
+		opts:   opts,
+		conns:  make(map[io.Closer]bool),
+		m:      make(map[string]*service),
+		quit:   make(chan struct{}),
+		done:   make(chan struct{}),
+		czData: new(channelzData),
+	}
+	s.cv = sync.NewCond(&amp;s.mu)
+	...
+
+	return s
+}
+</code></pre></div><p>这块比较简单，主要是实例 grpc.Server 并进行初始化动作。涉及如下：</p> <ul><li>lis：监听地址列表。</li> <li>opts：服务选项，这块包含 Credentials、Interceptor 以及一些基础配置。</li> <li>conns：客户端连接句柄列表。</li> <li>m：服务信息映射。</li> <li>quit：退出信号。</li> <li>done：完成信号。</li> <li>czData：用于存储 ClientConn，addrConn 和 Server 的channelz 相关数据。</li> <li>cv：当优雅退出时，会等待这个信号量，直到所有 RPC 请求都处理并断开才会继续处理。</li></ul> <h3 id="二、注册"><a href="#二、注册" class="header-anchor">#</a> 二、注册</h3> <div class="language- extra-class"><pre class="language-text"><code>pb.RegisterSearchServiceServer(server, &amp;SearchService{})
+</code></pre></div><h4 id="步骤一：service-api-interface"><a href="#步骤一：service-api-interface" class="header-anchor">#</a> 步骤一：Service API interface</h4> <div class="language- extra-class"><pre class="language-text"><code>// search.pb.go
+type SearchServiceServer interface {
+	Search(context.Context, *SearchRequest) (*SearchResponse, error)
+}
+
+func RegisterSearchServiceServer(s *grpc.Server, srv SearchServiceServer) {
+	s.RegisterService(&amp;_SearchService_serviceDesc, srv)
+}
+</code></pre></div><p>还记得我们平时编写的 Protobuf 吗？在生成出来的 <code>.pb.go</code> 文件中，会定义出 Service APIs interface 的具体实现约束。而我们在 gRPC Server 进行注册时，会传入应用 Service 的功能接口实现，此时生成的 <code>RegisterServer</code> 方法就会保证两者之间的一致性。</p> <h4 id="步骤二：service-api-idl"><a href="#步骤二：service-api-idl" class="header-anchor">#</a> 步骤二：Service API IDL</h4> <p>你想乱传糊弄一下？不可能的，请乖乖定义与 Protobuf 一致的接口方法。但是那个 <code>&amp;_SearchService_serviceDesc</code> 又有什么作用呢？代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>// search.pb.go
+var _SearchService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: &quot;proto.SearchService&quot;,
+	HandlerType: (*SearchServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: &quot;Search&quot;,
+			Handler:    _SearchService_Search_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: &quot;search.proto&quot;,
+}
+</code></pre></div><p>这看上去像服务的描述代码，用来向内部表述 “我” 都有什么。涉及如下:</p> <ul><li>ServiceName：服务名称</li> <li>HandlerType：服务接口，用于检查用户提供的实现是否满足接口要求</li> <li>Methods：一元方法集，注意结构内的 <code>Handler</code> 方法，其对应最终的 RPC 处理方法，在执行 RPC 方法的阶段会使用。</li> <li>Streams：流式方法集</li> <li>Metadata：元数据，是一个描述数据属性的东西。在这里主要是描述 <code>SearchServiceServer</code> 服务</li></ul> <h4 id="步骤三：register-service"><a href="#步骤三：register-service" class="header-anchor">#</a> 步骤三：Register Service</h4> <div class="language- extra-class"><pre class="language-text"><code>func (s *Server) register(sd *ServiceDesc, ss interface{}) {
+    ...
+	srv := &amp;service{
+		server: ss,
+		md:     make(map[string]*MethodDesc),
+		sd:     make(map[string]*StreamDesc),
+		mdata:  sd.Metadata,
+	}
+	for i := range sd.Methods {
+		d := &amp;sd.Methods[i]
+		srv.md[d.MethodName] = d
+	}
+	for i := range sd.Streams {
+		...
+	}
+	s.m[sd.ServiceName] = srv
+}
+</code></pre></div><p>在最后一步中，我们会将先前的服务接口信息、服务描述信息给注册到内部 <code>service</code> 去，以便于后续实际调用的使用。涉及如下：</p> <ul><li>server：服务的接口信息</li> <li>md：一元服务的 RPC 方法集</li> <li>sd：流式服务的 RPC 方法集</li> <li>mdata：metadata，元数据</li></ul> <h4 id="小结-2"><a href="#小结-2" class="header-anchor">#</a> 小结</h4> <p>在这一章节中，主要介绍的是 gRPC Server 在启动前的整理和注册行为，看上去很简单，但其实一切都是为了后续的实际运行的预先准备。因此我们整理一下思路，将其串联起来看看，如下：</p> <p><img src="https://i.imgur.com/vvBWEyx.png" alt="image"></p> <h3 id="三、监听"><a href="#三、监听" class="header-anchor">#</a> 三、监听</h3> <p>接下来到了整个流程中，最重要也是大家最关注的监听/处理阶段，核心代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>func (s *Server) Serve(lis net.Listener) error {
+	...
+	var tempDelay time.Duration 
+	for {
+		rawConn, err := lis.Accept()
+		if err != nil {
+			if ne, ok := err.(interface {
+				Temporary() bool
+			}); ok &amp;&amp; ne.Temporary() {
+				if tempDelay == 0 {
+					tempDelay = 5 * time.Millisecond
+				} else {
+					tempDelay *= 2
+				}
+				if max := 1 * time.Second; tempDelay &gt; max {
+					tempDelay = max
+				}
+				...
+				timer := time.NewTimer(tempDelay)
+				select {
+				case &lt;-timer.C:
+				case &lt;-s.quit:
+					timer.Stop()
+					return nil
+				}
+				continue
+			}
+			...
+			return err
+		}
+		tempDelay = 0
+
+		s.serveWG.Add(1)
+		go func() {
+			s.handleRawConn(rawConn)
+			s.serveWG.Done()
+		}()
+	}
+}
+</code></pre></div><p>Serve 会根据外部传入的 Listener 不同而调用不同的监听模式，这也是 <code>net.Listener</code> 的魅力，灵活性和扩展性会比较高。而在 gRPC Server 中最常用的就是 <code>TCPConn</code>，基于 TCP Listener 去做。接下来我们一起看看具体的处理逻辑，如下：</p> <p><img src="https://i.imgur.com/SYrkt0d.png" alt="image"></p> <ul><li>循环处理连接，通过 <code>lis.Accept</code> 取出连接，如果队列中没有需处理的连接时，会形成阻塞等待。</li> <li>若 <code>lis.Accept</code> 失败，则触发休眠机制，若为第一次失败那么休眠 5ms，否则翻倍，再次失败则不断翻倍直至上限休眠时间 1s，而休眠完毕后就会尝试去取下一个 “它”。</li> <li>若 <code>lis.Accept</code> 成功，则重置休眠的时间计数和启动一个新的 goroutine 调用 <code>handleRawConn</code> 方法去执行/处理新的请求，也就是大家很喜欢说的 “每一个请求都是不同的 goroutine 在处理”。</li> <li>在循环过程中，包含了 “退出” 服务的场景，主要是硬关闭和优雅重启服务两种情况。</li></ul> <h2 id="客户端"><a href="#客户端" class="header-anchor">#</a> 客户端</h2> <p><img src="https://i.imgur.com/xK0QsIm.png" alt="image"></p> <h3 id="一、创建拨号连接"><a href="#一、创建拨号连接" class="header-anchor">#</a> 一、创建拨号连接</h3> <div class="language- extra-class"><pre class="language-text"><code>// grpc.Dial(&quot;:&quot;+PORT, grpc.WithInsecure())
+func DialContext(ctx context.Context, target string, opts ...DialOption) (conn *ClientConn, err error) {
+	cc := &amp;ClientConn{
+		target:            target,
+		csMgr:             &amp;connectivityStateManager{},
+		conns:             make(map[*addrConn]struct{}),
+		dopts:             defaultDialOptions(),
+		blockingpicker:    newPickerWrapper(),
+		czData:            new(channelzData),
+		firstResolveEvent: grpcsync.NewEvent(),
+	}
+	...
+	chainUnaryClientInterceptors(cc)
+	chainStreamClientInterceptors(cc)
+
+	...
+}
+</code></pre></div><p><code>grpc.Dial</code> 方法实际上是对于 <code>grpc.DialContext</code> 的封装，区别在于 <code>ctx</code> 是直接传入 <code>context.Background</code>。其主要功能是<strong>创建</strong>与给定目标的客户端连接，其承担了以下职责：</p> <ul><li>初始化 ClientConn</li> <li>初始化（基于进程 LB）负载均衡配置</li> <li>初始化 channelz</li> <li>初始化重试规则和客户端一元/流式拦截器</li> <li>初始化协议栈上的基础信息</li> <li>相关 context 的超时控制</li> <li>初始化并解析地址信息</li> <li>创建与服务端之间的连接</li></ul> <h4 id="连没连"><a href="#连没连" class="header-anchor">#</a> 连没连</h4> <p>之前听到有的人说调用 <code>grpc.Dial</code> 后客户端就已经与服务端建立起了连接，但这对不对呢？我们先鸟瞰全貌，看看正在跑的 goroutine。如下：</p> <p><img src="https://i.imgur.com/yPK1KZn.jpg" alt="image"></p> <p>我们可以有几个核心方法一直在等待/处理信号，通过分析底层源码可得知。涉及如下：</p> <div class="language- extra-class"><pre class="language-text"><code>func (ac *addrConn) connect()
+func (ac *addrConn) resetTransport()
+func (ac *addrConn) createTransport(addr resolver.Address, copts transport.ConnectOptions, connectDeadline time.Time)
+func (ac *addrConn) getReadyTransport()
+</code></pre></div><p>在这里主要分析 goroutine 提示的 <code>resetTransport</code> 方法，看看都做了啥。核心代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>func (ac *addrConn) resetTransport() {
+	for i := 0; ; i++ {
+		if ac.state == connectivity.Shutdown {
+			return
+		}
+		...
+		connectDeadline := time.Now().Add(dialDuration)
+		ac.updateConnectivityState(connectivity.Connecting)
+		newTr, addr, reconnect, err := ac.tryAllAddrs(addrs, connectDeadline)
+		if err != nil {
+			if ac.state == connectivity.Shutdown {
+				return
+			}
+			ac.updateConnectivityState(connectivity.TransientFailure)
+			timer := time.NewTimer(backoffFor)
+			select {
+			case &lt;-timer.C:
+				...
+			}
+			continue
+		}
+
+		if ac.state == connectivity.Shutdown {
+			newTr.Close()
+			return
+		}
+		...
+		if !healthcheckManagingState {
+			ac.updateConnectivityState(connectivity.Ready)
+		}
+		...
+
+		if ac.state == connectivity.Shutdown {
+			return
+		}
+		ac.updateConnectivityState(connectivity.TransientFailure)
+	}
+}
+</code></pre></div><p>在该方法中会不断地去尝试创建连接，若成功则结束。否则不断地根据 <code>Backoff</code> 算法的重试机制去尝试创建连接，直到成功为止。从结论上来讲，单纯调用 <code>DialContext</code> 是异步建立连接的，也就是并不是马上生效，处于 <code>Connecting</code> 状态，而正式下要到达 <code>Ready</code> 状态才可用。</p> <h4 id="真的连了吗"><a href="#真的连了吗" class="header-anchor">#</a> 真的连了吗</h4> <p><img src="https://i.imgur.com/hYklktM.jpg" alt="image"></p> <p>在抓包工具上提示一个包都没有，那么这算真正连接了吗？我认为这是一个表述问题，我们应该尽可能的严谨。如果你真的想通过 <code>DialContext</code> 方法就打通与服务端的连接，则需要调用 <code>WithBlock</code> 方法，虽然会导致阻塞等待，但最终连接会到达 <code>Ready</code> 状态（握手成功）。如下图：</p> <p><img src="https://i.imgur.com/jHNuIYR.jpg" alt="image"></p> <h3 id="二、实例化-service-api"><a href="#二、实例化-service-api" class="header-anchor">#</a> 二、实例化 Service API</h3> <div class="language- extra-class"><pre class="language-text"><code>type SearchServiceClient interface {
+	Search(ctx context.Context, in *SearchRequest, opts ...grpc.CallOption) (*SearchResponse, error)
+}
+
+type searchServiceClient struct {
+	cc *grpc.ClientConn
+}
+
+func NewSearchServiceClient(cc *grpc.ClientConn) SearchServiceClient {
+	return &amp;searchServiceClient{cc}
+}
+</code></pre></div><p>这块就是实例 Service API interface，比较简单。</p> <h3 id="三、调用"><a href="#三、调用" class="header-anchor">#</a> 三、调用</h3> <div class="language- extra-class"><pre class="language-text"><code>// search.pb.go
+func (c *searchServiceClient) Search(ctx context.Context, in *SearchRequest, opts ...grpc.CallOption) (*SearchResponse, error) {
+	out := new(SearchResponse)
+	err := c.cc.Invoke(ctx, &quot;/proto.SearchService/Search&quot;, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+</code></pre></div><p>proto 生成的 RPC 方法更像是一个包装盒，把需要的东西放进去，而实际上调用的还是 <code>grpc.invoke</code> 方法。如下：</p> <div class="language- extra-class"><pre class="language-text"><code>func invoke(ctx context.Context, method string, req, reply interface{}, cc *ClientConn, opts ...CallOption) error {
+	cs, err := newClientStream(ctx, unaryStreamDesc, cc, method, opts...)
+	if err != nil {
+		return err
+	}
+	if err := cs.SendMsg(req); err != nil {
+		return err
+	}
+	return cs.RecvMsg(reply)
+}
+</code></pre></div><p>通过概览，可以关注到三块调用。如下：</p> <ul><li>newClientStream：获取传输层 Trasport 并组合封装到 ClientStream 中返回，在这块会涉及负载均衡、超时控制、 Encoding、 Stream 的动作，与服务端基本一致的行为。</li> <li>cs.SendMsg：发送 RPC 请求出去，但其并不承担等待响应的功能。</li> <li>cs.RecvMsg：阻塞等待接受到的 RPC 方法响应结果。</li></ul> <h4 id="连接"><a href="#连接" class="header-anchor">#</a> 连接</h4> <div class="language- extra-class"><pre class="language-text"><code>// clientconn.go
+func (cc *ClientConn) getTransport(ctx context.Context, failfast bool, method string) (transport.ClientTransport, func(balancer.DoneInfo), error) {
+	t, done, err := cc.blockingpicker.pick(ctx, failfast, balancer.PickOptions{
+		FullMethodName: method,
+	})
+	if err != nil {
+		return nil, nil, toRPCErr(err)
+	}
+	return t, done, nil
+}
+</code></pre></div><p>在 <code>newClientStream</code> 方法中，我们通过 <code>getTransport</code> 方法获取了 Transport 层中抽象出来的 ClientTransport 和 ServerTransport，实际上就是获取一个连接给后续 RPC 调用传输使用。</p> <h3 id="四、关闭连接"><a href="#四、关闭连接" class="header-anchor">#</a> 四、关闭连接</h3> <div class="language- extra-class"><pre class="language-text"><code>// conn.Close()
+func (cc *ClientConn) Close() error {
+	defer cc.cancel()
+    ...
+	cc.csMgr.updateState(connectivity.Shutdown)
+    ...
+	cc.blockingpicker.close()
+	if rWrapper != nil {
+		rWrapper.close()
+	}
+	if bWrapper != nil {
+		bWrapper.close()
+	}
+
+	for ac := range conns {
+		ac.tearDown(ErrClientConnClosing)
+	}
+	if channelz.IsOn() {
+		...
+		channelz.AddTraceEvent(cc.channelzID, ted)
+		channelz.RemoveEntry(cc.channelzID)
+	}
+	return nil
+}
+</code></pre></div><p>该方法会取消 ClientConn 上下文，同时关闭所有底层传输。涉及如下：</p> <ul><li>Context Cancel</li> <li>清空并关闭客户端连接</li> <li>清空并关闭解析器连接</li> <li>清空并关闭负载均衡连接</li> <li>添加跟踪引用</li> <li>移除当前通道信息</li></ul> <h2 id="q-a"><a href="#q-a" class="header-anchor">#</a> Q&amp;A</h2> <h3 id="_1-grpc-metadata-是通过什么传输？"><a href="#_1-grpc-metadata-是通过什么传输？" class="header-anchor">#</a> 1. gRPC Metadata 是通过什么传输？</h3> <p><img src="https://i.imgur.com/N7xx2JH.jpg" alt="image"></p> <h3 id="_2-调用-grpc-dial-会真正的去连接服务端吗？"><a href="#_2-调用-grpc-dial-会真正的去连接服务端吗？" class="header-anchor">#</a> 2. 调用 grpc.Dial 会真正的去连接服务端吗？</h3> <p>会，但是是异步连接的，连接状态为正在连接。但如果你设置了 <code>grpc.WithBlock</code> 选项，就会阻塞等待（等待握手成功）。另外你需要注意，当未设置 <code>grpc.WithBlock</code> 时，ctx 超时控制对其无任何效果。</p> <h3 id="_3-调用-clientconn-不-close-会导致泄露吗？"><a href="#_3-调用-clientconn-不-close-会导致泄露吗？" class="header-anchor">#</a> 3. 调用 ClientConn 不 Close 会导致泄露吗？</h3> <p>会，除非你的客户端不是常驻进程，那么在应用结束时会被动地回收资源。但如果是常驻进程，你又真的忘记执行 <code>Close</code> 语句，会造成的泄露。如下图：</p> <p><strong>3.1. 客户端</strong></p> <p><img src="https://i.imgur.com/YFMv93J.jpg" alt="image"></p> <p><strong>3.2. 服务端</strong></p> <p><img src="https://i.imgur.com/mu65CZL.png" alt="image"></p> <p><strong>3.3. TCP</strong></p> <p><img src="https://i.imgur.com/0Wg6ZY7.jpg" alt="image"></p> <h3 id="_4-不控制超时调用的话，会出现什么问题？"><a href="#_4-不控制超时调用的话，会出现什么问题？" class="header-anchor">#</a> 4. 不控制超时调用的话，会出现什么问题？</h3> <p>短时间内不会出现问题，但是会不断积蓄泄露，积蓄到最后当然就是服务无法提供响应了。如下图：</p> <p><img src="https://i.imgur.com/GIgP062.jpg" alt="image"></p> <h3 id="_5-为什么默认的拦截器不可以传多个？"><a href="#_5-为什么默认的拦截器不可以传多个？" class="header-anchor">#</a> 5. 为什么默认的拦截器不可以传多个？</h3> <div class="language- extra-class"><pre class="language-text"><code>func chainUnaryClientInterceptors(cc *ClientConn) {
+	interceptors := cc.dopts.chainUnaryInts
+	if cc.dopts.unaryInt != nil {
+		interceptors = append([]UnaryClientInterceptor{cc.dopts.unaryInt}, interceptors...)
+	}
+	var chainedInt UnaryClientInterceptor
+	if len(interceptors) == 0 {
+		chainedInt = nil
+	} else if len(interceptors) == 1 {
+		chainedInt = interceptors[0]
+	} else {
+		chainedInt = func(ctx context.Context, method string, req, reply interface{}, cc *ClientConn, invoker UnaryInvoker, opts ...CallOption) error {
+			return interceptors[0](ctx, method, req, reply, cc, getChainUnaryInvoker(interceptors, 0, invoker), opts...)
+		}
+	}
+	cc.dopts.unaryInt = chainedInt
+}
+</code></pre></div><p>当存在多个拦截器时，取的就是第一个拦截器。因此结论是允许传多个，但并没有用。</p> <h3 id="_6-真的需要用到多个拦截器的话，怎么办？"><a href="#_6-真的需要用到多个拦截器的话，怎么办？" class="header-anchor">#</a> 6. 真的需要用到多个拦截器的话，怎么办？</h3> <p>可以使用 <a href="https://github.com/grpc-ecosystem/go-grpc-middleware" target="_blank" rel="noopener noreferrer">go-grpc-middleware<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 提供的 <code>grpc.UnaryInterceptor</code> 和 <code>grpc.StreamInterceptor</code> 链式方法，方便快捷省心。</p> <p>单单会用还不行，我们再深剖一下，看看它是怎么实现的。核心代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>func ChainUnaryClient(interceptors ...grpc.UnaryClientInterceptor) grpc.UnaryClientInterceptor {
+	n := len(interceptors)
+	if n &gt; 1 {
+		lastI := n - 1
+		return func(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, invoker grpc.UnaryInvoker, opts ...grpc.CallOption) error {
+			var (
+				chainHandler grpc.UnaryInvoker
+				curI         int
+			)
+
+			chainHandler = func(currentCtx context.Context, currentMethod string, currentReq, currentRepl interface{}, currentConn *grpc.ClientConn, currentOpts ...grpc.CallOption) error {
+				if curI == lastI {
+					return invoker(currentCtx, currentMethod, currentReq, currentRepl, currentConn, currentOpts...)
+				}
+				curI++
+				err := interceptors[curI](currentCtx, currentMethod, currentReq, currentRepl, currentConn, chainHandler, currentOpts...)
+				curI--
+				return err
+			}
+
+			return interceptors[0](ctx, method, req, reply, cc, chainHandler, opts...)
+		}
+	}
+    ...
+}
+</code></pre></div><p>当拦截器数量大于 1 时，从 <code>interceptors[1]</code> 开始递归，每一个递归的拦截器 <code>interceptors[i]</code> 会不断地执行，最后才真正的去执行 <code>handler</code> 方法。同时也经常有人会问拦截器的执行顺序是什么，通过这段代码你得出结论了吗？</p> <h3 id="_7-频繁创建-clientconn-有什么问题？"><a href="#_7-频繁创建-clientconn-有什么问题？" class="header-anchor">#</a> 7. 频繁创建 ClientConn 有什么问题？</h3> <p>这个问题我们可以反向验证一下，假设不公用 ClientConn 看看会怎么样？如下:</p> <div class="language- extra-class"><pre class="language-text"><code>func BenchmarkSearch(b *testing.B) {
+	for i := 0; i &lt; b.N; i++ {
+		conn, err := GetClientConn()
+		if err != nil {
+			b.Errorf(&quot;GetClientConn err: %v&quot;, err)
+		}
+		_, err = Search(context.Background(), conn)
+		if err != nil {
+			b.Errorf(&quot;Search err: %v&quot;, err)
+		}
+	}
+}
+</code></pre></div><p>输出结果：</p> <div class="language- extra-class"><pre class="language-text"><code>    ... connection error: desc = &quot;transport: Error while dialing dial tcp :10001: socket: too many open files&quot;
+    ... connection error: desc = &quot;transport: Error while dialing dial tcp :10001: socket: too many open files&quot;
+    ... connection error: desc = &quot;transport: Error while dialing dial tcp :10001: socket: too many open files&quot;
+    ... connection error: desc = &quot;transport: Error while dialing dial tcp :10001: socket: too many open files&quot;
+FAIL
+exit status 1
+</code></pre></div><p>当你的应用场景是存在高频次同时生成/调用 ClientConn 时，可能会导致系统的文件句柄占用过多。这种情况下你可以变更应用程序生成/调用 ClientConn 的模式，又或是池化它，这块可以参考 <a href="github.com/processout/grpc-go-pool">grpc-go-pool</a> 项目。</p> <h3 id="_8-客户端请求失败后会默认重试吗？"><a href="#_8-客户端请求失败后会默认重试吗？" class="header-anchor">#</a> 8. 客户端请求失败后会默认重试吗？</h3> <p>会不断地进行重试，直到上下文取消。而重试时间方面采用 backoff 算法作为的重连机制，默认的最大重试时间间隔是 120s。</p> <h3 id="_9-为什么要用-http-2-作为传输协议？"><a href="#_9-为什么要用-http-2-作为传输协议？" class="header-anchor">#</a> 9. 为什么要用 HTTP/2 作为传输协议？</h3> <p>许多客户端要通过 HTTP 代理来访问网络，gRPC 全部用 HTTP/2 实现，等到代理开始支持 HTTP/2 就能透明转发 gRPC 的数据。不光如此，负责负载均衡、访问控制等等的反向代理都能无缝兼容 gRPC，比起自己设计 wire protocol 的 Thrift，这样做科学不少。@ctiller @滕亦飞</p> <h3 id="_10-在-kubernetes-中-grpc-负载均衡有问题？"><a href="#_10-在-kubernetes-中-grpc-负载均衡有问题？" class="header-anchor">#</a> 10. 在 Kubernetes 中 gRPC 负载均衡有问题？</h3> <p>gRPC 的 RPC 协议是基于 HTTP/2 标准实现的，HTTP/2 的一大特性就是不需要像 HTTP/1.1 一样，每次发出请求都要重新建立一个新连接，而是会复用原有的连接。</p> <p>所以这将导致 kube-proxy 只有在连接建立时才会做负载均衡，而在这之后的每一次 RPC 请求都会利用原本的连接，那么实际上后续的每一次的 RPC 请求都跑到了同一个地方。</p> <p>注：使用 k8s service 做负载均衡的情况下</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <ul><li>gRPC 基于 HTTP/2 + Protobuf。</li> <li>gRPC 有四种调用方式，分别是一元、服务端/客户端流式、双向流式。</li> <li>gRPC 的附加信息都会体现在 HEADERS 帧，数据在 DATA 帧上。</li> <li>Client 请求若使用 grpc.Dial 默认是异步建立连接，当时状态为 Connecting。</li> <li>Client 请求若需要同步则调用 WithBlock()，完成状态为 Ready。</li> <li>Server 监听是循环等待连接，若没有则休眠，最大休眠时间 1s；若接收到新请求则起一个新的 goroutine 去处理。</li> <li>grpc.ClientConn 不关闭连接，会导致 goroutine 和 Memory 等泄露。</li> <li>任何内/外调用如果不加超时控制，会出现泄漏和客户端不断重试。</li> <li>特定场景下，如果不对 grpc.ClientConn 加以调控，会影响调用。</li> <li>拦截器如果不用 go-grpc-middleware 链式处理，会覆盖。</li> <li>在选择 gRPC 的负载均衡模式时，需要谨慎。</li></ul> <h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ul><li>http://doc.oschina.net/grpc</li> <li>https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md</li> <li>https://juejin.im/post/5b88a4f56fb9a01a0b31a67e</li> <li>https://www.ibm.com/developerworks/cn/web/wa-http2-under-the-hood/index.html</li> <li>https://github.com/grpc/grpc-go/issues/1953</li> <li>https://www.zhihu.com/question/52670041</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">7/20/2020, 2:09:44 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9ea962d1.js" defer></script><script src="/assets/js/2.c9a70b15.js" defer></script><script src="/assets/js/4.844b86fa.js" defer></script><script src="/assets/js/183.7429f323.js" defer></script>
+  </body>
+</html>
